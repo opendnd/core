@@ -1,0 +1,40 @@
+{
+  "name": "opendnd-core",
+  "version": "0.0.1",
+  "description": "This is the opendnd core module",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "yarn run env:dev && nodemon --exec ts-node src/index.ts",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "lint": "tslint src/**/*.ts",
+    "env:dev": "cross-env NODE_ENV=development",
+    "env:prod": "cross-env NODE_ENV=production",
+    "test": "mocha -c -S -R spec --compilers ts:ts-node/register --check-leaks",
+    "test:watch": "yarn test -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendnd/core.git"
+  },
+  "author": "Drew Morris <dhmorris@gmail.com> (http://github.com/drewry)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opendnd/core/issues"
+  },
+  "homepage": "https://github.com/opendnd/core#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.1",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.5",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.4",
+    "yarn": "^1.10.1"
+  }
+}
