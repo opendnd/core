@@ -31,6 +31,7 @@ export enum PersonTypes {
 
 // age groups
 export enum AgeGroups {
+  Child,
   Young,
   Middle,
   Old,
