@@ -152,7 +152,7 @@ export interface DNA {
   notes: string
 }
 
-export class TplDNA {
+export class TplDNA implements DNA {
   version = ''
   uuid = ''
   size = null
