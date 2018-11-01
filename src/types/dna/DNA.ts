@@ -31,6 +31,84 @@ export interface Trait {
   trait: string
 }
 
+// the available trait categories
+export interface Traits {
+  // general traits include information about the body like shape
+  general?: Trait
+
+  // eye color
+  eyeColor?: Trait
+
+  // general information about the hair like shape, style, etc.
+  hairGeneral?: Trait
+
+  // hair color
+  hairColor?: Trait
+
+  // general information about the skin like texture
+  skinGeneral?: Trait
+
+  // skin color
+  skinColor?: Trait
+
+  // eye shape
+  eyeShape?: Trait
+
+  // face shape
+  faceShape?: Trait
+
+  // nose
+  faceNose?: Trait
+
+  // facial hair
+  hairFacial?: Trait
+
+  // mouth
+  faceMouth?: Trait
+
+  // eye brows
+  eyeBrows?: Trait
+
+  // this includes information about how the skin ages like texture
+  skinAging?: Trait
+}
+
+// the available chromosomes
+export interface Chromosomes {
+  1?: string
+  2?: string
+  3?: string
+  4?: string
+  5?: string
+  6?: string
+  7?: string
+  8?: string
+  9?: string
+  10?: string
+  11?: string
+  12?: string
+  13?: string
+  14?: string
+  15?: string
+  16?: string
+  17?: string
+  18?: string
+  19?: string
+  20?: string
+  21?: string
+  22?: string
+  23?: string
+  24?: string
+  25?: string
+  26?: string
+  27?: string
+  28?: string
+  29?: string
+  30?: string
+  31?: string
+  32?: string
+}
+
 // link to a DNA
 export interface LinkDNA {
   // uuid for this object
@@ -68,85 +146,13 @@ export interface DNA {
   weight: number
 
   // the list of traits for the creature
-  traits: {
-    // general traits include information about the body like shape
-    general?: Trait
-
-    // eye color
-    eyeColor?: Trait
-
-    // general information about the hair like shape, style, etc.
-    hairGeneral?: Trait
-
-    // hair color
-    hairColor?: Trait
-
-    // general information about the skin like texture
-    skinGeneral?: Trait
-
-    // skin color
-    skinColor?: Trait
-
-    // eye shape
-    eyeShape?: Trait
-
-    // face shape
-    faceShape?: Trait
-
-    // nose
-    faceNose?: Trait
-
-    // facial hair
-    hairFacial?: Trait
-
-    // mouth
-    faceMouth?: Trait
-
-    // eye brows
-    eyeBrows?: Trait
-
-    // this includes information about how the skin ages like texture
-    skinAging?: Trait
-  }
+  traits: Traits
 
   // chromosomes have the dice rolls for each chromosome pair
   // not all races have 32 chromosomes, that is the maximum
   // regular pair ex: 1=6
   // sex chromosome pair ex: X1=Y2
-  chromosomes: {
-    1?: string
-    2?: string
-    3?: string
-    4?: string
-    5?: string
-    6?: string
-    7?: string
-    8?: string
-    9?: string
-    10?: string
-    11?: string
-    12?: string
-    13?: string
-    14?: string
-    15?: string
-    16?: string
-    17?: string
-    18?: string
-    19?: string
-    20?: string
-    21?: string
-    22?: string
-    23?: string
-    24?: string
-    25?: string
-    26?: string
-    27?: string
-    28?: string
-    29?: string
-    30?: string
-    31?: string
-    32?: string
-  }
+  chromosomes: Chromosomes
 
   // notes as it relates to the backstory, campaign, etc.
   notes: string
@@ -166,4 +172,35 @@ export class TplDNA implements DNA {
   traits = {}
   chromosomes = {}
   notes = ''
+
+  // create template DNA
+  constructor(
+    version: string,
+    uuid: string,
+    size: Sizes,
+    abstract: boolean,
+    abstractProperties: object,
+    derivation: LinkDNA,
+    race: LinkRace,
+    gender: Genders,
+    height: number,
+    weight: number,
+    traits: Traits,
+    chromosomes: Chromosomes,
+    notes: string,
+  ) {
+    this.version = version;
+    this.uuid = uuid;
+    this.size = size;
+    this.abstract = abstract;
+    this.abstractProperties = abstractProperties;
+    this.derivation = derivation;
+    this.race = race;
+    this.gender = gender;
+    this.height = height;
+    this.weight = weight;
+    this.traits = traits;
+    this.chromosomes = chromosomes;
+    this.notes = notes;
+  }
 }
