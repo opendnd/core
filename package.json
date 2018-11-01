@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "This is the opendnd core module",
   "main": "dist/index.js",
-  "types": "./src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "start": "yarn run env:dev && nodemon --exec ts-node src/index.ts",
     "prebuild": "rimraf dist",
