@@ -151,3 +151,19 @@ export interface DNA {
   // notes as it relates to the backstory, campaign, etc.
   notes: string
 }
+
+export class TplDNA {
+  version = ''
+  uuid = ''
+  size = null
+  abstract = false
+  abstractProperties = {}
+  derivation = null
+  race = null
+  gender = null
+  height = 0
+  weight = 0
+  traits = {}
+  chromosomes = {}
+  notes = ''
+}
