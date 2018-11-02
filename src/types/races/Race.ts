@@ -27,7 +27,7 @@ export interface LinkRace {
   uuid: string
 
   // name for this race
-  name: string
+  name?: string
 }
 
 export interface Race {
