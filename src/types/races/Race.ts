@@ -25,6 +25,9 @@ export interface RacialAbilityIncrease {
 export interface LinkRace {
   // uuid for this object
   uuid: string
+
+  // name for this race
+  name: string
 }
 
 export interface Race {
@@ -33,6 +36,9 @@ export interface Race {
 
   // uuid for this object
   uuid: string
+
+  // name for this race
+  name: string
 
   // chromosomes have the dice size for each chromosome pair
   // note that this uses string instead of the Dice type as one chromosome specifies sex
@@ -172,6 +178,7 @@ export interface Race {
 export class TplRace implements Race {
   version = ''
   uuid = ''
+  name = ''
   chromosomes = {}
   sex = {}
   legend = {}

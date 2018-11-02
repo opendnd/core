@@ -1,12 +1,12 @@
 // types of dice
 export enum Dice {
-  d4,
-  d6,
-  d8,
-  d10,
-  d12,
-  d20,
-  d100,
+  D4,
+  D6,
+  D8,
+  D10,
+  D12,
+  D20,
+  D100,
 }
 
 // list of damage types
