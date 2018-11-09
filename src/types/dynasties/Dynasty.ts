@@ -1,9 +1,9 @@
-export interface LinkDynasty {
+export interface ILinkDynasty {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Dynasty {
+export interface IDynasty {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

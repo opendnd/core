@@ -1,27 +1,27 @@
-import { DNA } from '../dna/DNA'
-import { LinkItem, WeaponTypes, ArmorTypes } from '../items/Item'
-import { LinkBackground } from '../backgrounds/Background'
-import { LinkBuilding } from '../buildings/Building'
-import { LinkCampaign } from '../campaigns/Campaign'
-import { LinkKlass } from '../klasses/Klass'
-import { LinkDomain } from '../domains/Domain'
-import { LinkDialog } from '../dialogs/Dialog'
-import { LinkDisease } from '../diseases/Disease'
-import { LinkCulture } from '../cultures/Culture'
-import { LinkSpell } from '../spells/Spell'
-import { LinkDate } from '../calendars/Calendar'
-import { LinkFaction } from '../factions/Faction'
-import { LinkDynasty } from '../dynasties/Dynasty'
-import { LinkReligion } from '../religions/Religion'
-import { LinkLanguage } from '../languages/Language'
-import { LinkFeature } from '../features/Feature'
-import { LinkFamiliar } from '../familiars/Familiar'
-import { TransporationModes, LinkVehicle } from '../vehicles/Vehicle'
-import { LinkTool } from '../tools/Tool'
-import { LinkQuest } from '../quests/Quest'
-import { LinkTitle } from '../titles/Title'
-import { LinkStory } from '../stories/Story'
-import { Dice, DamageTypes, AbilityTypes, SkillTypes, ExpandedAlignments } from '../core/Core'
+import { ILinkBackground } from "../backgrounds/Background";
+import { ILinkBuilding } from "../buildings/Building";
+import { ILinkDate } from "../calendars/Calendar";
+import { ILinkCampaign } from "../campaigns/Campaign";
+import { AbilityTypes, DamageTypes, Dice, ExpandedAlignments, SkillTypes } from "../core/Core";
+import { ILinkCulture } from "../cultures/Culture";
+import { ILinkDialog } from "../dialogs/Dialog";
+import { ILinkDisease } from "../diseases/Disease";
+import { IDNA } from "../dna/DNA";
+import { ILinkDomain } from "../domains/Domain";
+import { ILinkDynasty } from "../dynasties/Dynasty";
+import { ILinkFaction } from "../factions/Faction";
+import { ILinkFamiliar } from "../familiars/Familiar";
+import { ILinkFeature } from "../features/Feature";
+import { ArmorTypes, ILinkItem, WeaponTypes } from "../items/Item";
+import { ILinkKlass } from "../klasses/Klass";
+import { ILinkLanguage } from "../languages/Language";
+import { ILinkQuest } from "../quests/Quest";
+import { ILinkReligion } from "../religions/Religion";
+import { ILinkSpell } from "../spells/Spell";
+import { ILinkStory } from "../stories/Story";
+import { ILinkTitle } from "../titles/Title";
+import { ILinkTool } from "../tools/Tool";
+import { ILinkVehicle, TransporationModes } from "../vehicles/Vehicle";
 
 // the types of persons
 export enum PersonTypes {
@@ -38,52 +38,52 @@ export enum AgeGroups {
 }
 
 // a link to a person
-export interface LinkPerson {
+export interface ILinkPerson {
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // name of the character
-  name: string
+  name: string;
 }
 
 // A Person are the playable and non-playable characters that make up the world
-export interface Person {
+export interface IPerson {
   // version number from personae
-  version: string
+  version: string;
 
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // type for this person
-  type: PersonTypes
+  type: PersonTypes;
 
   // is this an abstract concept of a person like a template?
-  abstract: boolean
-  abstractProperties: object
+  abstract: boolean;
+  abstractProperties: object;
 
   // derived source or template this person was based on
-  derivation: LinkPerson
+  derivation: ILinkPerson;
 
   // data for the DNA of the person
-  DNA: DNA
+  DNA: IDNA;
 
   // the following numbers should correspond to each other based on the XP chart
-  level: number
-  XP: number
+  level: number;
+  XP: number;
 
   // name of the player and the character
-  playerName: string
-  name: string
+  playerName: string;
+  name: string;
 
   // age number and which age group this person belongs to (based on racial lifespans)
-  age: number
-  ageGroup: AgeGroups
+  age: number;
+  ageGroup: AgeGroups;
 
   // power, honor, piety and reputation are similar in that they each determine your influence/respect with different groups
-  power: number
-  honor: number
-  piety: number
-  reputation: number
+  power: number;
+  honor: number;
+  piety: number;
+  reputation: number;
 
   // treasury is made up of values for copper, silver, electrum, gold and platinum pieces (coins)
   // how much each coin is worth varies from towns, settings and campaigns
@@ -93,11 +93,11 @@ export interface Person {
     sp: number // 1/10  | USD $10.00
     ep: number // 1/2   | USD $50.00
     gp: number // 1     | USD $100.00
-    pp: number // 10    | USD $1,000.00
-  }
+    pp: number, // 10    | USD $1,000.00
+  };
 
   // base cost in cp of the person
-  cost: number
+  cost: number;
 
   // ability scores
   abilities: {
@@ -106,8 +106,8 @@ export interface Person {
     CON: number // Constitution, measuring endurance
     INT: number // Intelligence, measuring reasoning and memory
     WIS: number // Wisdom, measuring Perception and Insight
-    CHA: number // Charisma, measuring force of personality
-  }
+    CHA: number, // Charisma, measuring force of personality
+  };
 
   // list of proficiencies
   proficiencies: {
@@ -115,7 +115,7 @@ export interface Person {
     skills: SkillTypes[]
 
     // a list of languages with proficiency
-    languages: LinkLanguage[]
+    languages: ILinkLanguage[]
 
     // a list of armors with proficiency
     armors: ArmorTypes[]
@@ -127,340 +127,340 @@ export interface Person {
     transportation: TransporationModes[]
 
     // a list of tools with proficiency
-    tools: LinkTool[]
+    tools: ILinkTool[]
 
     // proficiency bonus modifier based on your level
-    bonus: number // 1-4: +2 // 5-8 +3 // 9-12: +4 // 13-16: +5 // 17-20 +6
-  }
+    bonus: number, // 1-4: +2 // 5-8 +3 // 9-12: +4 // 13-16: +5 // 17-20 +6
+  };
 
   // derived stats
-  initiative: number // derived from DEX modifier
-  speed: number 
-  AC: number // derived from equipment and sometimes DEX modifier
+  initiative: number; // derived from DEX modifier
+  speed: number;
+  AC: number; // derived from equipment and sometimes DEX modifier
 
   // hit dice information
-  hitDice: Dice[]
-  maxHP: number
-  tempHP: number
-  HP: number
+  hitDice: Dice[];
+  maxHP: number;
+  tempHP: number;
+  HP: number;
 
   // the following deals with health conditions
-  conditions: LinkDisease[]
-  exhaustion: number // level 1-6
-  resistance: DamageTypes
-  vulnerability: DamageTypes
+  conditions: ILinkDisease[];
+  exhaustion: number; // level 1-6
+  resistance: DamageTypes;
+  vulnerability: DamageTypes;
 
   // alignment for the character
-  alignment: ExpandedAlignments
+  alignment: ExpandedAlignments;
 
   // the character k(c)lass from the list of available
-  klass: LinkKlass
+  klass: ILinkKlass;
 
   // spellcasting information
   spellcasting: {
     // spell casting ability
     ability: AbilityTypes
-    
+
     // spell save DC
     saveDC: number
-    
+
     // spell attack modifier
     attackModifier: number
-    
+
     // list of known spells
-    spells: LinkSpell[]
-  }
+    spells: ILinkSpell[],
+  };
 
   // cultural information
-  culture: LinkCulture
-  faith: LinkReligion
+  culture: ILinkCulture;
+  faith: ILinkReligion;
 
   // family and relationship information
-  mother: LinkPerson
-  father: LinkPerson
-  siblings: LinkPerson[]
-  spouse: LinkPerson
-  children: LinkPerson[]
-  family: LinkDynasty
-  liege: LinkPerson
+  mother: ILinkPerson;
+  father: ILinkPerson;
+  siblings: ILinkPerson[];
+  spouse: ILinkPerson;
+  children: ILinkPerson[];
+  family: ILinkDynasty;
+  liege: ILinkPerson;
 
   // allies & organization information
-  allies: LinkPerson[]
-  enemies: LinkPerson[]
+  allies: ILinkPerson[];
+  enemies: ILinkPerson[];
   factions: {
-    memberOf: LinkFaction[]
-    allies: LinkFaction[]
-    enemies: LinkFaction[]
-  }
+    memberOf: ILinkFaction[]
+    allies: ILinkFaction[]
+    enemies: ILinkFaction[],
+  };
 
   // birth information
   birth: {
     // location of birth
-    domain: LinkDomain
+    domain: ILinkDomain
 
     // date of birth
-    date: LinkDate
+    date: ILinkDate
 
     // birth order
-    rank: number
-  }
+    rank: number,
+  };
 
   // death information
   death: {
     // locatin of death
-    domain: LinkDomain
+    domain: ILinkDomain
 
     // date of death
-    date: LinkDate
-  }
+    date: ILinkDate,
+  };
 
   // features and actions
-  features: LinkFeature[]
-  actions: string[]
+  features: ILinkFeature[];
+  actions: string[];
 
   // a list of items
-  items: LinkItem[]
-  magicItems: LinkItem[]
+  items: ILinkItem[];
+  magicItems: ILinkItem[];
 
   // weight from items (encumberance)
   // not to be confused with character weight found in DNA
-  weight: number
-  capacity: number
+  weight: number;
+  capacity: number;
 
   // equipment is what is currently equipped to the person
   // each below is a reference to a uuid in items or a physical description
   equipment: {
     // head armor
-    head: LinkItem
+    head: ILinkItem
 
     // left brow, ex: makeup
-    leftBrow: LinkItem
+    leftBrow: ILinkItem
 
     // left eye, ex: monocle
-    leftEye: LinkItem
+    leftEye: ILinkItem
 
     // left ear, ex: jewelry
-    leftEar: LinkItem
+    leftEar: ILinkItem
 
     // right brow, ex: makeup
-    rightBrow: LinkItem
+    rightBrow: ILinkItem
 
     // right eye, ex: monocle
-    rightEye: LinkItem
+    rightEye: ILinkItem
 
     // right ear, ex: jewelry
-    rightEar: LinkItem
+    rightEar: ILinkItem
 
     // both eyes, ex: glasses
-    eyes: LinkItem
+    eyes: ILinkItem
 
     // nose, ex: jewelry
-    nose: LinkItem
+    nose: ILinkItem
 
     // mouth, ex: makeup
-    mouth: LinkItem
+    mouth: ILinkItem
 
     // chin, ex: jewelry
-    chin: LinkItem
+    chin: ILinkItem
 
     // neck, ex: jewelry
-    neck: LinkItem
+    neck: ILinkItem
 
     // left shoulder
-    leftShoulder: LinkItem
+    leftShoulder: ILinkItem
 
     // left shoulder
-    leftBreast: LinkItem
+    leftBreast: ILinkItem
 
     // left arm
-    leftArm: LinkItem
+    leftArm: ILinkItem
 
     // left wrist
-    leftWrist: LinkItem
+    leftWrist: ILinkItem
 
     // left hand, ex: glove
-    leftHand: LinkItem
+    leftHand: ILinkItem
 
     // left fingers, ex: ring
-    leftFingers: LinkItem
+    leftFingers: ILinkItem
 
     // left grip: ex: shield
-    leftGrip: LinkItem
-    
-    // right shoulder
-    rightShoulder: LinkItem
+    leftGrip: ILinkItem
 
     // right shoulder
-    rightBreast: LinkItem
+    rightShoulder: ILinkItem
+
+    // right shoulder
+    rightBreast: ILinkItem
 
     // right arm
-    rightArm: LinkItem
+    rightArm: ILinkItem
 
     // right wrist
-    rightWrist: LinkItem
+    rightWrist: ILinkItem
 
     // right hand, ex: glove
-    rightHand: LinkItem
+    rightHand: ILinkItem
 
     // right fingers, ex: ring
-    rightFingers: LinkItem
+    rightFingers: ILinkItem
 
     // right grip: ex: sword
-    rightGrip: LinkItem
+    rightGrip: ILinkItem
 
     // torso, ex: armor
-    torso: LinkItem
+    torso: ILinkItem
 
     // back, ex: cape
-    back: LinkItem
+    back: ILinkItem
 
     // abdomen, ex: cloth
-    abdomen: LinkItem
+    abdomen: ILinkItem
 
     // waist, ex: belt
-    waist: LinkItem
+    waist: ILinkItem
 
     // groin, ex: armor
-    groin: LinkItem
+    groin: ILinkItem
 
     // rear, ex: cloth
-    rear: LinkItem
+    rear: ILinkItem
 
     // left thigh
-    leftThigh: LinkItem
+    leftThigh: ILinkItem
 
     // left leg
-    leftLeg: LinkItem
+    leftLeg: ILinkItem
 
     // left knee
-    leftKnee: LinkItem
+    leftKnee: ILinkItem
 
     // left shin
-    leftShin: LinkItem
+    leftShin: ILinkItem
 
     // left ankle
-    leftAnkle: LinkItem
+    leftAnkle: ILinkItem
 
     // left foot
-    leftFoot: LinkItem
+    leftFoot: ILinkItem
 
     // left toes
-    leftToes: LinkItem
+    leftToes: ILinkItem
 
     // right thigh
-    rightThigh: LinkItem
+    rightThigh: ILinkItem
 
     // right leg
-    rightLeg: LinkItem
+    rightLeg: ILinkItem
 
     // right knee
-    rightKnee: LinkItem
+    rightKnee: ILinkItem
 
     // right shin
-    rightShin: LinkItem
+    rightShin: ILinkItem
 
     // right ankle
-    rightAnkle: LinkItem
+    rightAnkle: ILinkItem
 
     // right foot
-    rightFoot: LinkItem
+    rightFoot: ILinkItem
 
     // right toes
-    rightToes: LinkItem
+    rightToes: ILinkItem
 
     // mount
-    mount: LinkFamiliar
-  }
+    mount: ILinkFamiliar,
+  };
 
   // additional owernship
-  chattel: LinkPerson[]
-  domains: LinkDomain[]
-  buildings: LinkBuilding[]
-  titles: LinkTitle[]
-  familiars: LinkFamiliar[]
-  vehicles: LinkVehicle[]
+  chattel: ILinkPerson[];
+  domains: ILinkDomain[];
+  buildings: ILinkBuilding[];
+  titles: ILinkTitle[];
+  familiars: ILinkFamiliar[];
+  vehicles: ILinkVehicle[];
 
   // a one word description of this character's personality
-  trait: string
+  trait: string;
 
   // a one word description of this person's physical characteristic
-  characteristic: string
+  characteristic: string;
 
   // the character's mannerism in voice or behavior
-  mannerism: string
+  mannerism: string;
 
   // the character's special talent
-  talent: string
+  talent: string;
 
   // a detailed list of personality traits
-  personalityTraits: string[]
+  personalityTraits: string[];
 
   // the character's ideal
-  ideal: string
+  ideal: string;
 
   // the character's bond
-  bond: string
+  bond: string;
 
   // the character's flaw
-  flaw: string
+  flaw: string;
 
   // the background for the character and that background's specialty
-  background: LinkBackground
-  specialty: string
+  background: ILinkBackground;
+  specialty: string;
 
   // knowledge is a list of information the player has learned about the campaign, world, etc.
-  knowledge: string[]
+  knowledge: string[];
 
   // additional information about this character's backstory
-  backstory: string
+  backstory: string;
 
   // campaign information
-  campaigns: LinkCampaign[]
-  activeCampaign: LinkCampaign
-  quests: LinkQuest[]
-  stories: LinkStory[]
-  dialogs: LinkDialog[]
-  currentDialog: number
+  campaigns: ILinkCampaign[];
+  activeCampaign: ILinkCampaign;
+  quests: ILinkQuest[];
+  stories: ILinkStory[];
+  dialogs: ILinkDialog[];
+  currentDialog: number;
 
   // specific notes for this person like campaign notes
-  notes: string
+  notes: string;
 }
 
-export class TplPerson implements Person {
-  version = ''
-  uuid = ''
-  type = PersonTypes.NonPlayable
-  abstract = false
-  abstractProperties = {}
-  derivation = null
-  DNA = null
-  level = 0
-  XP = 0
-  playerName = ''
-  name = ''
-  age = 0
-  ageGroup = null
-  power = 0
-  honor = 0
-  piety = 0
-  reputation = 0
-  treasury = {
+export class Person implements IPerson {
+  public version = "";
+  public uuid = "";
+  public type = PersonTypes.NonPlayable;
+  public abstract = false;
+  public abstractProperties = {};
+  public derivation = null;
+  public DNA = null;
+  public level = 0;
+  public XP = 0;
+  public playerName = "";
+  public name = "";
+  public age = 0;
+  public ageGroup = null;
+  public power = 0;
+  public honor = 0;
+  public piety = 0;
+  public reputation = 0;
+  public treasury = {
     cp: 0,
     sp: 0,
     ep: 0,
     gp: 0,
     pp: 0,
-  }
-  cost = 0
-  abilities = {
+  };
+  public cost = 0;
+  public abilities = {
     STR: 0,
     DEX: 0,
     CON: 0,
     INT: 0,
     WIS: 0,
     CHA: 0,
-  }
-  proficiencies = {
+  };
+  public proficiencies = {
     skills: [],
     languages: [],
     armors: [],
@@ -468,58 +468,58 @@ export class TplPerson implements Person {
     transportation: [],
     tools: [],
     bonus: 0,
-  }
-  initiative = 0
-  speed = 0 
-  AC = 0
-  hitDice = []
-  maxHP = 0
-  tempHP = 0
-  HP = 0
-  conditions = []
-  exhaustion = 0
-  resistance = null
-  vulnerability = null
-  alignment = null
-  klass = null
-  spellcasting = {
+  };
+  public initiative = 0;
+  public speed = 0;
+  public AC = 0;
+  public hitDice = [];
+  public maxHP = 0;
+  public tempHP = 0;
+  public HP = 0;
+  public conditions = [];
+  public exhaustion = 0;
+  public resistance = null;
+  public vulnerability = null;
+  public alignment = null;
+  public klass = null;
+  public spellcasting = {
     ability: null,
     saveDC: 0,
     attackModifier: 0,
     spells: [],
-  }
-  culture = null
-  faith = null
-  mother = null
-  father = null
-  siblings = []
-  spouse = null
-  children = []
-  family = null
-  liege = null
-  allies = []
-  enemies = []
-  factions = {
+  };
+  public culture = null;
+  public faith = null;
+  public mother = null;
+  public father = null;
+  public siblings = [];
+  public spouse = null;
+  public children = [];
+  public family = null;
+  public liege = null;
+  public allies = [];
+  public enemies = [];
+  public factions = {
     memberOf: [],
     allies: [],
     enemies: [],
-  }
-  birth = {
+  };
+  public birth = {
     domain: null,
     date: null,
     rank: 0,
-  }
-  death = {
+  };
+  public death = {
     domain: null,
     date: null,
-  }
-  features = []
-  actions = []
-  items = []
-  magicItems = []
-  weight = 0
-  capacity = 0
-  equipment: {
+  };
+  public features = [];
+  public actions = [];
+  public items = [];
+  public magicItems = [];
+  public weight = 0;
+  public capacity = 0;
+  public equipment: {
     head: null,
     leftBrow: null,
     leftEye: null,
@@ -567,30 +567,30 @@ export class TplPerson implements Person {
     rightFoot: null,
     rightToes: null,
     mount: null,
-  }
-  chattel = []
-  domains = []
-  buildings = []
-  titles = []
-  familiars = []
-  vehicles = []
-  trait = '' 
-  characteristic = '' 
-  mannerism = '' 
-  talent = '' 
-  personalityTraits = []
-  ideal = ''
-  bond = ''
-  flaw = ''
-  background = null
-  specialty = ''
-  knowledge = []
-  backstory = ''
-  campaigns = []
-  activeCampaign = null
-  quests = []
-  stories = []
-  dialogs = []
-  currentDialog = 0
-  notes = ''
+  };
+  public chattel = [];
+  public domains = [];
+  public buildings = [];
+  public titles = [];
+  public familiars = [];
+  public vehicles = [];
+  public trait = "";
+  public characteristic = "";
+  public mannerism = "";
+  public talent = "";
+  public personalityTraits = [];
+  public ideal = "";
+  public bond = "";
+  public flaw = "";
+  public background = null;
+  public specialty = "";
+  public knowledge = [];
+  public backstory = "";
+  public campaigns = [];
+  public activeCampaign = null;
+  public quests = [];
+  public stories = [];
+  public dialogs = [];
+  public currentDialog = 0;
+  public notes = "";
 }

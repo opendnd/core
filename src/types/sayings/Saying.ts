@@ -1,4 +1,4 @@
-export interface Saying {
+export interface ISaying {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

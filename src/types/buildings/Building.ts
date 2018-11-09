@@ -1,9 +1,9 @@
-export interface LinkBuilding {
+export interface ILinkBuilding {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Building {
+export interface IBuilding {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

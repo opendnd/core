@@ -1,9 +1,9 @@
-export interface LinkFaction {
+export interface ILinkFaction {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Faction {
+export interface IFaction {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

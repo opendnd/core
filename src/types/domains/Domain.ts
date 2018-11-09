@@ -1,9 +1,9 @@
-export interface LinkDomain {
+export interface ILinkDomain {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Domain {
+export interface IDomain {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

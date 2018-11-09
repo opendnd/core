@@ -1,9 +1,9 @@
-export interface LinkLanguage {
+export interface ILinkLanguage {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Language {
+export interface ILanguage {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

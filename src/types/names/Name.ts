@@ -1,4 +1,4 @@
-export interface Name {
+export interface IName {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

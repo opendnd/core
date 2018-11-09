@@ -1,9 +1,9 @@
-export interface LinkCulture {
+export interface ILinkCulture {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Culture {
+export interface ICulture {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

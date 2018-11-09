@@ -1,5 +1,5 @@
-import { Dice, ExpandedAlignments, AdvantageTypes, DamageTypes } from '../core/Core'
-import { LinkDialog } from '../dialogs/Dialog'
+import { AdvantageTypes, DamageTypes, Dice, ExpandedAlignments } from "../core/Core";
+import { ILinkDialog } from "../dialogs/Dialog";
 
 // types and properties of weapons
 export enum WeaponTypes {
@@ -21,9 +21,9 @@ export enum WeaponProperties {
 }
 
 // weapon range
-export interface WeaponRange {
-  normal: number
-  long: number
+export interface IWeaponRange {
+  normal: number;
+  long: number;
 }
 
 // types of armors
@@ -75,7 +75,7 @@ export enum EquipmentLocations {
   LeftWrist,
   LeftHand,
   LeftFingers,
-  LeftGrip,  
+  LeftGrip,
   RightShoulder,
   RightBreast,
   RightArm,
@@ -105,70 +105,70 @@ export enum EquipmentLocations {
   RightToes,
 }
 
-export interface LinkItem {
+export interface ILinkItem {
   // uuid for this item
-  uuid: string
+  uuid: string;
 
   // name of the item
-  name: string
+  name: string;
 
   // personalized nickname of the item
-  nickcname: string
+  nickcname: string;
 }
 
-export interface Item {
+export interface IItem {
   // uuid for this item
-  uuid: string
-  
+  uuid: string;
+
   // name of the item
-  name: string
+  name: string;
 
   // personalized nickname of the item
-  nickcname: string
+  nickcname: string;
 
   // attributes of the item
-  type: ItemTypes
-  weaponProperties: WeaponProperties[]
-  range?: WeaponRange
-  ammunition: number
-  ammunitionItem: LinkItem
-  attributeDice: Dice // usually used with versatile
+  type: ItemTypes;
+  weaponProperties: WeaponProperties[];
+  range?: IWeaponRange;
+  ammunition: number;
+  ammunitionItem: ILinkItem;
+  attributeDice: Dice; // usually used with versatile
 
   // damage value for the item is based on the amount of dice and the dice type
-  damageDice: Dice[]
-  damageType: DamageTypes
+  damageDice: Dice[];
+  damageType: DamageTypes;
 
   // is this an abstract concept of an item like a template?
-  abstract: boolean
-  abstractProperties: object
+  abstract: boolean;
+  abstractProperties: object;
 
   // derived source or template this person was based on
-  derivation: LinkItem
+  derivation: ILinkItem;
 
   // base cost in cp of the item
-  cost: number
+  cost: number;
 
   // a list of items for containers
-  items: LinkItem[]
-  magicItems: LinkItem[]
+  items: ILinkItem[];
+  magicItems: ILinkItem[];
 
   // weight of the item
-  weight: number
+  weight: number;
 
   // stealth advantage/disadvantage
-  stealth: AdvantageTypes
+  stealth: AdvantageTypes;
 
   // rarity of the item
-  rarity: RarityTypes
+  rarity: RarityTypes;
 
   // AC for the item
-  AC: number
+  AC: number;
 
   // a list of locations this item can be equipped
-  equippable: EquipmentLocations[]
+  equippable: EquipmentLocations[];
 
   // if the item is sentient or not
-  sentient: boolean
+  sentient: boolean;
 
   // ability scores
   abilities: {
@@ -177,71 +177,71 @@ export interface Item {
     CON?: number // Constitution, measuring endurance
     INT?: number // Intelligence, measuring reasoning and memory
     WIS?: number // Wisdom, measuring Perception and Insight
-    CHA?: number // Charisma, measuring force of personality
-  }
+    CHA?: number, // Charisma, measuring force of personality
+  };
 
   // hit dice information
-  hitDice: Dice[]
-  maxHP: number
-  tempHP: number
-  HP: number
+  hitDice: Dice[];
+  maxHP: number;
+  tempHP: number;
+  HP: number;
 
   // alignment for the sentient item
-  alignment: ExpandedAlignments
+  alignment: ExpandedAlignments;
 
   // purpose and conflict for the sentient item
-  purpose: string
-  conflict: string
+  purpose: string;
+  conflict: string;
 
   // a trigger value for interaction
-  trigger: string
+  trigger: string;
 
   // for interacting with the item
-  dialogs: LinkDialog[]
-  currentDialog: number
+  dialogs: ILinkDialog[];
+  currentDialog: number;
 
   // special notes for the item
-  notes: string
+  notes: string;
 
   // additional properties on the item
-  properties: object
+  properties: object;
 }
 
-export class TplItem implements Item {
-  version = ''
-  uuid = ''
-  name = ''
-  nickcname = ''
-  type = null
-  weaponProperties = []
-  ammunition = 0
-  ammunitionItem = null
-  attributeDice = null 
-  damageDice = []
-  damageType = null
-  abstract = false
-  abstractProperties = {}
-  derivation = null
-  cost = 0
-  items = []
-  magicItems = []
-  weight = 0
-  stealth = null
-  rarity = null
-  AC = 0
-  equippable = []
-  sentient = false
-  abilities = {}
-  hitDice = []
-  maxHP = 0
-  tempHP = 0
-  HP = 0
-  alignment = null
-  purpose = ''
-  conflict = ''
-  trigger = ''
-  dialogs = []
-  currentDialog = 0
-  notes = ''
-  properties = {}
+export class Item implements IItem {
+  public version = "";
+  public uuid = "";
+  public name = "";
+  public nickcname = "";
+  public type = null;
+  public weaponProperties = [];
+  public ammunition = 0;
+  public ammunitionItem = null;
+  public attributeDice = null;
+  public damageDice = [];
+  public damageType = null;
+  public abstract = false;
+  public abstractProperties = {};
+  public derivation = null;
+  public cost = 0;
+  public items = [];
+  public magicItems = [];
+  public weight = 0;
+  public stealth = null;
+  public rarity = null;
+  public AC = 0;
+  public equippable = [];
+  public sentient = false;
+  public abilities = {};
+  public hitDice = [];
+  public maxHP = 0;
+  public tempHP = 0;
+  public HP = 0;
+  public alignment = null;
+  public purpose = "";
+  public conflict = "";
+  public trigger = "";
+  public dialogs = [];
+  public currentDialog = 0;
+  public notes = "";
+  public properties = {};
 }

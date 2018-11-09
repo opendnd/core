@@ -1,9 +1,9 @@
-export interface LinkSpell {
+export interface ILinkSpell {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Spell {
+export interface ISpell {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

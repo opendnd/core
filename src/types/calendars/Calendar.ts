@@ -1,36 +1,36 @@
-export interface LinkDate {
+export interface ILinkDate {
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // text output for the date
-  text: string
+  text: string;
 }
 
-export interface Date {
+export interface IDate {
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // a reference to the calendar being used for this date
-  calendar: LinkCalendar
+  calendar: ILinkCalendar;
 
   // a numerical representation of the value (seconds from epoch)
-  value: number
+  value: number;
 
-  epoch: number // era
-  solar: number // year
-  lunar: number // month
-  planetary: number // day
-  hora: number // hour
-  prima: number // minute
-  secunda: number // second
+  epoch: number; // era
+  solar: number; // year
+  lunar: number; // month
+  planetary: number; // day
+  hora: number; // hour
+  prima: number; // minute
+  secunda: number; // second
 }
 
-export interface LinkCalendar {
+export interface ILinkCalendar {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Calendar {
+export interface ICalendar {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

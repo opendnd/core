@@ -1,6 +1,6 @@
-import { Dice, AbilityTypes, ExpandedAlignments } from "../core/Core";
-import { LinkLanguage } from "../languages/Language";
+import { AbilityTypes, Dice, ExpandedAlignments } from "../core/Core";
 import { Sizes } from "../dna/DNA";
+import { ILinkLanguage } from "../languages/Language";
 
 export enum RacialAbilityIncreaseTypes {
   All, // gives to all
@@ -14,31 +14,31 @@ export enum RacialAbilityIncreaseTypes {
   Charisma, // measuring force of personality
 }
 
-export interface RacialAbilityIncrease {
+export interface IRacialAbilityIncrease {
   // the ability that the modifier is
-  ability: RacialAbilityIncreaseTypes
+  ability: RacialAbilityIncreaseTypes;
 
   // the amount this increases the ability
-  amount: number
+  amount: number;
 }
 
-export interface LinkRace {
+export interface ILinkRace {
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // name for this race
-  name?: string
+  name?: string;
 }
 
-export interface Race {
+export interface IRace {
   // uuid for this object
-  version: string
+  version: string;
 
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // name for this race
-  name: string
+  name: string;
 
   // chromosomes have the dice size for each chromosome pair
   // note that this uses string instead of the Dice type as one chromosome specifies sex
@@ -74,14 +74,14 @@ export interface Race {
     29?: string
     30?: string
     31?: string
-    32?: string
-  }
+    32?: string,
+  };
 
   // this determines which dice are used for the x and y chromosome
   sex: {
     x?: Dice
-    y?: Dice
-  }
+    y?: Dice,
+  };
 
   // legend is used to lookup which physical characteristic is used for which chromosome
   legend: {
@@ -105,7 +105,7 @@ export interface Race {
 
     // how does the skin age
     skinAging?: number
-    
+
     // shape of the face
     faceShape?: number
 
@@ -114,7 +114,7 @@ export interface Race {
 
     // shape of the mouth
     faceMouth?: number
-    
+
     // color of the eye
     eyeColor?: number
 
@@ -123,71 +123,71 @@ export interface Race {
 
     // details on the eye brows
     eyeBrows?: number
-    
+
     // traits specific to male or females
-    sex?: number
-  }
+    sex?: number,
+  };
 
   // age range
   ageRanges: {
     child?: {
       max: number
       weight: number
-      dice: Dice[]
+      dice: Dice[],
     }
     young?: {
       max: number
       weight: number
-      dice: Dice[]
+      dice: Dice[],
     }
     middle?: {
       max: number
       weight: number
-      dice: Dice[]
+      dice: Dice[],
     }
     old?: {
       max: number
       weight: number
-      dice: Dice[]
-    }
-  }
+      dice: Dice[],
+    },
+  };
 
   // genes includes a key value pair dictionary with detailed information on a gene
   // ex: "general:C1:20": "average height"
-  genes: object
+  genes: object;
 
   // ability score increases
-  abilitiyIncreases: RacialAbilityIncrease[]
+  abilitiyIncreases: IRacialAbilityIncrease[];
 
   // which alignments your race tends towards
-  alignments: ExpandedAlignments[]
+  alignments: ExpandedAlignments[];
 
   // which size this race is
-  size: Sizes
+  size: Sizes;
 
   // base speed
-  speed: number
+  speed: number;
 
   // which languages you speak by virtue of your race
-  languages: LinkLanguage[]
+  languages: ILinkLanguage[];
 
   // list of subraces
-  subraces: LinkRace[]
+  subraces: ILinkRace[];
 }
 
-export class TplRace implements Race {
-  version = ''
-  uuid = ''
-  name = ''
-  chromosomes = {}
-  sex = {}
-  legend = {}
-  ageRanges = {}
-  genes = {}
-  abilitiyIncreases = []
-  alignments = []
-  size = null
-  speed = 0
-  languages = []
-  subraces = []
+export class Race implements IRace {
+  public version = "";
+  public uuid = "";
+  public name = "";
+  public chromosomes = {};
+  public sex = {};
+  public legend = {};
+  public ageRanges = {};
+  public genes = {};
+  public abilitiyIncreases = [];
+  public alignments = [];
+  public size = null;
+  public speed = 0;
+  public languages = [];
+  public subraces = [];
 }

@@ -12,7 +12,8 @@
     "env:dev": "cross-env NODE_ENV=development",
     "env:prod": "cross-env NODE_ENV=production",
     "test": "mocha -c -S -R spec --compilers ts:ts-node/register --check-leaks",
-    "test:watch": "yarn test -- -w"
+    "test:watch": "yarn test -- -w",
+    "jsonschema": "typescript-json-schema --titles true --refs false --propOrder true --required true --noExtraProps true"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,8 @@
     "tslint": "^5.11.0",
     "typescript": "^3.1.4",
     "yarn": "^1.10.1"
+  },
+  "dependencies": {
+    "typescript-json-schema": "git+https://github.com/YousefED/typescript-json-schema.git"
   }
 }

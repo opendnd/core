@@ -1,9 +1,9 @@
-export interface LinkReligion {
+export interface ILinkReligion {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Religion {
+export interface IReligion {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

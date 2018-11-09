@@ -1,4 +1,4 @@
-import { LinkRace } from '../races/Race'
+import { ILinkRace } from "../races/Race";
 
 // sizes available for creatures
 export enum Sizes {
@@ -21,157 +21,157 @@ export enum Genders {
 }
 
 // Traits include informatin on the gene and the identified trait
-export interface Trait {
+export interface ITrait {
   // identifies the legend in the DNA, which chromosome and the rule for the trait
   // ex: eye-color:C2:10
-  gene: string
+  gene: string;
 
   // the identified trait
   // ex: brown
-  trait: string
+  trait: string;
 }
 
 // the available trait categories
-export interface Traits {
+export interface ITraits {
   // general traits include information about the body like shape
-  general?: Trait
+  general?: ITrait;
 
   // eye color
-  eyeColor?: Trait
+  eyeColor?: ITrait;
 
   // general information about the hair like shape, style, etc.
-  hairGeneral?: Trait
+  hairGeneral?: ITrait;
 
   // hair color
-  hairColor?: Trait
+  hairColor?: ITrait;
 
   // general information about the skin like texture
-  skinGeneral?: Trait
+  skinGeneral?: ITrait;
 
   // skin color
-  skinColor?: Trait
+  skinColor?: ITrait;
 
   // eye shape
-  eyeShape?: Trait
+  eyeShape?: ITrait;
 
   // face shape
-  faceShape?: Trait
+  faceShape?: ITrait;
 
   // nose
-  faceNose?: Trait
+  faceNose?: ITrait;
 
   // facial hair
-  hairFacial?: Trait
+  hairFacial?: ITrait;
 
   // mouth
-  faceMouth?: Trait
+  faceMouth?: ITrait;
 
   // eye brows
-  eyeBrows?: Trait
+  eyeBrows?: ITrait;
 
   // this includes information about how the skin ages like texture
-  skinAging?: Trait
+  skinAging?: ITrait;
 }
 
 // the available chromosomes
-export interface Chromosomes {
-  1?: string
-  2?: string
-  3?: string
-  4?: string
-  5?: string
-  6?: string
-  7?: string
-  8?: string
-  9?: string
-  10?: string
-  11?: string
-  12?: string
-  13?: string
-  14?: string
-  15?: string
-  16?: string
-  17?: string
-  18?: string
-  19?: string
-  20?: string
-  21?: string
-  22?: string
-  23?: string
-  24?: string
-  25?: string
-  26?: string
-  27?: string
-  28?: string
-  29?: string
-  30?: string
-  31?: string
-  32?: string
+export interface IChromosomes {
+  1?: string;
+  2?: string;
+  3?: string;
+  4?: string;
+  5?: string;
+  6?: string;
+  7?: string;
+  8?: string;
+  9?: string;
+  10?: string;
+  11?: string;
+  12?: string;
+  13?: string;
+  14?: string;
+  15?: string;
+  16?: string;
+  17?: string;
+  18?: string;
+  19?: string;
+  20?: string;
+  21?: string;
+  22?: string;
+  23?: string;
+  24?: string;
+  25?: string;
+  26?: string;
+  27?: string;
+  28?: string;
+  29?: string;
+  30?: string;
+  31?: string;
+  32?: string;
 }
 
 // link to a DNA
-export interface LinkDNA {
+export interface ILinkDNA {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
 // DNA is used to form the makeup of a creature at a genetic level
-export interface DNA {
+export interface IDNA {
   // version number from genetica
-  version: string
+  version: string;
 
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // size of the creature
-  size: Sizes
+  size: Sizes;
 
   // is this an abstract concept of a DNA set like a template?
-  abstract: boolean
-  abstractProperties: object
+  abstract: boolean;
+  abstractProperties: object;
 
   // derived source or template this DNA was based on
-  derivation: LinkDNA
+  derivation: ILinkDNA;
 
   // race of the creature
-  race: LinkRace
+  race: ILinkRace;
 
   // gender of the creature
-  gender: Genders
+  gender: Genders;
 
   // the height of the creature in inches
-  height: number
+  height: number;
 
   // the weight of the creature in pounds
-  weight: number
+  weight: number;
 
   // the list of traits for the creature
-  traits: Traits
+  traits: ITraits;
 
   // chromosomes have the dice rolls for each chromosome pair
   // not all races have 32 chromosomes, that is the maximum
   // regular pair ex: 1=6
   // sex chromosome pair ex: X1=Y2
-  chromosomes: Chromosomes
+  chromosomes: IChromosomes;
 
   // notes as it relates to the backstory, campaign, etc.
-  notes: string
+  notes: string;
 }
 
-export class TplDNA implements DNA {
-  version = ''
-  uuid = ''
-  size = null
-  abstract = false
-  abstractProperties = {}
-  derivation = null
-  race = null
-  gender = null
-  height = 0
-  weight = 0
-  traits = {}
-  chromosomes = {}
-  notes = ''
+export class DNA implements IDNA {
+  public version = "";
+  public uuid = "";
+  public size = null;
+  public abstract = false;
+  public abstractProperties = {};
+  public derivation = null;
+  public race = null;
+  public gender = null;
+  public height = 0;
+  public weight = 0;
+  public traits = {};
+  public chromosomes = {};
+  public notes = "";
 
   // create template DNA
   constructor(
@@ -180,13 +180,13 @@ export class TplDNA implements DNA {
     size: Sizes,
     abstract: boolean,
     abstractProperties: object,
-    derivation: LinkDNA,
-    race: LinkRace,
+    derivation: ILinkDNA,
+    race: ILinkRace,
     gender: Genders,
     height: number,
     weight: number,
-    traits: Traits,
-    chromosomes: Chromosomes,
+    traits: ITraits,
+    chromosomes: IChromosomes,
     notes: string,
   ) {
     this.version = version;

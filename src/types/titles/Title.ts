@@ -1,9 +1,9 @@
-export interface LinkTitle {
+export interface ILinkTitle {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Title {
+export interface ITitle {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

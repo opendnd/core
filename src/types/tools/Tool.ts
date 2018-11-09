@@ -1,9 +1,9 @@
-export interface LinkTool {
+export interface ILinkTool {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Tool {
+export interface ITool {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

@@ -1,4 +1,4 @@
-export interface Trap {
+export interface ITrap {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

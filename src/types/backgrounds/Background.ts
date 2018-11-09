@@ -1,27 +1,27 @@
-import { SkillTypes } from '../core/Core';
-import { TransporationModes } from '../vehicles/Vehicle';
-import { LinkItem } from '../items/Item';
-import { LinkLanguage } from '../languages/Language';
-import { LinkTool } from '../tools/Tool';
-import { LinkFeature } from '../features/Feature';
+import { SkillTypes } from "../core/Core";
+import { ILinkFeature } from "../features/Feature";
+import { ILinkItem } from "../items/Item";
+import { ILinkLanguage } from "../languages/Language";
+import { ILinkTool } from "../tools/Tool";
+import { TransporationModes } from "../vehicles/Vehicle";
 
-export interface LinkBackground {
+export interface ILinkBackground {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Background {
+export interface IBackground {
   // uuid for this object
-  version: string
+  version: string;
 
   // uuid for this object
-  uuid: string
+  uuid: string;
 
   // a list of specialties available for this background
-  specialties: string[]
+  specialties: string[];
 
   // a list of personality trait options
-  personalityTraits: string[]
+  personalityTraits: string[];
 
   // a list of ideals by alignment x & y options
   ideals: {
@@ -34,14 +34,14 @@ export interface Background {
     chaotic?: string[]
     rebel?: string[]
     social?: string[]
-    lawful?: string[]
-  }
+    lawful?: string[],
+  };
 
   // a list of bonds
-  bonds: string[]
+  bonds: string[];
 
   // a list of flaws
-  flaws: string[]
+  flaws: string[];
 
   // list of proficiencies
   proficiencies: {
@@ -52,33 +52,33 @@ export interface Background {
     transportation?: TransporationModes[]
 
     // a list of languages with proficiency
-    languages?: LinkLanguage[]
+    languages?: ILinkLanguage[]
 
     // a list of starting equipment
-    items?: LinkItem[]
+    items?: ILinkItem[]
 
     // a list of tools with proficiency
-    tools?: LinkTool[]
+    tools?: ILinkTool[]
 
     // a number of tools you may become proficient in with this background
     selectTools?: number
 
     // a number of languages you may learn from this background
-    selectLanguages?: number
-  }
+    selectLanguages?: number,
+  };
 
   // a list of features for this background
-  features: LinkFeature[]
+  features: ILinkFeature[];
 }
 
-export class TplBackground implements Background {
-  version = ''
-  uuid = ''
-  specialties = []
-  personalityTraits = []
-  ideals = {}
-  bonds = []
-  flaws = []
-  proficiencies = {}
-  features = []
+export class Background implements IBackground {
+  public version = "";
+  public uuid = "";
+  public specialties = [];
+  public personalityTraits = [];
+  public ideals = {};
+  public bonds = [];
+  public flaws = [];
+  public proficiencies = {};
+  public features = [];
 }

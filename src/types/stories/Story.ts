@@ -1,9 +1,9 @@
-export interface LinkStory {
+export interface ILinkStory {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Story {
+export interface IStory {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

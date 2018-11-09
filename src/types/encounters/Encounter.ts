@@ -1,4 +1,4 @@
-export interface Encounter {
+export interface IEncounter {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

@@ -1,9 +1,9 @@
-export interface LinkCampaign {
+export interface ILinkCampaign {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Campaign {
+export interface ICampaign {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

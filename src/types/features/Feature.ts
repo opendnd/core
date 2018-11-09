@@ -1,9 +1,9 @@
-export interface LinkFeature {
+export interface ILinkFeature {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }
 
-export interface Feature {
+export interface IFeature {
   // uuid for this object
-  uuid: string
+  uuid: string;
 }

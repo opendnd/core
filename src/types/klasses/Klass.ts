@@ -1,7 +1,7 @@
-export interface LinkKlass {
-  name: string
+export interface ILinkKlass {
+  name: string;
 }
 
-export interface Klass {
-  name: string
+export interface IKlass {
+  name: string;
 }
