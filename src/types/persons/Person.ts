@@ -25,16 +25,16 @@ import { ILinkVehicle, TransporationModes } from "../vehicles/Vehicle";
 
 // the types of persons
 export enum PersonTypes {
-  Playable,
-  NonPlayable,
+  Playable = "playable",
+  NonPlayable = "nonPlayable",
 }
 
 // age groups
 export enum AgeGroups {
-  Child,
-  Young,
-  Middle,
-  Old,
+  Child = "child",
+  Young = "young",
+  Middle = "middle",
+  Old = "old",
 }
 
 // a link to a person

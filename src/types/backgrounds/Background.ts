@@ -12,10 +12,10 @@ export interface ILinkBackground {
 
 export interface IBackground {
   // uuid for this object
-  version: string;
+  uuid: string;
 
   // uuid for this object
-  uuid: string;
+  version: string;
 
   // a list of specialties available for this background
   specialties: string[];

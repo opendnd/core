@@ -2,22 +2,22 @@ import { ILinkRace } from "../races/Race";
 
 // sizes available for creatures
 export enum Sizes {
-  Fine, // 1/2 x 1/2 ft.
-  Diminutive, // 1 x 1 ft.
-  Tiny, // 2-1/2 x 2-1/2 ft.
-  Small, // 5 x 5 ft.
-  Medium, // 5 x 5 ft.
-  Large, // 10 x 10 ft.
-  Huge, // 15 x 15 ft.
-  Gargantuan, // 20 x 20 ft.
-  Colossal, // 30 x 30 ft.
+  Fine = "fine", // 1/2 x 1/2 ft.
+  Diminutive = "diminutive", // 1 x 1 ft.
+  Tiny = "tiny", // 2-1/2 x 2-1/2 ft.
+  Small = "small", // 5 x 5 ft.
+  Medium = "medium", // 5 x 5 ft.
+  Large = "large", // 10 x 10 ft.
+  Huge = "huge", // 15 x 15 ft.
+  Gargantuan = "gargantuan", // 20 x 20 ft.
+  Colossal = "colossal", // 30 x 30 ft.
 }
 
 // genders available for creatures
 export enum Genders {
-  Male,
-  Female,
-  Neuter,
+  Male = "male",
+  Female = "female",
+  Neuter = "neuter",
 }
 
 // Traits include informatin on the gene and the identified trait

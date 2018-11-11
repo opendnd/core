@@ -70,7 +70,7 @@ export interface IDisease {
   transmission: TransmissionTypes;
 
   // incubation period with a base number in seconds with an optional modifier in dice
-  incubation: IIncubation
+  incubation: IIncubation;
 
   // what level of exhaustion does this cause?
   exhaustion: number;
@@ -95,4 +95,28 @@ export interface IDisease {
 
   // additional properties on the disease
   properties: object;
+}
+
+// disease class
+export class Disease implements IDisease {
+  public uuid = "";
+  public name = "";
+  public abstract = false;
+  public abstractProperties = {};
+  public derivation = null;
+  public type = null;
+  public condition = null;
+  public pathogen = null;
+  public transmission = null;
+  public incubation = null;
+  public exhaustion = 0;
+  public resistance = null;
+  public vulnerability = null;
+  public immunity = null;
+  public savingThrow = null;
+  public damage = [];
+  public trigger = "";
+  public triggerTime = null;
+  public notes = "";
+  public properties = {};
 }

@@ -3,15 +3,15 @@ import { Sizes } from "../dna/DNA";
 import { ILinkLanguage } from "../languages/Language";
 
 export enum RacialAbilityIncreaseTypes {
-  All, // gives to all
-  Choice, // gives to your choice of ability
+  All = "all", // gives to all
+  Choice = "choice", // gives to your choice of ability
 
-  Strength, // measuring physical power
-  Dexterity, // measuring agility
-  Constitution, // measuring endurance
-  Intelligence, // measuring reasoning and memory
-  Wisdom, // measuring Perception and Insight
-  Charisma, // measuring force of personality
+  Strength = "strength", // measuring physical power
+  Dexterity = "dexterity", // measuring agility
+  Constitution = "constitution", // measuring endurance
+  Intelligence = "intelligence", // measuring reasoning and memory
+  Wisdom = "wisdom", // measuring Perception and Insight
+  Charisma = "charisma", // measuring force of personality
 }
 
 export interface IRacialAbilityIncrease {

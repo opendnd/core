@@ -1,0 +1,272 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "properties": {
+        "abstract": {
+            "title": "abstract",
+            "type": "boolean"
+        },
+        "abstractProperties": {
+            "additionalProperties": true,
+            "properties": {
+            },
+            "title": "abstractProperties",
+            "type": "object"
+        },
+        "condition": {
+            "enum": [
+                "acute",
+                "chronic"
+            ],
+            "title": "condition",
+            "type": "string"
+        },
+        "damage": {
+            "items": {
+                "enum": [
+                    "d10",
+                    "d100",
+                    "d12",
+                    "d20",
+                    "d4",
+                    "d6",
+                    "d8"
+                ],
+                "type": "string"
+            },
+            "title": "damage",
+            "type": "array"
+        },
+        "derivation": {
+            "additionalProperties": false,
+            "properties": {
+                "uuid": {
+                    "title": "uuid",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "uuid"
+            ],
+            "required": [
+                "uuid"
+            ],
+            "title": "derivation",
+            "type": "object"
+        },
+        "exhaustion": {
+            "title": "exhaustion",
+            "type": "number"
+        },
+        "immunity": {
+            "additionalProperties": false,
+            "properties": {
+                "gene": {
+                    "title": "gene",
+                    "type": "string"
+                },
+                "trait": {
+                    "title": "trait",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "gene",
+                "trait"
+            ],
+            "required": [
+                "gene",
+                "trait"
+            ],
+            "title": "immunity",
+            "type": "object"
+        },
+        "incubation": {
+            "additionalProperties": false,
+            "properties": {
+                "dice": {
+                    "enum": [
+                        "d10",
+                        "d100",
+                        "d12",
+                        "d20",
+                        "d4",
+                        "d6",
+                        "d8"
+                    ],
+                    "title": "dice",
+                    "type": "string"
+                },
+                "time": {
+                    "title": "time",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": [
+                "time",
+                "dice"
+            ],
+            "required": [
+                "dice",
+                "time"
+            ],
+            "title": "incubation",
+            "type": "object"
+        },
+        "name": {
+            "title": "name",
+            "type": "string"
+        },
+        "notes": {
+            "title": "notes",
+            "type": "string"
+        },
+        "pathogen": {
+            "enum": [
+                "bacterium",
+                "fungus",
+                "protist",
+                "virus"
+            ],
+            "title": "pathogen",
+            "type": "string"
+        },
+        "properties": {
+            "additionalProperties": true,
+            "properties": {
+            },
+            "title": "properties",
+            "type": "object"
+        },
+        "resistance": {
+            "enum": [
+                "acid",
+                "bludgeoning",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "necrotic",
+                "piercing",
+                "poison",
+                "psychic",
+                "radiant",
+                "slashing",
+                "thunder"
+            ],
+            "title": "resistance",
+            "type": "string"
+        },
+        "savingThrow": {
+            "enum": [
+                "charisma",
+                "constitution",
+                "dexterity",
+                "intelligence",
+                "strength",
+                "wisdom"
+            ],
+            "title": "savingThrow",
+            "type": "string"
+        },
+        "transmission": {
+            "enum": [
+                "air",
+                "animal",
+                "environmental",
+                "food",
+                "vector"
+            ],
+            "title": "transmission",
+            "type": "string"
+        },
+        "trigger": {
+            "title": "trigger",
+            "type": "string"
+        },
+        "triggerTime": {
+            "title": "triggerTime",
+            "type": "number"
+        },
+        "type": {
+            "enum": [
+                "autoimmune",
+                "cognitive",
+                "congenital",
+                "dietary",
+                "infectious"
+            ],
+            "title": "type",
+            "type": "string"
+        },
+        "uuid": {
+            "title": "uuid",
+            "type": "string"
+        },
+        "vulnerability": {
+            "enum": [
+                "acid",
+                "bludgeoning",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "necrotic",
+                "piercing",
+                "poison",
+                "psychic",
+                "radiant",
+                "slashing",
+                "thunder"
+            ],
+            "title": "vulnerability",
+            "type": "string"
+        }
+    },
+    "propertyOrder": [
+        "uuid",
+        "name",
+        "abstract",
+        "abstractProperties",
+        "derivation",
+        "type",
+        "condition",
+        "pathogen",
+        "transmission",
+        "incubation",
+        "exhaustion",
+        "resistance",
+        "vulnerability",
+        "immunity",
+        "savingThrow",
+        "damage",
+        "trigger",
+        "triggerTime",
+        "notes",
+        "properties"
+    ],
+    "required": [
+        "abstract",
+        "abstractProperties",
+        "condition",
+        "damage",
+        "derivation",
+        "exhaustion",
+        "immunity",
+        "incubation",
+        "name",
+        "notes",
+        "pathogen",
+        "properties",
+        "resistance",
+        "savingThrow",
+        "transmission",
+        "trigger",
+        "triggerTime",
+        "type",
+        "uuid",
+        "vulnerability"
+    ],
+    "type": "object"
+}
+

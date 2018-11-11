@@ -3,11 +3,11 @@ import { ILinkPerson } from "../persons/Person";
 
 // the modes of transporation
 export enum TransporationModes {
-  Animal,
-  Human,
-  Land,
-  Air,
-  Water,
+  Animal = "animal",
+  Human = "human",
+  Land = "land",
+  Air = "air",
+  Water = "water",
 }
 
 // a link to a vehicle
