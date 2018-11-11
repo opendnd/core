@@ -1,0 +1,224 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "properties": {
+        "abstract": {
+            "title": "abstract",
+            "type": "boolean"
+        },
+        "abstractProperties": {
+            "additionalProperties": true,
+            "properties": {
+            },
+            "title": "abstractProperties",
+            "type": "object"
+        },
+        "capacity": {
+            "title": "capacity",
+            "type": "number"
+        },
+        "cargo": {
+            "items": {
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "title": "name",
+                        "type": "string"
+                    },
+                    "nickcname": {
+                        "title": "nickcname",
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "title": "uuid",
+                        "type": "string"
+                    }
+                },
+                "propertyOrder": [
+                    "uuid",
+                    "name",
+                    "nickcname"
+                ],
+                "required": [
+                    "name",
+                    "nickcname",
+                    "uuid"
+                ],
+                "type": "object"
+            },
+            "title": "cargo",
+            "type": "array"
+        },
+        "controllers": {
+            "items": {
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "title": "name",
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "title": "uuid",
+                        "type": "string"
+                    }
+                },
+                "propertyOrder": [
+                    "uuid",
+                    "name"
+                ],
+                "required": [
+                    "name",
+                    "uuid"
+                ],
+                "type": "object"
+            },
+            "title": "controllers",
+            "type": "array"
+        },
+        "cost": {
+            "title": "cost",
+            "type": "number"
+        },
+        "derivation": {
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "title": "name",
+                    "type": "string"
+                },
+                "nickname": {
+                    "title": "nickname",
+                    "type": "string"
+                },
+                "uuid": {
+                    "title": "uuid",
+                    "type": "string"
+                }
+            },
+            "propertyOrder": [
+                "uuid",
+                "name",
+                "nickname"
+            ],
+            "required": [
+                "name",
+                "nickname",
+                "uuid"
+            ],
+            "title": "derivation",
+            "type": "object"
+        },
+        "mode": {
+            "enum": [
+                "air",
+                "animal",
+                "human",
+                "land",
+                "water"
+            ],
+            "title": "mode",
+            "type": "string"
+        },
+        "multiplier": {
+            "title": "multiplier",
+            "type": "number"
+        },
+        "name": {
+            "title": "name",
+            "type": "string"
+        },
+        "nickname": {
+            "title": "nickname",
+            "type": "string"
+        },
+        "notes": {
+            "title": "notes",
+            "type": "string"
+        },
+        "passengers": {
+            "items": {
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "title": "name",
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "title": "uuid",
+                        "type": "string"
+                    }
+                },
+                "propertyOrder": [
+                    "uuid",
+                    "name"
+                ],
+                "required": [
+                    "name",
+                    "uuid"
+                ],
+                "type": "object"
+            },
+            "title": "passengers",
+            "type": "array"
+        },
+        "properties": {
+            "additionalProperties": true,
+            "properties": {
+            },
+            "title": "properties",
+            "type": "object"
+        },
+        "speed": {
+            "title": "speed",
+            "type": "number"
+        },
+        "uuid": {
+            "title": "uuid",
+            "type": "string"
+        },
+        "weight": {
+            "title": "weight",
+            "type": "number"
+        }
+    },
+    "propertyOrder": [
+        "uuid",
+        "name",
+        "nickname",
+        "cost",
+        "mode",
+        "abstract",
+        "abstractProperties",
+        "derivation",
+        "controllers",
+        "passengers",
+        "cargo",
+        "weight",
+        "capacity",
+        "multiplier",
+        "speed",
+        "notes",
+        "properties"
+    ],
+    "required": [
+        "abstract",
+        "abstractProperties",
+        "capacity",
+        "cargo",
+        "controllers",
+        "cost",
+        "derivation",
+        "mode",
+        "multiplier",
+        "name",
+        "nickname",
+        "notes",
+        "passengers",
+        "properties",
+        "speed",
+        "uuid",
+        "weight"
+    ],
+    "type": "object"
+}
+
