@@ -3884,6 +3884,8 @@
   },
   "additionalProperties": false,
   "propertyOrder": [
+    "uuid",
+    "version",
     "type",
     "DNA",
     "level",
@@ -3959,8 +3961,6 @@
     "stories",
     "dialogs",
     "currentDialog",
-    "uuid",
-    "version",
     "abstract",
     "abstractProperties",
     "derivation",
