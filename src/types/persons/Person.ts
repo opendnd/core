@@ -1,8 +1,17 @@
+import { 
+  AbilityTypes,
+  DamageTypes,
+  Dice,
+  ExpandedAlignments,
+  SkillTypes,
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 import { ILinkBackground } from "../backgrounds/Background";
 import { ILinkBuilding } from "../buildings/Building";
 import { ILinkDate } from "../calendars/Calendar";
 import { ILinkCampaign } from "../campaigns/Campaign";
-import { AbilityTypes, DamageTypes, Dice, ExpandedAlignments, SkillTypes } from "../core/Core";
 import { ILinkCulture } from "../cultures/Culture";
 import { ILinkDialog } from "../dialogs/Dialog";
 import { ILinkDisease } from "../diseases/Disease";
@@ -38,31 +47,12 @@ export enum AgeGroups {
 }
 
 // a link to a person
-export interface ILinkPerson {
-  // uuid for this object
-  uuid: string;
-
-  // name of the character
-  name: string;
-}
+export interface ILinkPerson extends ILinkResource {}
 
 // A Person are the playable and non-playable characters that make up the world
-export interface IPerson {
-  // version number from personae
-  version: string;
-
-  // uuid for this object
-  uuid: string;
-
+export interface IPerson extends IResource {
   // type for this person
   type: PersonTypes;
-
-  // is this an abstract concept of a person like a template?
-  abstract: boolean;
-  abstractProperties: object;
-
-  // derived source or template this person was based on
-  derivation: ILinkPerson;
 
   // data for the DNA of the person
   DNA: IDNA;
@@ -421,18 +411,10 @@ export interface IPerson {
   stories: ILinkStory[];
   dialogs: ILinkDialog[];
   currentDialog: number;
-
-  // specific notes for this person like campaign notes
-  notes: string;
 }
 
-export class Person implements IPerson {
-  public version = "";
-  public uuid = "";
+export class Person extends Resource implements IPerson {
   public type = PersonTypes.NonPlayable;
-  public abstract = false;
-  public abstractProperties = {};
-  public derivation = null;
   public DNA = null;
   public level = 0;
   public XP = 0;
@@ -592,5 +574,4 @@ export class Person implements IPerson {
   public stories = [];
   public dialogs = [];
   public currentDialog = 0;
-  public notes = "";
 }

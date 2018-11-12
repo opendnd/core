@@ -1,3 +1,8 @@
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 import { ILinkRace } from "../races/Race";
 
 // sizes available for creatures
@@ -110,28 +115,12 @@ export interface IChromosomes {
 }
 
 // link to a DNA
-export interface ILinkDNA {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkDNA extends ILinkResource {}
 
 // DNA is used to form the makeup of a creature at a genetic level
-export interface IDNA {
-  // version number from genetica
-  version: string;
-
-  // uuid for this object
-  uuid: string;
-
+export interface IDNA extends IResource {
   // size of the creature
   size: Sizes;
-
-  // is this an abstract concept of a DNA set like a template?
-  abstract: boolean;
-  abstractProperties: object;
-
-  // derived source or template this DNA was based on
-  derivation: ILinkDNA;
 
   // race of the creature
   race: ILinkRace;
@@ -153,54 +142,14 @@ export interface IDNA {
   // regular pair ex: 1=6
   // sex chromosome pair ex: X1=Y2
   chromosomes: IChromosomes;
-
-  // notes as it relates to the backstory, campaign, etc.
-  notes: string;
 }
 
-export class DNA implements IDNA {
-  public version = "";
-  public uuid = "";
+export class DNA extends Resource implements IDNA {
   public size = null;
-  public abstract = false;
-  public abstractProperties = {};
-  public derivation = null;
   public race = null;
   public gender = null;
   public height = 0;
   public weight = 0;
   public traits = {};
   public chromosomes = {};
-  public notes = "";
-
-  // create template DNA
-  constructor(
-    version: string,
-    uuid: string,
-    size: Sizes,
-    abstract: boolean,
-    abstractProperties: object,
-    derivation: ILinkDNA,
-    race: ILinkRace,
-    gender: Genders,
-    height: number,
-    weight: number,
-    traits: ITraits,
-    chromosomes: IChromosomes,
-    notes: string,
-  ) {
-    this.version = version;
-    this.uuid = uuid;
-    this.size = size;
-    this.abstract = abstract;
-    this.abstractProperties = abstractProperties;
-    this.derivation = derivation;
-    this.race = race;
-    this.gender = gender;
-    this.height = height;
-    this.weight = weight;
-    this.traits = traits;
-    this.chromosomes = chromosomes;
-    this.notes = notes;
-  }
 }

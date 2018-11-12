@@ -1,22 +1,18 @@
-import { SkillTypes } from "../core/Core";
+import { 
+  SkillTypes,
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 import { ILinkFeature } from "../features/Feature";
 import { ILinkItem } from "../items/Item";
 import { ILinkLanguage } from "../languages/Language";
 import { ILinkTool } from "../tools/Tool";
 import { TransporationModes } from "../vehicles/Vehicle";
 
-export interface ILinkBackground {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkBackground extends ILinkResource {}
 
-export interface IBackground {
-  // uuid for this object
-  uuid: string;
-
-  // uuid for this object
-  version: string;
-
+export interface IBackground extends IResource {
   // a list of specialties available for this background
   specialties: string[];
 
@@ -71,9 +67,7 @@ export interface IBackground {
   features: ILinkFeature[];
 }
 
-export class Background implements IBackground {
-  public version = "";
-  public uuid = "";
+export class Background extends Resource implements IBackground {
   public specialties = [];
   public personalityTraits = [];
   public ideals = {};

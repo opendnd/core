@@ -1,9 +1,11 @@
-export interface ILinkFeature {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface IFeature {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkFeature extends ILinkResource {}
+
+export interface IFeature extends IResource {}
+
+export class Feature extends Resource implements IFeature {}

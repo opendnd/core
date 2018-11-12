@@ -1,9 +1,11 @@
-export interface ILinkQuest {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface IQuest {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkQuest extends ILinkResource {}
+
+export interface IQuest extends IResource {}
+
+export class Quest extends Resource implements IQuest {}

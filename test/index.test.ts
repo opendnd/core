@@ -1,15 +1,20 @@
 import { expect } from 'chai';
-import { TplPerson, Person } from '../src/index';
-import { TplItem, Item } from '../src/index';
+import { Person } from '../src/index';
+import { Item } from '../src/index';
+import { schemas } from '../src/index';
 
-describe('Core', function () {
-  it('Person', function () {
-    const person:Person = new TplPerson();
+describe('Core', () => {
+  it('Person', () => {
+    const person:Person = new Person();
     expect(person.name).to.be.an('string');
   });
 
-  it('Item', function () {
-    const item:Item = new TplItem();
+  it('Item', () => {
+    const item:Item = new Item();
     expect(item.name).to.be.an('string');
+  });
+
+  it('schemas', () => {
+    expect(schemas.artwork).to.be.an('object');
   });
 });

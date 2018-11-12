@@ -1,164 +1,218 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "additionalProperties": false,
-    "properties": {
-        "currentPrompts": {
-            "title": "currentPrompts",
-            "type": "string"
-        },
-        "currentResponse": {
-            "title": "currentResponse",
-            "type": "string"
-        },
-        "prompts": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "choices": {
-                        "items": {
-                            "additionalProperties": false,
-                            "properties": {
-                                "VO": {
-                                    "title": "VO",
-                                    "type": "string"
-                                },
-                                "ambience": {
-                                    "title": "ambience",
-                                    "type": "string"
-                                },
-                                "emotion": {
-                                    "title": "emotion",
-                                    "type": "string"
-                                },
-                                "requirement": {
-                                    "properties": {
-                                    },
-                                    "title": "requirement",
-                                    "type": "object"
-                                },
-                                "response": {
-                                    "title": "response",
-                                    "type": "string"
-                                },
-                                "text": {
-                                    "title": "text",
-                                    "type": "string"
-                                },
-                                "triggers": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "title": "triggers",
-                                    "type": "array"
-                                }
-                            },
-                            "propertyOrder": [
-                                "text",
-                                "response",
-                                "requirement",
-                                "triggers",
-                                "VO",
-                                "emotion",
-                                "ambience"
-                            ],
-                            "required": [
-                                "VO",
-                                "ambience",
-                                "emotion",
-                                "requirement",
-                                "response",
-                                "text",
-                                "triggers"
-                            ],
-                            "type": "object"
-                        },
-                        "title": "choices",
-                        "type": "array"
-                    }
-                },
-                "propertyOrder": [
-                    "choices"
-                ],
-                "required": [
-                    "choices"
-                ],
-                "type": "object"
-            },
-            "title": "prompts",
-            "type": "array"
-        },
-        "responses": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "VO": {
-                        "title": "VO",
-                        "type": "string"
-                    },
-                    "ambience": {
-                        "title": "ambience",
-                        "type": "string"
-                    },
-                    "emotion": {
-                        "title": "emotion",
-                        "type": "string"
-                    },
-                    "prompts": {
-                        "title": "prompts",
-                        "type": "string"
-                    },
-                    "text": {
-                        "title": "text",
-                        "type": "string"
-                    },
-                    "triggers": {
-                        "items": {
-                            "type": "string"
-                        },
-                        "title": "triggers",
-                        "type": "array"
-                    }
-                },
-                "propertyOrder": [
-                    "text",
-                    "prompts",
-                    "triggers",
-                    "VO",
-                    "emotion",
-                    "ambience"
-                ],
-                "required": [
-                    "VO",
-                    "ambience",
-                    "emotion",
-                    "prompts",
-                    "text",
-                    "triggers"
-                ],
-                "type": "object"
-            },
-            "title": "responses",
-            "type": "array"
-        },
-        "uuid": {
-            "title": "uuid",
-            "type": "string"
-        }
+  "type": "object",
+  "properties": {
+    "currentPrompts": {
+      "type": "string",
+      "title": "Current Prompts"
     },
-    "propertyOrder": [
+    "currentResponse": {
+      "type": "string",
+      "title": "Current Response"
+    },
+    "responses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "text"
+          },
+          "prompts": {
+            "type": "string",
+            "title": "prompts"
+          },
+          "triggers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "triggers"
+          },
+          "VO": {
+            "type": "string",
+            "title": "VO"
+          },
+          "emotion": {
+            "type": "string",
+            "title": "emotion"
+          },
+          "ambience": {
+            "type": "string",
+            "title": "ambience"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "text",
+          "prompts",
+          "triggers",
+          "VO",
+          "emotion",
+          "ambience"
+        ],
+        "required": [
+          "VO",
+          "ambience",
+          "emotion",
+          "prompts",
+          "text",
+          "triggers"
+        ]
+      },
+      "title": "Responses"
+    },
+    "prompts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "text"
+                },
+                "response": {
+                  "type": "string",
+                  "title": "response"
+                },
+                "requirement": {
+                  "type": "object",
+                  "properties": {},
+                  "title": "requirement"
+                },
+                "triggers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "title": "triggers"
+                },
+                "VO": {
+                  "type": "string",
+                  "title": "VO"
+                },
+                "emotion": {
+                  "type": "string",
+                  "title": "emotion"
+                },
+                "ambience": {
+                  "type": "string",
+                  "title": "ambience"
+                }
+              },
+              "additionalProperties": false,
+              "propertyOrder": [
+                "text",
+                "response",
+                "requirement",
+                "triggers",
+                "VO",
+                "emotion",
+                "ambience"
+              ],
+              "required": [
+                "VO",
+                "ambience",
+                "emotion",
+                "requirement",
+                "response",
+                "text",
+                "triggers"
+              ]
+            },
+            "title": "choices"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "choices"
+        ],
+        "required": [
+          "choices"
+        ]
+      },
+      "title": "Prompts"
+    },
+    "uuid": {
+      "type": "string",
+      "title": "UUID"
+    },
+    "version": {
+      "type": "string",
+      "title": "Version"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "abstract": {
+      "type": "boolean",
+      "title": "Abstract"
+    },
+    "abstractProperties": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Abstract Properties"
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
         "uuid",
-        "currentPrompts",
-        "currentResponse",
-        "responses",
-        "prompts"
-    ],
-    "required": [
-        "currentPrompts",
-        "currentResponse",
-        "prompts",
-        "responses",
+        "name"
+      ],
+      "required": [
+        "name",
         "uuid"
-    ],
-    "type": "object"
+      ],
+      "title": "Derivation"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "additionalProperties": false,
+  "propertyOrder": [
+    "currentPrompts",
+    "currentResponse",
+    "responses",
+    "prompts",
+    "uuid",
+    "version",
+    "name",
+    "abstract",
+    "abstractProperties",
+    "derivation",
+    "notes"
+  ],
+  "required": [
+    "abstract",
+    "currentPrompts",
+    "currentResponse",
+    "name",
+    "prompts",
+    "responses",
+    "uuid",
+    "version"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Dialog",
+  "description": "Dialogs are the non-playable interactions, narratives and riddles that interact with your players."
 }
-

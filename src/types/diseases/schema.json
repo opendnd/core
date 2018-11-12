@@ -1,272 +1,280 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "autoimmune",
+        "cognitive",
+        "congenital",
+        "dietary",
+        "infectious"
+      ],
+      "type": "string",
+      "title": "Type"
+    },
+    "condition": {
+      "enum": [
+        "acute",
+        "chronic"
+      ],
+      "type": "string",
+      "title": "Condition"
+    },
+    "pathogen": {
+      "enum": [
+        "bacterium",
+        "fungus",
+        "protist",
+        "virus"
+      ],
+      "type": "string",
+      "title": "Pathogen"
+    },
+    "transmission": {
+      "enum": [
+        "air",
+        "animal",
+        "environmental",
+        "food",
+        "vector"
+      ],
+      "type": "string",
+      "title": "Transmission"
+    },
+    "incubation": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "type": "number",
+          "title": "Time"
+        },
+        "dice": {
+          "enum": [
+            "d4",
+            "d6",
+            "d8",
+            "d10",
+            "d12",
+            "d20",
+            "d100"
+          ],
+          "type": "string",
+          "title": "Dice"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "time",
+        "dice"
+      ],
+      "required": [
+        "dice",
+        "time"
+      ],
+      "title": "Incubation"
+    },
+    "exhaustion": {
+      "type": "number",
+      "title": "Exhaustion"
+    },
+    "resistance": {
+      "enum": [
+        "acid",
+        "bludgeoning",
+        "cold",
+        "fire",
+        "force",
+        "lightning",
+        "necrotic",
+        "piercing",
+        "poison",
+        "psychic",
+        "radiant",
+        "slashing",
+        "thunder"
+      ],
+      "type": "string",
+      "title": "Resistance"
+    },
+    "vulnerability": {
+      "enum": [
+        "acid",
+        "bludgeoning",
+        "cold",
+        "fire",
+        "force",
+        "lightning",
+        "necrotic",
+        "piercing",
+        "poison",
+        "psychic",
+        "radiant",
+        "slashing",
+        "thunder"
+      ],
+      "type": "string",
+      "title": "Vulnerability"
+    },
+    "immunity": {
+      "type": "object",
+      "properties": {
+        "gene": {
+          "type": "string",
+          "title": "Gene"
+        },
+        "trait": {
+          "type": "string",
+          "title": "Trait"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "gene",
+        "trait"
+      ],
+      "required": [
+        "gene",
+        "trait"
+      ],
+      "title": "Immunity"
+    },
+    "savingThrow": {
+      "enum": [
+        "charisma",
+        "constitution",
+        "dexterity",
+        "intelligence",
+        "strength",
+        "wisdom"
+      ],
+      "type": "string",
+      "title": "Saving Throw"
+    },
+    "damage": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "d4",
+          "d6",
+          "d8",
+          "d10",
+          "d12",
+          "d20",
+          "d100"
+        ],
+        "type": "string"
+      },
+      "title": "Damage"
+    },
+    "trigger": {
+      "type": "string",
+      "title": "Trigger"
+    },
+    "triggerTime": {
+      "type": "number",
+      "title": "Trigger Time"
+    },
     "properties": {
-        "abstract": {
-            "title": "abstract",
-            "type": "boolean"
-        },
-        "abstractProperties": {
-            "additionalProperties": true,
-            "properties": {
-            },
-            "title": "abstractProperties",
-            "type": "object"
-        },
-        "condition": {
-            "enum": [
-                "acute",
-                "chronic"
-            ],
-            "title": "condition",
-            "type": "string"
-        },
-        "damage": {
-            "items": {
-                "enum": [
-                    "d10",
-                    "d100",
-                    "d12",
-                    "d20",
-                    "d4",
-                    "d6",
-                    "d8"
-                ],
-                "type": "string"
-            },
-            "title": "damage",
-            "type": "array"
-        },
-        "derivation": {
-            "additionalProperties": false,
-            "properties": {
-                "uuid": {
-                    "title": "uuid",
-                    "type": "string"
-                }
-            },
-            "propertyOrder": [
-                "uuid"
-            ],
-            "required": [
-                "uuid"
-            ],
-            "title": "derivation",
-            "type": "object"
-        },
-        "exhaustion": {
-            "title": "exhaustion",
-            "type": "number"
-        },
-        "immunity": {
-            "additionalProperties": false,
-            "properties": {
-                "gene": {
-                    "title": "gene",
-                    "type": "string"
-                },
-                "trait": {
-                    "title": "trait",
-                    "type": "string"
-                }
-            },
-            "propertyOrder": [
-                "gene",
-                "trait"
-            ],
-            "required": [
-                "gene",
-                "trait"
-            ],
-            "title": "immunity",
-            "type": "object"
-        },
-        "incubation": {
-            "additionalProperties": false,
-            "properties": {
-                "dice": {
-                    "enum": [
-                        "d10",
-                        "d100",
-                        "d12",
-                        "d20",
-                        "d4",
-                        "d6",
-                        "d8"
-                    ],
-                    "title": "dice",
-                    "type": "string"
-                },
-                "time": {
-                    "title": "time",
-                    "type": "number"
-                }
-            },
-            "propertyOrder": [
-                "time",
-                "dice"
-            ],
-            "required": [
-                "dice",
-                "time"
-            ],
-            "title": "incubation",
-            "type": "object"
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Properties"
+    },
+    "uuid": {
+      "type": "string",
+      "title": "UUID"
+    },
+    "version": {
+      "type": "string",
+      "title": "Version"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "abstract": {
+      "type": "boolean",
+      "title": "Abstract"
+    },
+    "abstractProperties": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Abstract Properties"
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "UUID"
         },
         "name": {
-            "title": "name",
-            "type": "string"
-        },
-        "notes": {
-            "title": "notes",
-            "type": "string"
-        },
-        "pathogen": {
-            "enum": [
-                "bacterium",
-                "fungus",
-                "protist",
-                "virus"
-            ],
-            "title": "pathogen",
-            "type": "string"
-        },
-        "properties": {
-            "additionalProperties": true,
-            "properties": {
-            },
-            "title": "properties",
-            "type": "object"
-        },
-        "resistance": {
-            "enum": [
-                "acid",
-                "bludgeoning",
-                "cold",
-                "fire",
-                "force",
-                "lightning",
-                "necrotic",
-                "piercing",
-                "poison",
-                "psychic",
-                "radiant",
-                "slashing",
-                "thunder"
-            ],
-            "title": "resistance",
-            "type": "string"
-        },
-        "savingThrow": {
-            "enum": [
-                "charisma",
-                "constitution",
-                "dexterity",
-                "intelligence",
-                "strength",
-                "wisdom"
-            ],
-            "title": "savingThrow",
-            "type": "string"
-        },
-        "transmission": {
-            "enum": [
-                "air",
-                "animal",
-                "environmental",
-                "food",
-                "vector"
-            ],
-            "title": "transmission",
-            "type": "string"
-        },
-        "trigger": {
-            "title": "trigger",
-            "type": "string"
-        },
-        "triggerTime": {
-            "title": "triggerTime",
-            "type": "number"
-        },
-        "type": {
-            "enum": [
-                "autoimmune",
-                "cognitive",
-                "congenital",
-                "dietary",
-                "infectious"
-            ],
-            "title": "type",
-            "type": "string"
-        },
-        "uuid": {
-            "title": "uuid",
-            "type": "string"
-        },
-        "vulnerability": {
-            "enum": [
-                "acid",
-                "bludgeoning",
-                "cold",
-                "fire",
-                "force",
-                "lightning",
-                "necrotic",
-                "piercing",
-                "poison",
-                "psychic",
-                "radiant",
-                "slashing",
-                "thunder"
-            ],
-            "title": "vulnerability",
-            "type": "string"
+          "type": "string",
+          "title": "Name"
         }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "Derivation"
     },
-    "propertyOrder": [
-        "uuid",
-        "name",
-        "abstract",
-        "abstractProperties",
-        "derivation",
-        "type",
-        "condition",
-        "pathogen",
-        "transmission",
-        "incubation",
-        "exhaustion",
-        "resistance",
-        "vulnerability",
-        "immunity",
-        "savingThrow",
-        "damage",
-        "trigger",
-        "triggerTime",
-        "notes",
-        "properties"
-    ],
-    "required": [
-        "abstract",
-        "abstractProperties",
-        "condition",
-        "damage",
-        "derivation",
-        "exhaustion",
-        "immunity",
-        "incubation",
-        "name",
-        "notes",
-        "pathogen",
-        "properties",
-        "resistance",
-        "savingThrow",
-        "transmission",
-        "trigger",
-        "triggerTime",
-        "type",
-        "uuid",
-        "vulnerability"
-    ],
-    "type": "object"
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "additionalProperties": false,
+  "propertyOrder": [
+    "type",
+    "condition",
+    "pathogen",
+    "transmission",
+    "incubation",
+    "exhaustion",
+    "resistance",
+    "vulnerability",
+    "immunity",
+    "savingThrow",
+    "damage",
+    "trigger",
+    "triggerTime",
+    "properties",
+    "uuid",
+    "version",
+    "name",
+    "abstract",
+    "abstractProperties",
+    "derivation",
+    "notes"
+  ],
+  "required": [
+    "abstract",
+    "condition",
+    "damage",
+    "exhaustion",
+    "immunity",
+    "incubation",
+    "name",
+    "pathogen",
+    "properties",
+    "resistance",
+    "savingThrow",
+    "transmission",
+    "trigger",
+    "triggerTime",
+    "type",
+    "uuid",
+    "version",
+    "vulnerability"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Disease",
+  "description": "Diseases are the illnesses and conditions that affect the inhabitants of your world."
 }
-

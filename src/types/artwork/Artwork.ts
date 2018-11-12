@@ -1,15 +1,11 @@
-export interface ILinkArtwork {
-  // uuid for this object
-  uuid: string;
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-  // name for this object
-  name?: string;
-}
+export interface ILinkArtwork extends ILinkResource {}
 
-export interface IArtwork {
-  // uuid for this object
-  uuid: string;
+export interface IArtwork extends IResource {}
 
-  // name for this object
-  name: string;
-}
+export class Artwork extends Resource implements IArtwork {}

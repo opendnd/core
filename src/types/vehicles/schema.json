@@ -1,224 +1,219 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "nickname": {
+      "type": "string",
+      "title": "Nickname"
+    },
+    "cost": {
+      "type": "number",
+      "title": "Cost"
+    },
+    "mode": {
+      "enum": [
+        "air",
+        "animal",
+        "human",
+        "land",
+        "water"
+      ],
+      "type": "string",
+      "title": "Mode"
+    },
+    "controllers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Controllers"
+    },
+    "passengers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Passengers"
+    },
+    "cargo": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nickcname": {
+            "type": "string",
+            "title": "nickcname"
+          },
+          "uuid": {
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "nickcname",
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Cargo"
+    },
+    "weight": {
+      "type": "number",
+      "title": "Weight"
+    },
+    "capacity": {
+      "type": "number",
+      "title": "Capacity"
+    },
+    "multiplier": {
+      "type": "number",
+      "title": "Multiplier"
+    },
+    "speed": {
+      "type": "number",
+      "title": "Speed"
+    },
     "properties": {
-        "abstract": {
-            "title": "abstract",
-            "type": "boolean"
-        },
-        "abstractProperties": {
-            "additionalProperties": true,
-            "properties": {
-            },
-            "title": "abstractProperties",
-            "type": "object"
-        },
-        "capacity": {
-            "title": "capacity",
-            "type": "number"
-        },
-        "cargo": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "name": {
-                        "title": "name",
-                        "type": "string"
-                    },
-                    "nickcname": {
-                        "title": "nickcname",
-                        "type": "string"
-                    },
-                    "uuid": {
-                        "title": "uuid",
-                        "type": "string"
-                    }
-                },
-                "propertyOrder": [
-                    "uuid",
-                    "name",
-                    "nickcname"
-                ],
-                "required": [
-                    "name",
-                    "nickcname",
-                    "uuid"
-                ],
-                "type": "object"
-            },
-            "title": "cargo",
-            "type": "array"
-        },
-        "controllers": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "name": {
-                        "title": "name",
-                        "type": "string"
-                    },
-                    "uuid": {
-                        "title": "uuid",
-                        "type": "string"
-                    }
-                },
-                "propertyOrder": [
-                    "uuid",
-                    "name"
-                ],
-                "required": [
-                    "name",
-                    "uuid"
-                ],
-                "type": "object"
-            },
-            "title": "controllers",
-            "type": "array"
-        },
-        "cost": {
-            "title": "cost",
-            "type": "number"
-        },
-        "derivation": {
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "title": "name",
-                    "type": "string"
-                },
-                "nickname": {
-                    "title": "nickname",
-                    "type": "string"
-                },
-                "uuid": {
-                    "title": "uuid",
-                    "type": "string"
-                }
-            },
-            "propertyOrder": [
-                "uuid",
-                "name",
-                "nickname"
-            ],
-            "required": [
-                "name",
-                "nickname",
-                "uuid"
-            ],
-            "title": "derivation",
-            "type": "object"
-        },
-        "mode": {
-            "enum": [
-                "air",
-                "animal",
-                "human",
-                "land",
-                "water"
-            ],
-            "title": "mode",
-            "type": "string"
-        },
-        "multiplier": {
-            "title": "multiplier",
-            "type": "number"
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Properties"
+    },
+    "uuid": {
+      "type": "string",
+      "title": "UUID"
+    },
+    "version": {
+      "type": "string",
+      "title": "Version"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "abstract": {
+      "type": "boolean",
+      "title": "Abstract"
+    },
+    "abstractProperties": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Abstract Properties"
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "UUID"
         },
         "name": {
-            "title": "name",
-            "type": "string"
-        },
-        "nickname": {
-            "title": "nickname",
-            "type": "string"
-        },
-        "notes": {
-            "title": "notes",
-            "type": "string"
-        },
-        "passengers": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "name": {
-                        "title": "name",
-                        "type": "string"
-                    },
-                    "uuid": {
-                        "title": "uuid",
-                        "type": "string"
-                    }
-                },
-                "propertyOrder": [
-                    "uuid",
-                    "name"
-                ],
-                "required": [
-                    "name",
-                    "uuid"
-                ],
-                "type": "object"
-            },
-            "title": "passengers",
-            "type": "array"
-        },
-        "properties": {
-            "additionalProperties": true,
-            "properties": {
-            },
-            "title": "properties",
-            "type": "object"
-        },
-        "speed": {
-            "title": "speed",
-            "type": "number"
-        },
-        "uuid": {
-            "title": "uuid",
-            "type": "string"
-        },
-        "weight": {
-            "title": "weight",
-            "type": "number"
+          "type": "string",
+          "title": "Name"
         }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "Derivation"
     },
-    "propertyOrder": [
-        "uuid",
-        "name",
-        "nickname",
-        "cost",
-        "mode",
-        "abstract",
-        "abstractProperties",
-        "derivation",
-        "controllers",
-        "passengers",
-        "cargo",
-        "weight",
-        "capacity",
-        "multiplier",
-        "speed",
-        "notes",
-        "properties"
-    ],
-    "required": [
-        "abstract",
-        "abstractProperties",
-        "capacity",
-        "cargo",
-        "controllers",
-        "cost",
-        "derivation",
-        "mode",
-        "multiplier",
-        "name",
-        "nickname",
-        "notes",
-        "passengers",
-        "properties",
-        "speed",
-        "uuid",
-        "weight"
-    ],
-    "type": "object"
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "additionalProperties": false,
+  "propertyOrder": [
+    "nickname",
+    "cost",
+    "mode",
+    "controllers",
+    "passengers",
+    "cargo",
+    "weight",
+    "capacity",
+    "multiplier",
+    "speed",
+    "properties",
+    "uuid",
+    "version",
+    "name",
+    "abstract",
+    "abstractProperties",
+    "derivation",
+    "notes"
+  ],
+  "required": [
+    "abstract",
+    "capacity",
+    "cargo",
+    "controllers",
+    "cost",
+    "mode",
+    "multiplier",
+    "name",
+    "nickname",
+    "passengers",
+    "properties",
+    "speed",
+    "uuid",
+    "version",
+    "weight"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vehicle",
+  "description": "Vehicles are the mechanical or magical objects that can transport characters and things across your world."
 }
-

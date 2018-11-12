@@ -1,9 +1,11 @@
-export interface ILinkCulture {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface ICulture {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkCulture extends ILinkResource {}
+
+export interface ICulture extends IResource {}
+
+export class Culture extends Resource implements ICulture {}

@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "title": "UUID"
+    },
+    "version": {
+      "type": "string",
+      "title": "Version"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "abstract": {
+      "type": "boolean",
+      "title": "Abstract"
+    },
+    "abstractProperties": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Abstract Properties"
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "Derivation"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "additionalProperties": false,
+  "propertyOrder": [
+    "uuid",
+    "version",
+    "name",
+    "abstract",
+    "abstractProperties",
+    "derivation",
+    "notes"
+  ],
+  "required": [
+    "abstract",
+    "name",
+    "uuid",
+    "version"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Religion",
+  "description": "Religions form the gods, demi-gods and divine entities that inspire your world."
+}

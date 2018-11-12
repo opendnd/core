@@ -1,3 +1,8 @@
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 import { ILinkItem } from "../items/Item";
 import { ILinkPerson } from "../persons/Person";
 
@@ -11,24 +16,12 @@ export enum TransporationModes {
 }
 
 // a link to a vehicle
-export interface ILinkVehicle {
-  // uuid for this object
-  uuid: string;
-
-  // name of the vehicle
-  name: string;
-
+export interface ILinkVehicle extends ILinkResource {
   // personalized nickname for the vehicle
-  nickname: string;
+  nickname?: string;
 }
 
-export interface IVehicle {
-  // uuid for this object
-  uuid: string;
-
-  // name for the vehicle
-  name: string;
-
+export interface IVehicle extends IResource {
   // personalized nickname for the vehicle
   nickname: string;
 
@@ -37,13 +30,6 @@ export interface IVehicle {
 
   // mode of transport
   mode: TransporationModes;
-
-  // is it an abstract concept like a template for a vehicle?
-  abstract: boolean;
-  abstractProperties: object;
-
-  // derived source or template this vehicle was based on
-  derivation: ILinkVehicle;
 
   // who is controlling the vehicle and riding in it
   controllers: ILinkPerson[];
@@ -60,9 +46,20 @@ export interface IVehicle {
   // a base speed value
   speed: number;
 
-  // special notes for the vehicle
-  notes: string;
-
   // specific properties can vary differently based on the type
   properties: object;
+}
+
+export class Vehicle extends Resource implements IVehicle {
+  public nickname = "";
+  public cost = 0;
+  public mode = null;
+  public controllers = [];
+  public passengers = [];
+  public cargo = [];
+  public weight = 0;
+  public capacity = 0;
+  public multiplier = 0;
+  public speed = 0;
+  public properties = {};
 }

@@ -1,4 +1,11 @@
-export interface IName {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
+
+export interface ILinkName extends ILinkResource {}
+
+export interface IName extends IResource {}
+
+export class Name extends Resource implements IName {}

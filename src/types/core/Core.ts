@@ -174,3 +174,42 @@ export enum AdvantageTypes {
 
 // export the standard array numbers
 export const standardArray = [15, 14, 13, 12, 10, 8];
+
+// standard resource link
+export interface ILinkResource {
+  // uuid for this resource
+  uuid: string;
+
+  // uuid for this resource
+  name: string;
+}
+
+// standard resource
+export interface IResource {
+  // uuid for this resource
+  uuid: string;
+
+  // version number for resource generator or creator
+  version: string;
+
+  // uuid for this resource
+  name: string;
+
+  // is this an abstract concept of a resource like a template?
+  abstract: boolean;
+  abstractProperties?: object;
+
+  // derived source or template this resource was based on
+  derivation?: ILinkResource;
+
+  // specific notes for this resource
+  notes?: string;
+}
+
+// disease class
+export class Resource implements IResource {
+  public uuid = "";
+  public version = "";
+  public name = "";
+  public abstract = false;
+}

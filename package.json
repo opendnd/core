@@ -1,6 +1,6 @@
 {
   "name": "opendnd-core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This is the opendnd core module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "env:prod": "cross-env NODE_ENV=production",
     "test": "mocha -c -S -R spec --compilers ts:ts-node/register --check-leaks",
     "test:watch": "yarn test -- -w",
-    "jsonschema": "typescript-json-schema --titles true --refs false --propOrder true --required true --noExtraProps true"
+    "jsonschema": "node scripts/generate-schemas.js"
   },
   "repository": {
     "type": "git",

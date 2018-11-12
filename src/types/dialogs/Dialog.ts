@@ -1,7 +1,10 @@
-export interface ILinkDialog {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
+
+export interface ILinkDialog extends ILinkResource {}
 
 // a response is for the non-playable character to respond to something (or start talking)
 export interface IResponse {
@@ -43,10 +46,7 @@ export interface IChoice {
   ambience: string;
 }
 
-export interface IDialog {
-  // uuid for this object
-  uuid: string;
-
+export interface IDialog extends IResource {
   // current prompts for the player to choose
   currentPrompts: string;
 
@@ -58,4 +58,11 @@ export interface IDialog {
 
   // a list of prompts
   prompts: IPrompts[];
+}
+
+export class Dialog extends Resource implements IDialog {
+  public currentPrompts = "";
+  public currentResponse = "";
+  public responses = [];
+  public prompts = [];
 }

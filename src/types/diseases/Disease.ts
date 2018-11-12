@@ -1,4 +1,11 @@
-import { AbilityTypes, DamageTypes, Dice } from "../core/Core";
+import {
+  AbilityTypes,
+  DamageTypes,
+  Dice,
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 import { ITrait } from "../dna/DNA";
 
 // condition types
@@ -43,26 +50,10 @@ export interface IIncubation {
 }
 
 // link to a disease object
-export interface ILinkDisease {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkDisease extends ILinkResource {}
 
 // disease object
-export interface IDisease {
-  // uuid for this object
-  uuid: string;
-
-  // name for the disease
-  name: string;
-
-  // is it an abstract concept like a template for a disease?
-  abstract: boolean;
-  abstractProperties: object;
-
-  // derived source or template this vehicle was based on
-  derivation: ILinkDisease;
-
+export interface IDisease extends IResource {
   // condition, agent, transmission, disease
   type: DiseaseTypes;
   condition: ConditionTypes;
@@ -90,20 +81,12 @@ export interface IDisease {
   trigger: string;
   triggerTime: number;
 
-  // notes on the disease
-  notes: string;
-
   // additional properties on the disease
   properties: object;
 }
 
 // disease class
-export class Disease implements IDisease {
-  public uuid = "";
-  public name = "";
-  public abstract = false;
-  public abstractProperties = {};
-  public derivation = null;
+export class Disease extends Resource implements IDisease {
   public type = null;
   public condition = null;
   public pathogen = null;
@@ -117,6 +100,5 @@ export class Disease implements IDisease {
   public damage = [];
   public trigger = "";
   public triggerTime = null;
-  public notes = "";
   public properties = {};
 }

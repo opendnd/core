@@ -1,9 +1,11 @@
-export interface ILinkDynasty {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface IDynasty {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkDynasty extends ILinkResource {}
+
+export interface IDynasty extends IResource {}
+
+export class Dynasty extends Resource implements IDynasty {}

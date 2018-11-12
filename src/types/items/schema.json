@@ -1,573 +1,572 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "additionalProperties": false,
-    "properties": {
-        "AC": {
-            "title": "AC",
-            "type": "number"
+  "type": "object",
+  "properties": {
+    "nickcname": {
+      "type": "string",
+      "title": "Nickcname"
+    },
+    "type": {
+      "enum": [
+        "armor",
+        "consumable",
+        "container",
+        "interactable",
+        "magic",
+        "tool",
+        "weapon"
+      ],
+      "type": "string",
+      "title": "Type"
+    },
+    "weaponProperties": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "ammunition",
+          "finesse",
+          "heavy",
+          "light",
+          "loading",
+          "range",
+          "reach",
+          "special",
+          "thrown",
+          "twoHanded",
+          "versatile"
+        ],
+        "type": "string"
+      },
+      "title": "Weapon Properties"
+    },
+    "range": {
+      "type": "object",
+      "properties": {
+        "normal": {
+          "type": "number",
+          "title": "Normal"
         },
-        "HP": {
-            "title": "HP",
-            "type": "number"
-        },
-        "abilities": {
-            "additionalProperties": false,
-            "properties": {
-                "CHA": {
-                    "title": "CHA",
-                    "type": "number"
-                },
-                "CON": {
-                    "title": "CON",
-                    "type": "number"
-                },
-                "DEX": {
-                    "title": "DEX",
-                    "type": "number"
-                },
-                "INT": {
-                    "title": "INT",
-                    "type": "number"
-                },
-                "STR": {
-                    "title": "STR",
-                    "type": "number"
-                },
-                "WIS": {
-                    "title": "WIS",
-                    "type": "number"
-                }
-            },
-            "propertyOrder": [
-                "STR",
-                "DEX",
-                "CON",
-                "INT",
-                "WIS",
-                "CHA"
-            ],
-            "title": "abilities",
-            "type": "object"
-        },
-        "abstract": {
-            "title": "abstract",
-            "type": "boolean"
-        },
-        "abstractProperties": {
-            "additionalProperties": true,
-            "properties": {
-            },
-            "title": "abstractProperties",
-            "type": "object"
-        },
-        "alignment": {
-            "enum": [
-                "CE",
-                "CG",
-                "CI",
-                "CM",
-                "CN",
-                "LE",
-                "LG",
-                "LI",
-                "LM",
-                "LN",
-                "NE",
-                "NG",
-                "NI",
-                "NM",
-                "NN",
-                "RE",
-                "RG",
-                "RI",
-                "RM",
-                "RN",
-                "SE",
-                "SG",
-                "SI",
-                "SM",
-                "SN"
-            ],
-            "title": "alignment",
-            "type": "string"
-        },
-        "ammunition": {
-            "title": "ammunition",
-            "type": "number"
-        },
-        "ammunitionItem": {
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "title": "name",
-                    "type": "string"
-                },
-                "nickcname": {
-                    "title": "nickcname",
-                    "type": "string"
-                },
-                "uuid": {
-                    "title": "uuid",
-                    "type": "string"
-                }
-            },
-            "propertyOrder": [
-                "uuid",
-                "name",
-                "nickcname"
-            ],
-            "required": [
-                "name",
-                "nickcname",
-                "uuid"
-            ],
-            "title": "ammunitionItem",
-            "type": "object"
-        },
-        "attributeDice": {
-            "enum": [
-                "d10",
-                "d100",
-                "d12",
-                "d20",
-                "d4",
-                "d6",
-                "d8"
-            ],
-            "title": "attributeDice",
-            "type": "string"
-        },
-        "conflict": {
-            "title": "conflict",
-            "type": "string"
-        },
-        "cost": {
-            "title": "cost",
-            "type": "number"
-        },
-        "currentDialog": {
-            "title": "currentDialog",
-            "type": "number"
-        },
-        "damageDice": {
-            "items": {
-                "enum": [
-                    "d10",
-                    "d100",
-                    "d12",
-                    "d20",
-                    "d4",
-                    "d6",
-                    "d8"
-                ],
-                "type": "string"
-            },
-            "title": "damageDice",
-            "type": "array"
-        },
-        "damageType": {
-            "enum": [
-                "acid",
-                "bludgeoning",
-                "cold",
-                "fire",
-                "force",
-                "lightning",
-                "necrotic",
-                "piercing",
-                "poison",
-                "psychic",
-                "radiant",
-                "slashing",
-                "thunder"
-            ],
-            "title": "damageType",
-            "type": "string"
-        },
-        "derivation": {
-            "additionalProperties": false,
-            "properties": {
-                "name": {
-                    "title": "name",
-                    "type": "string"
-                },
-                "nickcname": {
-                    "title": "nickcname",
-                    "type": "string"
-                },
-                "uuid": {
-                    "title": "uuid",
-                    "type": "string"
-                }
-            },
-            "propertyOrder": [
-                "uuid",
-                "name",
-                "nickcname"
-            ],
-            "required": [
-                "name",
-                "nickcname",
-                "uuid"
-            ],
-            "title": "derivation",
-            "type": "object"
-        },
-        "dialogs": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "uuid": {
-                        "title": "uuid",
-                        "type": "string"
-                    }
-                },
-                "propertyOrder": [
-                    "uuid"
-                ],
-                "required": [
-                    "uuid"
-                ],
-                "type": "object"
-            },
-            "title": "dialogs",
-            "type": "array"
-        },
-        "equippable": {
-            "items": {
-                "enum": [
-                    "abdomen",
-                    "back",
-                    "chin",
-                    "eyes",
-                    "groin",
-                    "head",
-                    "leftAnkle",
-                    "leftArm",
-                    "leftBreast",
-                    "leftBrow",
-                    "leftEar",
-                    "leftEye",
-                    "leftFingers",
-                    "leftFoot",
-                    "leftGrip",
-                    "leftHand",
-                    "leftKnee",
-                    "leftLeg",
-                    "leftShin",
-                    "leftShoulder",
-                    "leftThigh",
-                    "leftToes",
-                    "leftWrist",
-                    "mouth",
-                    "neck",
-                    "nose",
-                    "rear",
-                    "rightAnkle",
-                    "rightArm",
-                    "rightBreast",
-                    "rightBrow",
-                    "rightEar",
-                    "rightEye",
-                    "rightFingers",
-                    "rightFoot",
-                    "rightGrip",
-                    "rightHand",
-                    "rightKnee",
-                    "rightLeg",
-                    "rightShin",
-                    "rightShoulder",
-                    "rightThigh",
-                    "rightToes",
-                    "rightWrist",
-                    "torso",
-                    "waist"
-                ],
-                "type": "string"
-            },
-            "title": "equippable",
-            "type": "array"
-        },
-        "hitDice": {
-            "items": {
-                "enum": [
-                    "d10",
-                    "d100",
-                    "d12",
-                    "d20",
-                    "d4",
-                    "d6",
-                    "d8"
-                ],
-                "type": "string"
-            },
-            "title": "hitDice",
-            "type": "array"
-        },
-        "items": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "name": {
-                        "title": "name",
-                        "type": "string"
-                    },
-                    "nickcname": {
-                        "title": "nickcname",
-                        "type": "string"
-                    },
-                    "uuid": {
-                        "title": "uuid",
-                        "type": "string"
-                    }
-                },
-                "propertyOrder": [
-                    "uuid",
-                    "name",
-                    "nickcname"
-                ],
-                "required": [
-                    "name",
-                    "nickcname",
-                    "uuid"
-                ],
-                "type": "object"
-            },
-            "title": "items",
-            "type": "array"
-        },
-        "magicItems": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "name": {
-                        "title": "name",
-                        "type": "string"
-                    },
-                    "nickcname": {
-                        "title": "nickcname",
-                        "type": "string"
-                    },
-                    "uuid": {
-                        "title": "uuid",
-                        "type": "string"
-                    }
-                },
-                "propertyOrder": [
-                    "uuid",
-                    "name",
-                    "nickcname"
-                ],
-                "required": [
-                    "name",
-                    "nickcname",
-                    "uuid"
-                ],
-                "type": "object"
-            },
-            "title": "magicItems",
-            "type": "array"
-        },
-        "maxHP": {
-            "title": "maxHP",
-            "type": "number"
-        },
-        "name": {
-            "title": "name",
-            "type": "string"
-        },
+        "long": {
+          "type": "number",
+          "title": "Long"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "normal",
+        "long"
+      ],
+      "required": [
+        "long",
+        "normal"
+      ],
+      "title": "Range"
+    },
+    "ammunition": {
+      "type": "number",
+      "title": "Ammunition"
+    },
+    "ammunitionItem": {
+      "type": "object",
+      "properties": {
         "nickcname": {
-            "title": "nickcname",
-            "type": "string"
-        },
-        "notes": {
-            "title": "notes",
-            "type": "string"
-        },
-        "properties": {
-            "additionalProperties": true,
-            "properties": {
-            },
-            "title": "properties",
-            "type": "object"
-        },
-        "purpose": {
-            "title": "purpose",
-            "type": "string"
-        },
-        "range": {
-            "additionalProperties": false,
-            "properties": {
-                "long": {
-                    "title": "long",
-                    "type": "number"
-                },
-                "normal": {
-                    "title": "normal",
-                    "type": "number"
-                }
-            },
-            "propertyOrder": [
-                "normal",
-                "long"
-            ],
-            "required": [
-                "long",
-                "normal"
-            ],
-            "title": "range",
-            "type": "object"
-        },
-        "rarity": {
-            "enum": [
-                "artifact",
-                "common",
-                "legendary",
-                "rare",
-                "uncommon",
-                "veryRare"
-            ],
-            "title": "rarity",
-            "type": "string"
-        },
-        "sentient": {
-            "title": "sentient",
-            "type": "boolean"
-        },
-        "stealth": {
-            "enum": [
-                "advantage",
-                "disadvantage",
-                "neutral"
-            ],
-            "title": "stealth",
-            "type": "string"
-        },
-        "tempHP": {
-            "title": "tempHP",
-            "type": "number"
-        },
-        "trigger": {
-            "title": "trigger",
-            "type": "string"
-        },
-        "type": {
-            "enum": [
-                "armor",
-                "consumable",
-                "container",
-                "interactable",
-                "magic",
-                "tool",
-                "weapon"
-            ],
-            "title": "type",
-            "type": "string"
+          "type": "string",
+          "title": "Nickcname"
         },
         "uuid": {
-            "title": "uuid",
-            "type": "string"
+          "type": "string",
+          "title": "UUID"
         },
-        "weaponProperties": {
-            "items": {
-                "enum": [
-                    "ammunition",
-                    "finesse",
-                    "heavy",
-                    "light",
-                    "loading",
-                    "range",
-                    "reach",
-                    "special",
-                    "thrown",
-                    "twoHanded",
-                    "versatile"
-                ],
-                "type": "string"
-            },
-            "title": "weaponProperties",
-            "type": "array"
-        },
-        "weight": {
-            "title": "weight",
-            "type": "number"
+        "name": {
+          "type": "string",
+          "title": "Name"
         }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "nickcname",
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "Ammunition Item"
     },
-    "propertyOrder": [
+    "attributeDice": {
+      "enum": [
+        "d4",
+        "d6",
+        "d8",
+        "d10",
+        "d12",
+        "d20",
+        "d100"
+      ],
+      "type": "string",
+      "title": "Attribute Dice"
+    },
+    "damageDice": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "d4",
+          "d6",
+          "d8",
+          "d10",
+          "d12",
+          "d20",
+          "d100"
+        ],
+        "type": "string"
+      },
+      "title": "Damage Dice"
+    },
+    "damageType": {
+      "enum": [
+        "acid",
+        "bludgeoning",
+        "cold",
+        "fire",
+        "force",
+        "lightning",
+        "necrotic",
+        "piercing",
+        "poison",
+        "psychic",
+        "radiant",
+        "slashing",
+        "thunder"
+      ],
+      "type": "string",
+      "title": "Damage Type"
+    },
+    "cost": {
+      "type": "number",
+      "title": "Cost"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nickcname": {
+            "type": "string",
+            "title": "nickcname"
+          },
+          "uuid": {
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "nickcname",
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Items"
+    },
+    "magicItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nickcname": {
+            "type": "string",
+            "title": "nickcname"
+          },
+          "uuid": {
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "nickcname",
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Magic Items"
+    },
+    "weight": {
+      "type": "number",
+      "title": "Weight"
+    },
+    "stealth": {
+      "enum": [
+        "advantage",
+        "disadvantage",
+        "neutral"
+      ],
+      "type": "string",
+      "title": "Stealth"
+    },
+    "rarity": {
+      "enum": [
+        "artifact",
+        "common",
+        "legendary",
+        "rare",
+        "uncommon",
+        "veryRare"
+      ],
+      "type": "string",
+      "title": "Rarity"
+    },
+    "AC": {
+      "type": "number",
+      "title": " A C"
+    },
+    "equippable": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "abdomen",
+          "back",
+          "chin",
+          "eyes",
+          "groin",
+          "head",
+          "leftAnkle",
+          "leftArm",
+          "leftBreast",
+          "leftBrow",
+          "leftEar",
+          "leftEye",
+          "leftFingers",
+          "leftFoot",
+          "leftGrip",
+          "leftHand",
+          "leftKnee",
+          "leftLeg",
+          "leftShin",
+          "leftShoulder",
+          "leftThigh",
+          "leftToes",
+          "leftWrist",
+          "mouth",
+          "neck",
+          "nose",
+          "rear",
+          "rightAnkle",
+          "rightArm",
+          "rightBreast",
+          "rightBrow",
+          "rightEar",
+          "rightEye",
+          "rightFingers",
+          "rightFoot",
+          "rightGrip",
+          "rightHand",
+          "rightKnee",
+          "rightLeg",
+          "rightShin",
+          "rightShoulder",
+          "rightThigh",
+          "rightToes",
+          "rightWrist",
+          "torso",
+          "waist"
+        ],
+        "type": "string"
+      },
+      "title": "Equippable"
+    },
+    "sentient": {
+      "type": "boolean",
+      "title": "Sentient"
+    },
+    "abilities": {
+      "type": "object",
+      "properties": {
+        "STR": {
+          "type": "number",
+          "title": " S T R"
+        },
+        "DEX": {
+          "type": "number",
+          "title": " D E X"
+        },
+        "CON": {
+          "type": "number",
+          "title": " C O N"
+        },
+        "INT": {
+          "type": "number",
+          "title": " I N T"
+        },
+        "WIS": {
+          "type": "number",
+          "title": " W I S"
+        },
+        "CHA": {
+          "type": "number",
+          "title": " C H A"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "STR",
+        "DEX",
+        "CON",
+        "INT",
+        "WIS",
+        "CHA"
+      ],
+      "title": "Abilities"
+    },
+    "hitDice": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "d4",
+          "d6",
+          "d8",
+          "d10",
+          "d12",
+          "d20",
+          "d100"
+        ],
+        "type": "string"
+      },
+      "title": "Hit Dice"
+    },
+    "maxHP": {
+      "type": "number",
+      "title": "Max H P"
+    },
+    "tempHP": {
+      "type": "number",
+      "title": "Temp H P"
+    },
+    "HP": {
+      "type": "number",
+      "title": " H P"
+    },
+    "alignment": {
+      "enum": [
+        "CE",
+        "CG",
+        "CI",
+        "CM",
+        "CN",
+        "LE",
+        "LG",
+        "LI",
+        "LM",
+        "LN",
+        "NE",
+        "NG",
+        "NI",
+        "NM",
+        "NN",
+        "RE",
+        "RG",
+        "RI",
+        "RM",
+        "RN",
+        "SE",
+        "SG",
+        "SI",
+        "SM",
+        "SN"
+      ],
+      "type": "string",
+      "title": "Alignment"
+    },
+    "purpose": {
+      "type": "string",
+      "title": "Purpose"
+    },
+    "conflict": {
+      "type": "string",
+      "title": "Conflict"
+    },
+    "trigger": {
+      "type": "string",
+      "title": "Trigger"
+    },
+    "dialogs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Dialogs"
+    },
+    "currentDialog": {
+      "type": "number",
+      "title": "Current Dialog"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Properties"
+    },
+    "uuid": {
+      "type": "string",
+      "title": "UUID"
+    },
+    "version": {
+      "type": "string",
+      "title": "Version"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "abstract": {
+      "type": "boolean",
+      "title": "Abstract"
+    },
+    "abstractProperties": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Abstract Properties"
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
         "uuid",
+        "name"
+      ],
+      "required": [
         "name",
-        "nickcname",
-        "type",
-        "weaponProperties",
-        "range",
-        "ammunition",
-        "ammunitionItem",
-        "attributeDice",
-        "damageDice",
-        "damageType",
-        "abstract",
-        "abstractProperties",
-        "derivation",
-        "cost",
-        "items",
-        "magicItems",
-        "weight",
-        "stealth",
-        "rarity",
-        "AC",
-        "equippable",
-        "sentient",
-        "abilities",
-        "hitDice",
-        "maxHP",
-        "tempHP",
-        "HP",
-        "alignment",
-        "purpose",
-        "conflict",
-        "trigger",
-        "dialogs",
-        "currentDialog",
-        "notes",
-        "properties"
-    ],
-    "required": [
-        "AC",
-        "HP",
-        "abilities",
-        "abstract",
-        "abstractProperties",
-        "alignment",
-        "ammunition",
-        "ammunitionItem",
-        "attributeDice",
-        "conflict",
-        "cost",
-        "currentDialog",
-        "damageDice",
-        "damageType",
-        "derivation",
-        "dialogs",
-        "equippable",
-        "hitDice",
-        "items",
-        "magicItems",
-        "maxHP",
-        "name",
-        "nickcname",
-        "notes",
-        "properties",
-        "purpose",
-        "rarity",
-        "sentient",
-        "stealth",
-        "tempHP",
-        "trigger",
-        "type",
-        "uuid",
-        "weaponProperties",
-        "weight"
-    ],
-    "type": "object"
+        "uuid"
+      ],
+      "title": "Derivation"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "additionalProperties": false,
+  "propertyOrder": [
+    "nickcname",
+    "type",
+    "weaponProperties",
+    "range",
+    "ammunition",
+    "ammunitionItem",
+    "attributeDice",
+    "damageDice",
+    "damageType",
+    "cost",
+    "items",
+    "magicItems",
+    "weight",
+    "stealth",
+    "rarity",
+    "AC",
+    "equippable",
+    "sentient",
+    "abilities",
+    "hitDice",
+    "maxHP",
+    "tempHP",
+    "HP",
+    "alignment",
+    "purpose",
+    "conflict",
+    "trigger",
+    "dialogs",
+    "currentDialog",
+    "properties",
+    "uuid",
+    "version",
+    "name",
+    "abstract",
+    "abstractProperties",
+    "derivation",
+    "notes"
+  ],
+  "required": [
+    "AC",
+    "HP",
+    "abilities",
+    "abstract",
+    "alignment",
+    "ammunition",
+    "ammunitionItem",
+    "attributeDice",
+    "conflict",
+    "cost",
+    "currentDialog",
+    "damageDice",
+    "damageType",
+    "dialogs",
+    "equippable",
+    "hitDice",
+    "items",
+    "magicItems",
+    "maxHP",
+    "name",
+    "nickcname",
+    "properties",
+    "purpose",
+    "rarity",
+    "sentient",
+    "stealth",
+    "tempHP",
+    "trigger",
+    "type",
+    "uuid",
+    "version",
+    "weaponProperties",
+    "weight"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Item",
+  "description": "Items are used for many different purposes, such as equipment to a person, clothing, weapons, food, stored items in a building or container, used in a trap and many other uses."
 }
-

@@ -1,9 +1,11 @@
-export interface ILinkLanguage {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface ILanguage {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkLanguage extends ILinkResource {}
+
+export interface ILanguage extends IResource {}
+
+export class Language extends Resource implements ILanguage {}

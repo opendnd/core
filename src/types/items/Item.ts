@@ -1,4 +1,12 @@
-import { AdvantageTypes, DamageTypes, Dice, ExpandedAlignments } from "../core/Core";
+import {
+  AdvantageTypes,
+  DamageTypes,
+  Dice,
+  ExpandedAlignments,
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 import { ILinkDialog } from "../dialogs/Dialog";
 
 // types and properties of weapons
@@ -105,24 +113,12 @@ export enum EquipmentLocations {
   RightToes = "rightToes",
 }
 
-export interface ILinkItem {
-  // uuid for this item
-  uuid: string;
-
-  // name of the item
-  name: string;
-
+export interface ILinkItem extends ILinkResource {
   // personalized nickname of the item
-  nickcname: string;
+  nickcname?: string;
 }
 
-export interface IItem {
-  // uuid for this item
-  uuid: string;
-
-  // name of the item
-  name: string;
-
+export interface IItem extends IResource {
   // personalized nickname of the item
   nickcname: string;
 
@@ -137,13 +133,6 @@ export interface IItem {
   // damage value for the item is based on the amount of dice and the dice type
   damageDice: Dice[];
   damageType: DamageTypes;
-
-  // is this an abstract concept of an item like a template?
-  abstract: boolean;
-  abstractProperties: object;
-
-  // derived source or template this person was based on
-  derivation: ILinkItem;
 
   // base cost in cp of the item
   cost: number;
@@ -200,17 +189,11 @@ export interface IItem {
   dialogs: ILinkDialog[];
   currentDialog: number;
 
-  // special notes for the item
-  notes: string;
-
   // additional properties on the item
   properties: object;
 }
 
-export class Item implements IItem {
-  public version = "";
-  public uuid = "";
-  public name = "";
+export class Item extends Resource implements IItem {
   public nickcname = "";
   public type = null;
   public weaponProperties = [];
@@ -219,9 +202,6 @@ export class Item implements IItem {
   public attributeDice = null;
   public damageDice = [];
   public damageType = null;
-  public abstract = false;
-  public abstractProperties = {};
-  public derivation = null;
   public cost = 0;
   public items = [];
   public magicItems = [];
@@ -242,6 +222,5 @@ export class Item implements IItem {
   public trigger = "";
   public dialogs = [];
   public currentDialog = 0;
-  public notes = "";
   public properties = {};
 }

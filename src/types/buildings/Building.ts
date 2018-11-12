@@ -1,9 +1,11 @@
-export interface ILinkBuilding {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface IBuilding {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkBuilding extends ILinkResource {}
+
+export interface IBuilding extends IResource {}
+
+export class Building extends Resource implements IBuilding {}

@@ -1,9 +1,11 @@
-export interface ILinkFaction {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface IFaction {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkFaction extends ILinkResource {}
+
+export interface IFaction extends IResource {}
+
+export class Faction extends Resource implements IFaction {}

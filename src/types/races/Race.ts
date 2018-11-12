@@ -1,4 +1,10 @@
-import { AbilityTypes, Dice, ExpandedAlignments } from "../core/Core";
+import { 
+  Dice,
+  ExpandedAlignments,
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 import { Sizes } from "../dna/DNA";
 import { ILinkLanguage } from "../languages/Language";
 
@@ -22,24 +28,9 @@ export interface IRacialAbilityIncrease {
   amount: number;
 }
 
-export interface ILinkRace {
-  // uuid for this object
-  uuid: string;
+export interface ILinkRace extends ILinkResource {}
 
-  // name for this race
-  name?: string;
-}
-
-export interface IRace {
-  // uuid for this object
-  version: string;
-
-  // uuid for this object
-  uuid: string;
-
-  // name for this race
-  name: string;
-
+export interface IRace extends IResource {
   // chromosomes have the dice size for each chromosome pair
   // note that this uses string instead of the Dice type as one chromosome specifies sex
   chromosomes: {
@@ -175,10 +166,7 @@ export interface IRace {
   subraces: ILinkRace[];
 }
 
-export class Race implements IRace {
-  public version = "";
-  public uuid = "";
-  public name = "";
+export class Race extends Resource implements IRace {
   public chromosomes = {};
   public sex = {};
   public legend = {};

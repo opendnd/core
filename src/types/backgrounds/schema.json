@@ -1,312 +1,378 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "additionalProperties": false,
-    "properties": {
-        "bonds": {
-            "items": {
-                "type": "string"
-            },
-            "title": "bonds",
-            "type": "array"
-        },
-        "features": {
-            "items": {
-                "additionalProperties": false,
-                "properties": {
-                    "uuid": {
-                        "title": "uuid",
-                        "type": "string"
-                    }
-                },
-                "propertyOrder": [
-                    "uuid"
-                ],
-                "required": [
-                    "uuid"
-                ],
-                "type": "object"
-            },
-            "title": "features",
-            "type": "array"
-        },
-        "flaws": {
-            "items": {
-                "type": "string"
-            },
-            "title": "flaws",
-            "type": "array"
-        },
-        "ideals": {
-            "additionalProperties": false,
-            "properties": {
-                "any": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "any",
-                    "type": "array"
-                },
-                "chaotic": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "chaotic",
-                    "type": "array"
-                },
-                "evil": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "evil",
-                    "type": "array"
-                },
-                "good": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "good",
-                    "type": "array"
-                },
-                "impure": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "impure",
-                    "type": "array"
-                },
-                "lawful": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "lawful",
-                    "type": "array"
-                },
-                "moral": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "moral",
-                    "type": "array"
-                },
-                "neutral": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "neutral",
-                    "type": "array"
-                },
-                "rebel": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "rebel",
-                    "type": "array"
-                },
-                "social": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "title": "social",
-                    "type": "array"
-                }
-            },
-            "propertyOrder": [
-                "any",
-                "good",
-                "moral",
-                "impure",
-                "evil",
-                "neutral",
-                "chaotic",
-                "rebel",
-                "social",
-                "lawful"
-            ],
-            "title": "ideals",
-            "type": "object"
-        },
-        "personalityTraits": {
-            "items": {
-                "type": "string"
-            },
-            "title": "personalityTraits",
-            "type": "array"
-        },
-        "proficiencies": {
-            "additionalProperties": false,
-            "properties": {
-                "items": {
-                    "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                            "name": {
-                                "title": "name",
-                                "type": "string"
-                            },
-                            "nickcname": {
-                                "title": "nickcname",
-                                "type": "string"
-                            },
-                            "uuid": {
-                                "title": "uuid",
-                                "type": "string"
-                            }
-                        },
-                        "propertyOrder": [
-                            "uuid",
-                            "name",
-                            "nickcname"
-                        ],
-                        "required": [
-                            "name",
-                            "nickcname",
-                            "uuid"
-                        ],
-                        "type": "object"
-                    },
-                    "title": "items",
-                    "type": "array"
-                },
-                "languages": {
-                    "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                            "uuid": {
-                                "title": "uuid",
-                                "type": "string"
-                            }
-                        },
-                        "propertyOrder": [
-                            "uuid"
-                        ],
-                        "required": [
-                            "uuid"
-                        ],
-                        "type": "object"
-                    },
-                    "title": "languages",
-                    "type": "array"
-                },
-                "selectLanguages": {
-                    "title": "selectLanguages",
-                    "type": "number"
-                },
-                "selectTools": {
-                    "title": "selectTools",
-                    "type": "number"
-                },
-                "skills": {
-                    "items": {
-                        "enum": [
-                            "acrobatics",
-                            "animalhandling",
-                            "arcana",
-                            "athletics",
-                            "deception",
-                            "history",
-                            "insight",
-                            "intimidation",
-                            "investigation",
-                            "medicine",
-                            "nature",
-                            "perception",
-                            "performance",
-                            "persuasion",
-                            "religion",
-                            "sleightofhand",
-                            "stealth",
-                            "survival"
-                        ],
-                        "type": "string"
-                    },
-                    "title": "skills",
-                    "type": "array"
-                },
-                "tools": {
-                    "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                            "uuid": {
-                                "title": "uuid",
-                                "type": "string"
-                            }
-                        },
-                        "propertyOrder": [
-                            "uuid"
-                        ],
-                        "required": [
-                            "uuid"
-                        ],
-                        "type": "object"
-                    },
-                    "title": "tools",
-                    "type": "array"
-                },
-                "transportation": {
-                    "items": {
-                        "enum": [
-                            "air",
-                            "animal",
-                            "human",
-                            "land",
-                            "water"
-                        ],
-                        "type": "string"
-                    },
-                    "title": "transportation",
-                    "type": "array"
-                }
-            },
-            "propertyOrder": [
-                "skills",
-                "transportation",
-                "languages",
-                "items",
-                "tools",
-                "selectTools",
-                "selectLanguages"
-            ],
-            "title": "proficiencies",
-            "type": "object"
-        },
-        "specialties": {
-            "items": {
-                "type": "string"
-            },
-            "title": "specialties",
-            "type": "array"
-        },
-        "uuid": {
-            "title": "uuid",
-            "type": "string"
-        },
-        "version": {
-            "title": "version",
-            "type": "string"
-        }
+  "type": "object",
+  "properties": {
+    "specialties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Specialties"
     },
-    "propertyOrder": [
+    "personalityTraits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Personality Traits"
+    },
+    "ideals": {
+      "type": "object",
+      "properties": {
+        "any": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Any"
+        },
+        "good": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Good"
+        },
+        "moral": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Moral"
+        },
+        "impure": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Impure"
+        },
+        "evil": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Evil"
+        },
+        "neutral": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Neutral"
+        },
+        "chaotic": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Chaotic"
+        },
+        "rebel": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Rebel"
+        },
+        "social": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Social"
+        },
+        "lawful": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Lawful"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "any",
+        "good",
+        "moral",
+        "impure",
+        "evil",
+        "neutral",
+        "chaotic",
+        "rebel",
+        "social",
+        "lawful"
+      ],
+      "title": "Ideals"
+    },
+    "bonds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Bonds"
+    },
+    "flaws": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Flaws"
+    },
+    "proficiencies": {
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "acrobatics",
+              "animalhandling",
+              "arcana",
+              "athletics",
+              "deception",
+              "history",
+              "insight",
+              "intimidation",
+              "investigation",
+              "medicine",
+              "nature",
+              "perception",
+              "performance",
+              "persuasion",
+              "religion",
+              "sleightofhand",
+              "stealth",
+              "survival"
+            ],
+            "type": "string"
+          },
+          "title": "Skills"
+        },
+        "transportation": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "air",
+              "animal",
+              "human",
+              "land",
+              "water"
+            ],
+            "type": "string"
+          },
+          "title": "Transportation"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "uuid": {
+                "type": "string",
+                "title": "uuid"
+              },
+              "name": {
+                "type": "string",
+                "title": "name"
+              }
+            },
+            "additionalProperties": false,
+            "propertyOrder": [
+              "uuid",
+              "name"
+            ],
+            "required": [
+              "name",
+              "uuid"
+            ]
+          },
+          "title": "Languages"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nickcname": {
+                "type": "string",
+                "title": "nickcname"
+              },
+              "uuid": {
+                "type": "string",
+                "title": "uuid"
+              },
+              "name": {
+                "type": "string",
+                "title": "name"
+              }
+            },
+            "additionalProperties": false,
+            "propertyOrder": [
+              "nickcname",
+              "uuid",
+              "name"
+            ],
+            "required": [
+              "name",
+              "uuid"
+            ]
+          },
+          "title": "Items"
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "uuid": {
+                "type": "string",
+                "title": "uuid"
+              },
+              "name": {
+                "type": "string",
+                "title": "name"
+              }
+            },
+            "additionalProperties": false,
+            "propertyOrder": [
+              "uuid",
+              "name"
+            ],
+            "required": [
+              "name",
+              "uuid"
+            ]
+          },
+          "title": "Tools"
+        },
+        "selectTools": {
+          "type": "number",
+          "title": "Select Tools"
+        },
+        "selectLanguages": {
+          "type": "number",
+          "title": "Select Languages"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "skills",
+        "transportation",
+        "languages",
+        "items",
+        "tools",
+        "selectTools",
+        "selectLanguages"
+      ],
+      "title": "Proficiencies"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Features"
+    },
+    "uuid": {
+      "type": "string",
+      "title": "UUID"
+    },
+    "version": {
+      "type": "string",
+      "title": "Version"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "abstract": {
+      "type": "boolean",
+      "title": "Abstract"
+    },
+    "abstractProperties": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true,
+      "title": "Abstract Properties"
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
         "uuid",
-        "version",
-        "specialties",
-        "personalityTraits",
-        "ideals",
-        "bonds",
-        "flaws",
-        "proficiencies",
-        "features"
-    ],
-    "required": [
-        "bonds",
-        "features",
-        "flaws",
-        "ideals",
-        "personalityTraits",
-        "proficiencies",
-        "specialties",
-        "uuid",
-        "version"
-    ],
-    "type": "object"
+        "name"
+      ],
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "Derivation"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "additionalProperties": false,
+  "propertyOrder": [
+    "specialties",
+    "personalityTraits",
+    "ideals",
+    "bonds",
+    "flaws",
+    "proficiencies",
+    "features",
+    "uuid",
+    "version",
+    "name",
+    "abstract",
+    "abstractProperties",
+    "derivation",
+    "notes"
+  ],
+  "required": [
+    "abstract",
+    "bonds",
+    "features",
+    "flaws",
+    "ideals",
+    "name",
+    "personalityTraits",
+    "proficiencies",
+    "specialties",
+    "uuid",
+    "version"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Background",
+  "description": "Backgrounds are used for a person to help determine ideals, bonds, etc. Where a person comes from is important to give us context on where they'll go next."
 }
-

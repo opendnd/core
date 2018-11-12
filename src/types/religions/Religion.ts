@@ -1,9 +1,11 @@
-export interface ILinkReligion {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface IReligion {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkReligion extends ILinkResource {}
+
+export interface IReligion extends IResource {}
+
+export class Religion extends Resource implements IReligion {}

@@ -1,9 +1,11 @@
-export interface ILinkStory {
-  // uuid for this object
-  uuid: string;
-}
+import { 
+  IResource,
+  ILinkResource,
+  Resource,
+} from "../core/Core";
 
-export interface IStory {
-  // uuid for this object
-  uuid: string;
-}
+export interface ILinkStory extends ILinkResource {}
+
+export interface IStory extends IResource {}
+
+export class Story extends Resource implements IStory {}
