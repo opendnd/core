@@ -22,31 +22,51 @@ export interface ILinkVehicle extends ILinkResource {
 }
 
 export interface IVehicle extends IResource {
-  // personalized nickname for the vehicle
+  /** 
+   * personalized nickname for the vehicle
+   */
   nickname: string;
 
-  // base cost in cp of the vehicle
+  /** 
+   * base cost in cp of the vehicle
+   */
   cost: number;
 
-  // mode of transport
+  /** 
+   * mode of transport
+   */
   mode: TransporationModes;
 
-  // who is controlling the vehicle and riding in it
+  /** 
+   * who is controlling the vehicle @link:ILinkPerson[]
+   */
   controllers: ILinkPerson[];
+
+  /** 
+   * who is riding in the vehicle @link:ILinkPerson[]
+   */
   passengers: ILinkPerson[];
 
-  // what cargo is the vehicle carrying and what is its current encumberence (weight)
+  /** 
+   * what cargo is the vehicle carrying and what is its current encumberence (weight) @link:ILinkItem[]
+   */
   cargo: ILinkItem[];
   weight: number;
   capacity: number;
 
-  // a base multiplier to derive additional multipliers
+  /** 
+   * a base multiplier to derive additional multipliers
+   */
   multiplier: number;
 
-  // a base speed value
+  /** 
+   * a base speed value
+   */
   speed: number;
 
-  // specific properties can vary differently based on the type
+  /** 
+   * specific properties can vary differently based on the type
+   */
   properties: object;
 }
 

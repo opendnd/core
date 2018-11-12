@@ -470,6 +470,7 @@
       "title": "Genes"
     },
     "abilitiyIncreases": {
+      "description": "ability score increases",
       "type": "array",
       "items": {
         "type": "object",
@@ -506,6 +507,7 @@
       "title": "Abilitiy Increases"
     },
     "alignments": {
+      "description": "which alignments your race tends towards",
       "type": "array",
       "items": {
         "enum": [
@@ -540,6 +542,7 @@
       "title": "Alignments"
     },
     "size": {
+      "description": "which size this race is",
       "enum": [
         "colossal",
         "diminutive",
@@ -555,19 +558,23 @@
       "title": "Size"
     },
     "speed": {
+      "description": "base speed",
       "type": "number",
       "title": "Speed"
     },
     "languages": {
+      "description": "which languages you speak by virtue of your race @link:ILinkLanguage[];",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -585,15 +592,18 @@
       "title": "Languages"
     },
     "subraces": {
+      "description": "list of subraces @link:ILinkRace[];",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -611,35 +621,41 @@
       "title": "Subraces"
     },
     "uuid": {
+      "description": "This is the UUID for this Resource.",
       "type": "string",
       "title": "UUID"
     },
     "version": {
+      "description": "This is the version number for generator used to create this Resource.",
       "type": "string",
       "title": "Version"
     },
     "name": {
+      "description": "This is the name for this Resource.",
       "type": "string",
       "title": "Name"
     },
     "abstract": {
+      "description": "This determines if this is an abstract concept a Resource like a template.",
       "type": "boolean",
       "title": "Abstract"
     },
     "abstractProperties": {
-      "type": "object",
-      "properties": {},
-      "additionalProperties": true,
-      "title": "Abstract Properties"
+      "description": "These are unique properties for an abstract Resource to help with generating.",
+      "title": "Abstract Properties",
+      "type": "string"
     },
     "derivation": {
+      "description": "This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -656,6 +672,7 @@
       "title": "Derivation"
     },
     "notes": {
+      "description": "These are specific notes for this Resource that may be helpful while writing.",
       "type": "string",
       "title": "Notes"
     }

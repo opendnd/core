@@ -1,9 +1,9 @@
 {
   "type": "object",
   "properties": {
-    "nickcname": {
+    "nickname": {
       "type": "string",
-      "title": "Nickcname"
+      "title": "Nickname"
     },
     "type": {
       "enum": [
@@ -68,22 +68,24 @@
     "ammunitionItem": {
       "type": "object",
       "properties": {
-        "nickcname": {
+        "nickname": {
           "type": "string",
-          "title": "Nickcname"
+          "title": "Nickname"
         },
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
       },
       "additionalProperties": false,
       "propertyOrder": [
-        "nickcname",
+        "nickname",
         "uuid",
         "name"
       ],
@@ -142,30 +144,34 @@
       "title": "Damage Type"
     },
     "cost": {
+      "description": "base cost in cp of the item",
       "type": "number",
       "title": "Cost"
     },
     "items": {
+      "description": "a list of items for containers @link:ILinkItem[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "nickcname": {
+          "nickname": {
             "type": "string",
-            "title": "nickcname"
+            "title": "nickname"
           },
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
         },
         "additionalProperties": false,
         "propertyOrder": [
-          "nickcname",
+          "nickname",
           "uuid",
           "name"
         ],
@@ -177,26 +183,29 @@
       "title": "Items"
     },
     "magicItems": {
+      "description": "a list of magical items for containers @link:ILinkItem[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "nickcname": {
+          "nickname": {
             "type": "string",
-            "title": "nickcname"
+            "title": "nickname"
           },
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
         },
         "additionalProperties": false,
         "propertyOrder": [
-          "nickcname",
+          "nickname",
           "uuid",
           "name"
         ],
@@ -208,10 +217,12 @@
       "title": "Magic Items"
     },
     "weight": {
+      "description": "weight of the item",
       "type": "number",
       "title": "Weight"
     },
     "stealth": {
+      "description": "stealth advantage/disadvantage",
       "enum": [
         "advantage",
         "disadvantage",
@@ -221,22 +232,25 @@
       "title": "Stealth"
     },
     "rarity": {
+      "description": "rarity of the item",
       "enum": [
         "artifact",
         "common",
         "legendary",
         "rare",
         "uncommon",
-        "veryRare"
+        "very_rare"
       ],
       "type": "string",
       "title": "Rarity"
     },
     "AC": {
+      "description": "AC for the item",
       "type": "number",
       "title": " A C"
     },
     "equippable": {
+      "description": "a list of locations this item can be equipped",
       "type": "array",
       "items": {
         "enum": [
@@ -246,44 +260,44 @@
           "eyes",
           "groin",
           "head",
-          "leftAnkle",
-          "leftArm",
-          "leftBreast",
-          "leftBrow",
-          "leftEar",
-          "leftEye",
-          "leftFingers",
-          "leftFoot",
-          "leftGrip",
-          "leftHand",
-          "leftKnee",
-          "leftLeg",
-          "leftShin",
-          "leftShoulder",
-          "leftThigh",
-          "leftToes",
-          "leftWrist",
+          "left_ankle",
+          "left_arm",
+          "left_breast",
+          "left_brow",
+          "left_ear",
+          "left_eye",
+          "left_fingers",
+          "left_foot",
+          "left_grip",
+          "left_hand",
+          "left_knee",
+          "left_leg",
+          "left_shin",
+          "left_shoulder",
+          "left_thigh",
+          "left_toes",
+          "left_wrist",
           "mouth",
           "neck",
           "nose",
           "rear",
-          "rightAnkle",
-          "rightArm",
-          "rightBreast",
-          "rightBrow",
-          "rightEar",
-          "rightEye",
-          "rightFingers",
-          "rightFoot",
-          "rightGrip",
-          "rightHand",
-          "rightKnee",
-          "rightLeg",
-          "rightShin",
-          "rightShoulder",
-          "rightThigh",
-          "rightToes",
-          "rightWrist",
+          "right_ankle",
+          "right_arm",
+          "right_breast",
+          "right_brow",
+          "right_ear",
+          "right_eye",
+          "right_fingers",
+          "right_foot",
+          "right_grip",
+          "right_hand",
+          "right_knee",
+          "right_leg",
+          "right_shin",
+          "right_shoulder",
+          "right_thigh",
+          "right_toes",
+          "right_wrist",
           "torso",
           "waist"
         ],
@@ -292,6 +306,7 @@
       "title": "Equippable"
     },
     "sentient": {
+      "description": "if the item is sentient or not",
       "type": "boolean",
       "title": "Sentient"
     },
@@ -411,10 +426,12 @@
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -442,35 +459,41 @@
       "title": "Properties"
     },
     "uuid": {
+      "description": "This is the UUID for this Resource.",
       "type": "string",
       "title": "UUID"
     },
     "version": {
+      "description": "This is the version number for generator used to create this Resource.",
       "type": "string",
       "title": "Version"
     },
     "name": {
+      "description": "This is the name for this Resource.",
       "type": "string",
       "title": "Name"
     },
     "abstract": {
+      "description": "This determines if this is an abstract concept a Resource like a template.",
       "type": "boolean",
       "title": "Abstract"
     },
     "abstractProperties": {
-      "type": "object",
-      "properties": {},
-      "additionalProperties": true,
-      "title": "Abstract Properties"
+      "description": "These are unique properties for an abstract Resource to help with generating.",
+      "title": "Abstract Properties",
+      "type": "string"
     },
     "derivation": {
+      "description": "This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -487,13 +510,14 @@
       "title": "Derivation"
     },
     "notes": {
+      "description": "These are specific notes for this Resource that may be helpful while writing.",
       "type": "string",
       "title": "Notes"
     }
   },
   "additionalProperties": false,
   "propertyOrder": [
-    "nickcname",
+    "nickname",
     "type",
     "weaponProperties",
     "range",
@@ -552,7 +576,7 @@
     "magicItems",
     "maxHP",
     "name",
-    "nickcname",
+    "nickname",
     "properties",
     "purpose",
     "rarity",

@@ -177,32 +177,52 @@ export const standardArray = [15, 14, 13, 12, 10, 8];
 
 // standard resource link
 export interface ILinkResource {
-  // uuid for this resource
+  /**
+   * This is the UUID for the linked Resource.
+   */
   uuid: string;
 
-  // uuid for this resource
+  /**
+   * This is the name for the linked Resource.
+   */
   name: string;
 }
 
 // standard resource
 export interface IResource {
-  // uuid for this resource
+  /**
+   * This is the UUID for this Resource.
+   */
   uuid: string;
 
-  // version number for resource generator or creator
+  /**
+   * This is the version number for generator used to create this Resource.
+   */
   version: string;
 
-  // uuid for this resource
+  /**
+   * This is the name for this Resource.
+   */
   name: string;
 
-  // is this an abstract concept of a resource like a template?
+  /**
+   * This determines if this is an abstract concept a Resource like a template.
+   */
   abstract: boolean;
-  abstractProperties?: object;
 
-  // derived source or template this resource was based on
+  /**
+   * These are unique properties for an abstract Resource to help with generating.
+   */
+  abstractProperties?: object | string;
+
+  /**
+   * This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource
+   */
   derivation?: ILinkResource;
 
-  // specific notes for this resource
+  /**
+   * These are specific notes for this Resource that may be helpful while writing.
+   */
   notes?: string;
 }
 

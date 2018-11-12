@@ -139,35 +139,41 @@
       "title": "Prompts"
     },
     "uuid": {
+      "description": "This is the UUID for this Resource.",
       "type": "string",
       "title": "UUID"
     },
     "version": {
+      "description": "This is the version number for generator used to create this Resource.",
       "type": "string",
       "title": "Version"
     },
     "name": {
+      "description": "This is the name for this Resource.",
       "type": "string",
       "title": "Name"
     },
     "abstract": {
+      "description": "This determines if this is an abstract concept a Resource like a template.",
       "type": "boolean",
       "title": "Abstract"
     },
     "abstractProperties": {
-      "type": "object",
-      "properties": {},
-      "additionalProperties": true,
-      "title": "Abstract Properties"
+      "description": "These are unique properties for an abstract Resource to help with generating.",
+      "title": "Abstract Properties",
+      "type": "string"
     },
     "derivation": {
+      "description": "This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -184,6 +190,7 @@
       "title": "Derivation"
     },
     "notes": {
+      "description": "These are specific notes for this Resource that may be helpful while writing.",
       "type": "string",
       "title": "Notes"
     }

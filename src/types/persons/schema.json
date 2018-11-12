@@ -2,17 +2,20 @@
   "type": "object",
   "properties": {
     "type": {
+      "description": "type for this person",
       "enum": [
-        "nonPlayable",
+        "non_playable",
         "playable"
       ],
       "type": "string",
       "title": "Type"
     },
     "DNA": {
+      "description": "data for the DNA of the person",
       "type": "object",
       "properties": {
         "size": {
+          "description": "size of the creature",
           "enum": [
             "colossal",
             "diminutive",
@@ -28,13 +31,16 @@
           "title": "Size"
         },
         "race": {
+          "description": "race of the creature @link:ILinkRace",
           "type": "object",
           "properties": {
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
@@ -51,6 +57,7 @@
           "title": "Race"
         },
         "gender": {
+          "description": "gender of the creature",
           "enum": [
             "female",
             "male",
@@ -60,14 +67,17 @@
           "title": "Gender"
         },
         "height": {
+          "description": "the height of the creature in inches",
           "type": "number",
           "title": "Height"
         },
         "weight": {
+          "description": "the weight of the creature in pounds",
           "type": "number",
           "title": "Weight"
         },
         "traits": {
+          "description": "the list of traits for the creature",
           "type": "object",
           "properties": {
             "general": {
@@ -558,35 +568,50 @@
           "title": "Chromosomes"
         },
         "uuid": {
+          "description": "This is the UUID for this Resource.",
           "type": "string",
           "title": "UUID"
         },
         "version": {
+          "description": "This is the version number for generator used to create this Resource.",
           "type": "string",
           "title": "Version"
         },
         "name": {
+          "description": "This is the name for this Resource.",
           "type": "string",
           "title": "Name"
         },
         "abstract": {
+          "description": "This determines if this is an abstract concept a Resource like a template.",
           "type": "boolean",
           "title": "Abstract"
         },
         "abstractProperties": {
-          "type": "object",
-          "properties": {},
-          "additionalProperties": true,
+          "description": "These are unique properties for an abstract Resource to help with generating.",
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            },
+            {
+              "type": "string"
+            }
+          ],
           "title": "Abstract Properties"
         },
         "derivation": {
+          "description": "This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource",
           "type": "object",
           "properties": {
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
@@ -603,6 +628,7 @@
           "title": "Derivation"
         },
         "notes": {
+          "description": "These are specific notes for this Resource that may be helpful while writing.",
           "type": "string",
           "title": "Notes"
         }
@@ -637,9 +663,10 @@
         "version",
         "weight"
       ],
-      "title": " D N A"
+      "title": "DNA"
     },
     "level": {
+      "description": "the following numbers should correspond to each other based on the XP chart",
       "type": "number",
       "title": "Level"
     },
@@ -648,14 +675,17 @@
       "title": " X P"
     },
     "playerName": {
+      "description": "name of the player and the character",
       "type": "string",
       "title": "Player Name"
     },
     "name": {
+      "description": "This is the name for this Resource.",
       "type": "string",
       "title": "Name"
     },
     "age": {
+      "description": "age number and which age group this person belongs to (based on racial lifespans)",
       "type": "number",
       "title": "Age"
     },
@@ -670,6 +700,7 @@
       "title": "Age Group"
     },
     "power": {
+      "description": "power, honor, piety and reputation are similar in that they each determine your influence/respect with different groups",
       "type": "number",
       "title": "Power"
     },
@@ -781,6 +812,7 @@
       "type": "object",
       "properties": {
         "skills": {
+          "description": "a list of skills with proficiency",
           "type": "array",
           "items": {
             "enum": [
@@ -808,15 +840,18 @@
           "title": "Skills"
         },
         "languages": {
+          "description": "a list of languages with proficiency @link:ILinkTool[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -834,6 +869,7 @@
           "title": "Languages"
         },
         "armors": {
+          "description": "a list of armors with proficiency",
           "type": "array",
           "items": {
             "enum": [
@@ -847,6 +883,7 @@
           "title": "Armors"
         },
         "weapons": {
+          "description": "a list of weapons with proficiency",
           "type": "array",
           "items": {
             "enum": [
@@ -858,6 +895,7 @@
           "title": "Weapons"
         },
         "transportation": {
+          "description": "a list of transportation modes with proficiency",
           "type": "array",
           "items": {
             "enum": [
@@ -872,15 +910,18 @@
           "title": "Transportation"
         },
         "tools": {
+          "description": "a list of tools with proficiency @link:ILinkTool[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -964,15 +1005,18 @@
       "title": " H P"
     },
     "conditions": {
+      "description": "the following deals with health conditions @link:ILinkDisease[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -1063,13 +1107,16 @@
       "title": "Alignment"
     },
     "klass": {
+      "description": "the character k(c)lass from the list of available @link:ILinkKlass",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1089,6 +1136,7 @@
       "type": "object",
       "properties": {
         "ability": {
+          "description": "spell casting ability",
           "enum": [
             "charisma",
             "constitution",
@@ -1101,23 +1149,28 @@
           "title": "Ability"
         },
         "saveDC": {
+          "description": "spell save DC",
           "type": "number",
           "title": "Save D C"
         },
         "attackModifier": {
+          "description": "spell attack modifier",
           "type": "number",
           "title": "Attack Modifier"
         },
         "spells": {
+          "description": "list of known spells @link:ILinkSpell[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -1151,13 +1204,16 @@
       "title": "Spellcasting"
     },
     "culture": {
+      "description": "cultural information @link:ILinkCulture",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1174,13 +1230,16 @@
       "title": "Culture"
     },
     "faith": {
+      "description": "religion information @link:ILinkReligion",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1197,13 +1256,16 @@
       "title": "Faith"
     },
     "mother": {
+      "description": "mother relationship information @link:ILinkPerson",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1220,13 +1282,16 @@
       "title": "Mother"
     },
     "father": {
+      "description": "father relationship information @link:ILinkPerson",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1243,15 +1308,18 @@
       "title": "Father"
     },
     "siblings": {
+      "description": "siblings relationship information @link:ILinkPerson[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -1269,13 +1337,16 @@
       "title": "Siblings"
     },
     "spouse": {
+      "description": "spouse relationship information @link:ILinkPerson",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1292,15 +1363,18 @@
       "title": "Spouse"
     },
     "children": {
+      "description": "children relationship information @link:ILinkPerson[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -1318,13 +1392,16 @@
       "title": "Children"
     },
     "family": {
+      "description": "family relationship information @link:ILinkDynasty",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1341,13 +1418,16 @@
       "title": "Family"
     },
     "liege": {
+      "description": "liege relationship information @link:ILinkPerson[]",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -1364,15 +1444,18 @@
       "title": "Liege"
     },
     "allies": {
+      "description": "allies relationship information @link:ILinkPerson[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -1390,15 +1473,18 @@
       "title": "Allies"
     },
     "enemies": {
+      "description": "enemies relationship information @link:ILinkPerson[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -1416,18 +1502,22 @@
       "title": "Enemies"
     },
     "factions": {
+      "description": "Factions are a group of peopl with a common goal",
       "type": "object",
       "properties": {
         "memberOf": {
+          "description": "member of factions information @link:ILinkFaction[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -1445,15 +1535,18 @@
           "title": "Member Of"
         },
         "allies": {
+          "description": "allied factions @link:ILinkFaction[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -1471,15 +1564,18 @@
           "title": "Allies"
         },
         "enemies": {
+          "description": "enemy factions @link:ILinkFaction[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -1511,16 +1607,20 @@
       "title": "Factions"
     },
     "birth": {
+      "description": "birth information",
       "type": "object",
       "properties": {
         "domain": {
+          "description": "location of birth @link:ILinkDomain",
           "type": "object",
           "properties": {
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
@@ -1537,13 +1637,16 @@
           "title": "Domain"
         },
         "date": {
+          "description": "date of birth @link:ILinkDate",
           "type": "object",
           "properties": {
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
@@ -1560,6 +1663,7 @@
           "title": "Date"
         },
         "rank": {
+          "description": "birth order",
           "type": "number",
           "title": "Rank"
         }
@@ -1578,16 +1682,20 @@
       "title": "Birth"
     },
     "death": {
+      "description": "death information",
       "type": "object",
       "properties": {
         "domain": {
+          "description": "location of death @link:ILinkDomain",
           "type": "object",
           "properties": {
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
@@ -1604,13 +1712,16 @@
           "title": "Domain"
         },
         "date": {
+          "description": "date of death @link:ILinkDate",
           "type": "object",
           "properties": {
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
@@ -1639,15 +1750,18 @@
       "title": "Death"
     },
     "features": {
+      "description": "features and actions @link:ILinkFeature[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -1672,26 +1786,29 @@
       "title": "Actions"
     },
     "items": {
+      "description": "a list of items @link:ILinkItem[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "nickcname": {
+          "nickname": {
             "type": "string",
-            "title": "nickcname"
+            "title": "nickname"
           },
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
         },
         "additionalProperties": false,
         "propertyOrder": [
-          "nickcname",
+          "nickname",
           "uuid",
           "name"
         ],
@@ -1703,26 +1820,29 @@
       "title": "Items"
     },
     "magicItems": {
+      "description": "a list of magical items @link:ILinkItem[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "nickcname": {
+          "nickname": {
             "type": "string",
-            "title": "nickcname"
+            "title": "nickname"
           },
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
         },
         "additionalProperties": false,
         "propertyOrder": [
-          "nickcname",
+          "nickname",
           "uuid",
           "name"
         ],
@@ -1745,24 +1865,27 @@
       "type": "object",
       "properties": {
         "head": {
+          "description": "head armor @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1773,24 +1896,27 @@
           "title": "Head"
         },
         "leftBrow": {
+          "description": "left brow, ex: makeup @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1801,24 +1927,27 @@
           "title": "Left Brow"
         },
         "leftEye": {
+          "description": "left eye, ex: monocle @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1829,24 +1958,27 @@
           "title": "Left Eye"
         },
         "leftEar": {
+          "description": "left ear, ex: jewelry @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1857,24 +1989,27 @@
           "title": "Left Ear"
         },
         "rightBrow": {
+          "description": "right brow, ex: makeup @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1885,24 +2020,27 @@
           "title": "Right Brow"
         },
         "rightEye": {
+          "description": "right eye, ex: monocle @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1913,24 +2051,27 @@
           "title": "Right Eye"
         },
         "rightEar": {
+          "description": "right ear, ex: jewelry @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1941,24 +2082,27 @@
           "title": "Right Ear"
         },
         "eyes": {
+          "description": "both eyes, ex: glasses @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1969,24 +2113,27 @@
           "title": "Eyes"
         },
         "nose": {
+          "description": "nose, ex: jewelry @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -1997,24 +2144,27 @@
           "title": "Nose"
         },
         "mouth": {
+          "description": "mouth, ex: makeup @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2025,24 +2175,27 @@
           "title": "Mouth"
         },
         "chin": {
+          "description": "chin, ex: jewelry @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2053,24 +2206,27 @@
           "title": "Chin"
         },
         "neck": {
+          "description": "neck, ex: jewelry @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2081,24 +2237,27 @@
           "title": "Neck"
         },
         "leftShoulder": {
+          "description": "left shoulder @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2109,24 +2268,27 @@
           "title": "Left Shoulder"
         },
         "leftBreast": {
+          "description": "left shoulder @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2137,24 +2299,27 @@
           "title": "Left Breast"
         },
         "leftArm": {
+          "description": "left arm @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2165,24 +2330,27 @@
           "title": "Left Arm"
         },
         "leftWrist": {
+          "description": "left wrist @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2193,24 +2361,27 @@
           "title": "Left Wrist"
         },
         "leftHand": {
+          "description": "left hand, ex: glove @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2221,24 +2392,27 @@
           "title": "Left Hand"
         },
         "leftFingers": {
+          "description": "left fingers, ex: ring @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2249,24 +2423,27 @@
           "title": "Left Fingers"
         },
         "leftGrip": {
+          "description": "left grip: ex: shield @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2277,24 +2454,27 @@
           "title": "Left Grip"
         },
         "rightShoulder": {
+          "description": "right shoulder @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2305,24 +2485,27 @@
           "title": "Right Shoulder"
         },
         "rightBreast": {
+          "description": "right shoulder @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2333,24 +2516,27 @@
           "title": "Right Breast"
         },
         "rightArm": {
+          "description": "right arm @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2361,24 +2547,27 @@
           "title": "Right Arm"
         },
         "rightWrist": {
+          "description": "right wrist @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2389,24 +2578,27 @@
           "title": "Right Wrist"
         },
         "rightHand": {
+          "description": "right hand, ex: glove @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2417,24 +2609,27 @@
           "title": "Right Hand"
         },
         "rightFingers": {
+          "description": "right fingers, ex: ring @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2445,24 +2640,27 @@
           "title": "Right Fingers"
         },
         "rightGrip": {
+          "description": "right grip: ex: sword @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2473,24 +2671,27 @@
           "title": "Right Grip"
         },
         "torso": {
+          "description": "torso, ex: armor @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2501,24 +2702,27 @@
           "title": "Torso"
         },
         "back": {
+          "description": "back, ex: cape @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2529,24 +2733,27 @@
           "title": "Back"
         },
         "abdomen": {
+          "description": "abdomen, ex: cloth @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2557,24 +2764,27 @@
           "title": "Abdomen"
         },
         "waist": {
+          "description": "waist, ex: belt @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2585,24 +2795,27 @@
           "title": "Waist"
         },
         "groin": {
+          "description": "groin, ex: armor @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2613,24 +2826,27 @@
           "title": "Groin"
         },
         "rear": {
+          "description": "rear, ex: cloth @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2641,24 +2857,27 @@
           "title": "Rear"
         },
         "leftThigh": {
+          "description": "left thigh @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2669,24 +2888,27 @@
           "title": "Left Thigh"
         },
         "leftLeg": {
+          "description": "left leg @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2697,24 +2919,27 @@
           "title": "Left Leg"
         },
         "leftKnee": {
+          "description": "left knee @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2725,24 +2950,27 @@
           "title": "Left Knee"
         },
         "leftShin": {
+          "description": "left shin @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2753,24 +2981,27 @@
           "title": "Left Shin"
         },
         "leftAnkle": {
+          "description": "left ankle @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2781,24 +3012,27 @@
           "title": "Left Ankle"
         },
         "leftFoot": {
+          "description": "left foot @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2809,24 +3043,27 @@
           "title": "Left Foot"
         },
         "leftToes": {
+          "description": "left toes @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2837,24 +3074,27 @@
           "title": "Left Toes"
         },
         "rightThigh": {
+          "description": "right thigh @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2865,24 +3105,27 @@
           "title": "Right Thigh"
         },
         "rightLeg": {
+          "description": "right leg @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2893,24 +3136,27 @@
           "title": "Right Leg"
         },
         "rightKnee": {
+          "description": "right knee @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2921,24 +3167,27 @@
           "title": "Right Knee"
         },
         "rightShin": {
+          "description": "right shin @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2949,24 +3198,27 @@
           "title": "Right Shin"
         },
         "rightAnkle": {
+          "description": "right ankle @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -2977,24 +3229,27 @@
           "title": "Right Ankle"
         },
         "rightFoot": {
+          "description": "right foot @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -3005,24 +3260,27 @@
           "title": "Right Foot"
         },
         "rightToes": {
+          "description": "right toes @link:ILinkItem",
           "type": "object",
           "properties": {
-            "nickcname": {
+            "nickname": {
               "type": "string",
-              "title": "Nickcname"
+              "title": "Nickname"
             },
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
           },
           "additionalProperties": false,
           "propertyOrder": [
-            "nickcname",
+            "nickname",
             "uuid",
             "name"
           ],
@@ -3033,13 +3291,16 @@
           "title": "Right Toes"
         },
         "mount": {
+          "description": "mount @link:ILinkFamiliar",
           "type": "object",
           "properties": {
             "uuid": {
+              "description": "This is the UUID for the linked Resource.",
               "type": "string",
               "title": "UUID"
             },
             "name": {
+              "description": "This is the name for the linked Resource.",
               "type": "string",
               "title": "Name"
             }
@@ -3158,15 +3419,18 @@
       "title": "Equipment"
     },
     "chattel": {
+      "description": "a list of people owned by this person @link:ILinkPerson[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3184,15 +3448,18 @@
       "title": "Chattel"
     },
     "domains": {
+      "description": "domains owned by this person @link:ILinkDomain[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3210,15 +3477,18 @@
       "title": "Domains"
     },
     "buildings": {
+      "description": "buildings owned by this person @link:ILinkBuilding[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3236,15 +3506,18 @@
       "title": "Buildings"
     },
     "titles": {
+      "description": "titles owned by this person @link:ILinkTitle[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3262,15 +3535,18 @@
       "title": "Titles"
     },
     "familiars": {
+      "description": "familiars owned by this person @link:ILinkFamiliar[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3288,6 +3564,7 @@
       "title": "Familiars"
     },
     "vehicles": {
+      "description": "vehicles owned by this person @link:ILinkVehicle[]",
       "type": "array",
       "items": {
         "type": "object",
@@ -3297,10 +3574,12 @@
             "title": "nickname"
           },
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3319,22 +3598,27 @@
       "title": "Vehicles"
     },
     "trait": {
+      "description": "a one word description of this character's personality",
       "type": "string",
       "title": "Trait"
     },
     "characteristic": {
+      "description": "a one word description of this person's physical characteristic",
       "type": "string",
       "title": "Characteristic"
     },
     "mannerism": {
+      "description": "the character's mannerism in voice or behavior",
       "type": "string",
       "title": "Mannerism"
     },
     "talent": {
+      "description": "the character's special talent",
       "type": "string",
       "title": "Talent"
     },
     "personalityTraits": {
+      "description": "a detailed list of personality traits",
       "type": "array",
       "items": {
         "type": "string"
@@ -3342,25 +3626,31 @@
       "title": "Personality Traits"
     },
     "ideal": {
+      "description": "the character's ideal",
       "type": "string",
       "title": "Ideal"
     },
     "bond": {
+      "description": "the character's bond",
       "type": "string",
       "title": "Bond"
     },
     "flaw": {
+      "description": "the character's flaw",
       "type": "string",
       "title": "Flaw"
     },
     "background": {
+      "description": "the background for the character and that background's specialty @link:ILinkBackground",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -3381,6 +3671,7 @@
       "title": "Specialty"
     },
     "knowledge": {
+      "description": "knowledge is a list of information the player has learned about the campaign, world, etc.",
       "type": "array",
       "items": {
         "type": "string"
@@ -3388,19 +3679,23 @@
       "title": "Knowledge"
     },
     "backstory": {
+      "description": "additional information about this character's backstory",
       "type": "string",
       "title": "Backstory"
     },
     "campaigns": {
+      "description": "campaigns @link:ILinkCampaign[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3418,13 +3713,16 @@
       "title": "Campaigns"
     },
     "activeCampaign": {
+      "description": "activeCampaign @link:ILinkCampaign",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -3441,15 +3739,18 @@
       "title": "Active Campaign"
     },
     "quests": {
+      "description": "quests @link:ILinkQuest[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3467,15 +3768,18 @@
       "title": "Quests"
     },
     "stories": {
+      "description": "stories @link:ILinkStory[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3493,15 +3797,18 @@
       "title": "Stories"
     },
     "dialogs": {
+      "description": "dialogs @link:ILinkDialog[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -3519,35 +3826,41 @@
       "title": "Dialogs"
     },
     "currentDialog": {
+      "description": "currentDialog",
       "type": "number",
       "title": "Current Dialog"
     },
     "uuid": {
+      "description": "This is the UUID for this Resource.",
       "type": "string",
       "title": "UUID"
     },
     "version": {
+      "description": "This is the version number for generator used to create this Resource.",
       "type": "string",
       "title": "Version"
     },
     "abstract": {
+      "description": "This determines if this is an abstract concept a Resource like a template.",
       "type": "boolean",
       "title": "Abstract"
     },
     "abstractProperties": {
-      "type": "object",
-      "properties": {},
-      "additionalProperties": true,
-      "title": "Abstract Properties"
+      "description": "These are unique properties for an abstract Resource to help with generating.",
+      "title": "Abstract Properties",
+      "type": "string"
     },
     "derivation": {
+      "description": "This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -3564,6 +3877,7 @@
       "title": "Derivation"
     },
     "notes": {
+      "description": "These are specific notes for this Resource that may be helpful while writing.",
       "type": "string",
       "title": "Notes"
     }

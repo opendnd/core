@@ -122,6 +122,7 @@
       "type": "object",
       "properties": {
         "skills": {
+          "description": "a list of skills with proficiency",
           "type": "array",
           "items": {
             "enum": [
@@ -149,6 +150,7 @@
           "title": "Skills"
         },
         "transportation": {
+          "description": "a list of transportation modes with proficiency",
           "type": "array",
           "items": {
             "enum": [
@@ -163,15 +165,18 @@
           "title": "Transportation"
         },
         "languages": {
+          "description": "a list of languages with proficiency @link:ILinkLanguage[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -189,26 +194,29 @@
           "title": "Languages"
         },
         "items": {
+          "description": "a list of starting equipment @link:ILinkItem[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "nickcname": {
+              "nickname": {
                 "type": "string",
-                "title": "nickcname"
+                "title": "nickname"
               },
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
             },
             "additionalProperties": false,
             "propertyOrder": [
-              "nickcname",
+              "nickname",
               "uuid",
               "name"
             ],
@@ -220,15 +228,18 @@
           "title": "Items"
         },
         "tools": {
+          "description": "a list of tools with proficiency @link:ILinkTool[]",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "uuid": {
+                "description": "This is the UUID for the linked Resource.",
                 "type": "string",
                 "title": "uuid"
               },
               "name": {
+                "description": "This is the name for the linked Resource.",
                 "type": "string",
                 "title": "name"
               }
@@ -246,10 +257,12 @@
           "title": "Tools"
         },
         "selectTools": {
+          "description": "a number of tools you may become proficient in with this background",
           "type": "number",
           "title": "Select Tools"
         },
         "selectLanguages": {
+          "description": "a number of languages you may learn from this background",
           "type": "number",
           "title": "Select Languages"
         }
@@ -267,15 +280,18 @@
       "title": "Proficiencies"
     },
     "features": {
+      "description": "a list of features for this background @link:ILinkFeature[]",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "uuid": {
+            "description": "This is the UUID for the linked Resource.",
             "type": "string",
             "title": "uuid"
           },
           "name": {
+            "description": "This is the name for the linked Resource.",
             "type": "string",
             "title": "name"
           }
@@ -293,35 +309,41 @@
       "title": "Features"
     },
     "uuid": {
+      "description": "This is the UUID for this Resource.",
       "type": "string",
       "title": "UUID"
     },
     "version": {
+      "description": "This is the version number for generator used to create this Resource.",
       "type": "string",
       "title": "Version"
     },
     "name": {
+      "description": "This is the name for this Resource.",
       "type": "string",
       "title": "Name"
     },
     "abstract": {
+      "description": "This determines if this is an abstract concept a Resource like a template.",
       "type": "boolean",
       "title": "Abstract"
     },
     "abstractProperties": {
-      "type": "object",
-      "properties": {},
-      "additionalProperties": true,
-      "title": "Abstract Properties"
+      "description": "These are unique properties for an abstract Resource to help with generating.",
+      "title": "Abstract Properties",
+      "type": "string"
     },
     "derivation": {
+      "description": "This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource",
       "type": "object",
       "properties": {
         "uuid": {
+          "description": "This is the UUID for the linked Resource.",
           "type": "string",
           "title": "UUID"
         },
         "name": {
+          "description": "This is the name for the linked Resource.",
           "type": "string",
           "title": "Name"
         }
@@ -338,6 +360,7 @@
       "title": "Derivation"
     },
     "notes": {
+      "description": "These are specific notes for this Resource that may be helpful while writing.",
       "type": "string",
       "title": "Notes"
     }

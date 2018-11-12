@@ -147,22 +147,34 @@ export interface IRace extends IResource {
   // ex: "general:C1:20": "average height"
   genes: object;
 
-  // ability score increases
+  /** 
+   * ability score increases
+   */
   abilitiyIncreases: IRacialAbilityIncrease[];
 
-  // which alignments your race tends towards
+  /** 
+   * which alignments your race tends towards
+   */
   alignments: ExpandedAlignments[];
 
-  // which size this race is
+  /** 
+   * which size this race is
+   */
   size: Sizes;
 
-  // base speed
+  /** 
+   * base speed
+   */
   speed: number;
 
-  // which languages you speak by virtue of your race
+  /** 
+   * which languages you speak by virtue of your race @link:ILinkLanguage[];
+   */
   languages: ILinkLanguage[];
 
-  // list of subraces
+  /** 
+   * list of subraces @link:ILinkRace[];
+   */
   subraces: ILinkRace[];
 }
 

@@ -119,22 +119,34 @@ export interface ILinkDNA extends ILinkResource {}
 
 // DNA is used to form the makeup of a creature at a genetic level
 export interface IDNA extends IResource {
-  // size of the creature
+  /** 
+   * size of the creature
+   */
   size: Sizes;
 
-  // race of the creature
+  /** 
+   * race of the creature @link:ILinkRace
+   */
   race: ILinkRace;
 
-  // gender of the creature
+  /** 
+   * gender of the creature
+   */
   gender: Genders;
 
-  // the height of the creature in inches
+  /** 
+   * the height of the creature in inches
+   */
   height: number;
 
-  // the weight of the creature in pounds
+  /** 
+   * the weight of the creature in pounds
+   */
   weight: number;
 
-  // the list of traits for the creature
+  /** 
+   * the list of traits for the creature
+   */
   traits: ITraits;
 
   // chromosomes have the dice rolls for each chromosome pair

@@ -58,7 +58,7 @@ export enum RarityTypes {
   Common = "common",
   Uncommon = "uncommon",
   Rare = "rare",
-  VeryRare = "veryRare",
+  VeryRare = "very_rare",
   Legendary = "legendary",
   Artifact = "artifact",
 }
@@ -66,61 +66,61 @@ export enum RarityTypes {
 // locations of equipment
 export enum EquipmentLocations {
   Head = "head",
-  LeftBrow = "leftBrow",
-  LeftEye = "leftEye",
-  LeftEar = "leftEar",
-  RightBrow = "rightBrow",
-  RightEye = "rightEye",
-  RightEar = "rightEar",
+  LeftBrow = "left_brow",
+  LeftEye = "left_eye",
+  LeftEar = "left_ear",
+  RightBrow = "right_brow",
+  RightEye = "right_eye",
+  RightEar = "right_ear",
   Eyes = "eyes",
   Nose = "nose",
   Mouth = "mouth",
   Chin = "chin",
   Neck = "neck",
-  LeftShoulder = "leftShoulder",
-  LeftBreast = "leftBreast",
-  LeftArm = "leftArm",
-  LeftWrist = "leftWrist",
-  LeftHand = "leftHand",
-  LeftFingers = "leftFingers",
-  LeftGrip = "leftGrip",
-  RightShoulder = "rightShoulder",
-  RightBreast = "rightBreast",
-  RightArm = "rightArm",
-  RightWrist = "rightWrist",
-  RightHand = "rightHand",
-  RightFingers = "rightFingers",
-  RightGrip = "rightGrip",
+  LeftShoulder = "left_shoulder",
+  LeftBreast = "left_breast",
+  LeftArm = "left_arm",
+  LeftWrist = "left_wrist",
+  LeftHand = "left_hand",
+  LeftFingers = "left_fingers",
+  LeftGrip = "left_grip",
+  RightShoulder = "right_shoulder",
+  RightBreast = "right_breast",
+  RightArm = "right_arm",
+  RightWrist = "right_wrist",
+  RightHand = "right_hand",
+  RightFingers = "right_fingers",
+  RightGrip = "right_grip",
   Torso = "torso",
   Back = "back",
   Abdomen = "abdomen",
   Waist = "waist",
   Groin = "groin",
   Rear = "rear",
-  LeftThigh = "leftThigh",
-  LeftLeg = "leftLeg",
-  LeftKnee = "leftKnee",
-  LeftShin = "leftShin",
-  LeftAnkle = "leftAnkle",
-  LeftFoot = "leftFoot",
-  LeftToes = "leftToes",
-  RightThigh = "rightThigh",
-  RightLeg = "rightLeg",
-  RightKnee = "rightKnee",
-  RightShin = "rightShin",
-  RightAnkle = "rightAnkle",
-  RightFoot = "rightFoot",
-  RightToes = "rightToes",
+  LeftThigh = "left_thigh",
+  LeftLeg = "left_leg",
+  LeftKnee = "left_knee",
+  LeftShin = "left_shin",
+  LeftAnkle = "left_ankle",
+  LeftFoot = "left_foot",
+  LeftToes = "left_toes",
+  RightThigh = "right_thigh",
+  RightLeg = "right_leg",
+  RightKnee = "right_knee",
+  RightShin = "right_shin",
+  RightAnkle = "right_ankle",
+  RightFoot = "right_foot",
+  RightToes = "right_toes",
 }
 
 export interface ILinkItem extends ILinkResource {
   // personalized nickname of the item
-  nickcname?: string;
+  nickname?: string;
 }
 
 export interface IItem extends IResource {
   // personalized nickname of the item
-  nickcname: string;
+  nickname: string;
 
   // attributes of the item
   type: ItemTypes;
@@ -134,29 +134,49 @@ export interface IItem extends IResource {
   damageDice: Dice[];
   damageType: DamageTypes;
 
-  // base cost in cp of the item
+  /**
+   * base cost in cp of the item 
+   */
   cost: number;
 
-  // a list of items for containers
+  /**
+   * a list of items for containers @link:ILinkItem[]
+   */
   items: ILinkItem[];
+
+  /**
+   * a list of magical items for containers @link:ILinkItem[]
+   */
   magicItems: ILinkItem[];
 
-  // weight of the item
+  /**
+   * weight of the item 
+   */
   weight: number;
 
-  // stealth advantage/disadvantage
+  /**
+   * stealth advantage/disadvantage 
+   */
   stealth: AdvantageTypes;
 
-  // rarity of the item
+  /**
+   * rarity of the item 
+   */
   rarity: RarityTypes;
 
-  // AC for the item
+  /**
+   * AC for the item 
+   */
   AC: number;
 
-  // a list of locations this item can be equipped
+  /**
+   * a list of locations this item can be equipped 
+   */
   equippable: EquipmentLocations[];
 
-  // if the item is sentient or not
+  /**
+   * if the item is sentient or not 
+   */
   sentient: boolean;
 
   // ability scores
@@ -194,7 +214,7 @@ export interface IItem extends IResource {
 }
 
 export class Item extends Resource implements IItem {
-  public nickcname = "";
+  public nickname = "";
   public type = null;
   public weaponProperties = [];
   public ammunition = 0;

@@ -7,7 +7,9 @@ import {
 export interface ILinkDate extends ILinkResource {}
 
 export interface IDate extends IResource {
-  // a reference to the calendar being used for this date
+  /** 
+   * a reference to the calendar being used for this date @link:ILinkCalendar
+   */
   calendar: ILinkCalendar;
 
   // a numerical representation of the value (seconds from epoch)

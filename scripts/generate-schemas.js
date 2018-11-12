@@ -82,6 +82,14 @@ const fixDiceOrder = (schema) => {
   }
 }
 
+// fix abstract properties
+const fixAbstractProperties = (schema) => {
+  if (schema.properties.abstractProperties) {
+    delete schema.properties.abstractProperties.anyOf;
+    schema.properties.abstractProperties.type = 'string';
+  }
+}
+
 // capitalize all the titles in a schema
 const capitalizeTitles = (schema) => {
   if (schema.properties) {
@@ -105,8 +113,9 @@ const splitOnCapital = (title) => {
     splitTitle += letter;
   });
 
-  // edge case for Uuid
+  // edge cases
   if (splitTitle.includes('Uuid')) splitTitle = splitTitle.replace('Uuid', 'UUID');
+  if (splitTitle.includes('D N A')) splitTitle = 'DNA';
 
   return splitTitle;
 }
@@ -127,16 +136,28 @@ const processAll = () => {
   
           const settings = {
             ref: false,
+            aliasRef: false,
+            topRef: false,
             required: true,
             titles: true,
             propOrder: true,
             noExtraProps: true,
+            uniqueNames: true,
           };
           const program = TJS.getProgramFromFiles([path.join(resourceDir, file)]);
-          const schema = TJS.generateSchema(program, `I${resource}`, settings);
+          const generator = TJS.buildGenerator(program, settings);
+          const symbols = generator.getUserSymbols();
+          let symbol = '';
+          symbols.forEach((srcSymbol) => {
+            if (srcSymbol.includes(`I${resource}`)) {
+              symbol = srcSymbol;
+            }
+          });
+          const schema = generator.getSchemaForSymbol(symbol);
 
           capitalizeTitles(schema);
           fixDiceOrder(schema);
+          fixAbstractProperties(schema);
 
           // add title and description
           schema.title = resource;

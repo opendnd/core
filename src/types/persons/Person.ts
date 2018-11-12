@@ -35,7 +35,7 @@ import { ILinkVehicle, TransporationModes } from "../vehicles/Vehicle";
 // the types of persons
 export enum PersonTypes {
   Playable = "playable",
-  NonPlayable = "nonPlayable",
+  NonPlayable = "non_playable",
 }
 
 // age groups
@@ -51,25 +51,37 @@ export interface ILinkPerson extends ILinkResource {}
 
 // A Person are the playable and non-playable characters that make up the world
 export interface IPerson extends IResource {
-  // type for this person
+  /** 
+   * type for this person
+   */
   type: PersonTypes;
 
-  // data for the DNA of the person
+  /** 
+   * data for the DNA of the person
+   */
   DNA: IDNA;
 
-  // the following numbers should correspond to each other based on the XP chart
+  /** 
+   * the following numbers should correspond to each other based on the XP chart
+   */
   level: number;
   XP: number;
 
-  // name of the player and the character
+  /** 
+   * name of the player and the character
+   */
   playerName: string;
   name: string;
 
-  // age number and which age group this person belongs to (based on racial lifespans)
+  /** 
+   * age number and which age group this person belongs to (based on racial lifespans)
+   */
   age: number;
   ageGroup: AgeGroups;
 
-  // power, honor, piety and reputation are similar in that they each determine your influence/respect with different groups
+  /**
+   * power, honor, piety and reputation are similar in that they each determine your influence/respect with different groups
+   */ 
   power: number;
   honor: number;
   piety: number;
@@ -101,22 +113,34 @@ export interface IPerson extends IResource {
 
   // list of proficiencies
   proficiencies: {
-    // a list of skills with proficiency
+    /**
+     * a list of skills with proficiency
+     */
     skills: SkillTypes[]
 
-    // a list of languages with proficiency
+    /**
+     * a list of languages with proficiency @link:ILinkTool[]
+     */
     languages: ILinkLanguage[]
 
-    // a list of armors with proficiency
+    /**
+     * a list of armors with proficiency
+     */
     armors: ArmorTypes[]
 
-    // a list of weapons with proficiency
+    /**
+     * a list of weapons with proficiency
+     */
     weapons: WeaponTypes[]
 
-    // a list of transportation modes with proficiency
+    /**
+     * a list of transportation modes with proficiency
+     */
     transportation: TransporationModes[]
 
-    // a list of tools with proficiency
+    /**
+     * a list of tools with proficiency @link:ILinkTool[]
+     */
     tools: ILinkTool[]
 
     // proficiency bonus modifier based on your level
@@ -134,7 +158,9 @@ export interface IPerson extends IResource {
   tempHP: number;
   HP: number;
 
-  // the following deals with health conditions
+  /** 
+   * the following deals with health conditions @link:ILinkDisease[]
+   */
   conditions: ILinkDisease[];
   exhaustion: number; // level 1-6
   resistance: DamageTypes;
@@ -143,73 +169,158 @@ export interface IPerson extends IResource {
   // alignment for the character
   alignment: ExpandedAlignments;
 
-  // the character k(c)lass from the list of available
+  /** 
+   * the character k(c)lass from the list of available @link:ILinkKlass
+   */
   klass: ILinkKlass;
 
   // spellcasting information
   spellcasting: {
-    // spell casting ability
+    /**  
+     * spell casting ability
+     */
     ability: AbilityTypes
 
-    // spell save DC
+    /**  
+     * spell save DC
+     */
     saveDC: number
 
-    // spell attack modifier
+    /**  
+     * spell attack modifier
+     */
     attackModifier: number
 
-    // list of known spells
+    /**  
+     * list of known spells @link:ILinkSpell[]
+     */
     spells: ILinkSpell[],
   };
 
-  // cultural information
+  /** 
+   * cultural information @link:ILinkCulture
+   */
   culture: ILinkCulture;
+
+  /** 
+   * religion information @link:ILinkReligion
+   */
   faith: ILinkReligion;
 
-  // family and relationship information
+  /**
+   * mother relationship information @link:ILinkPerson
+   */
   mother: ILinkPerson;
+
+  /**
+   * father relationship information @link:ILinkPerson
+   */
   father: ILinkPerson;
+
+  /**
+   * siblings relationship information @link:ILinkPerson[]
+   */
   siblings: ILinkPerson[];
+
+  /**
+   * spouse relationship information @link:ILinkPerson
+   */
   spouse: ILinkPerson;
+
+  /**
+   * children relationship information @link:ILinkPerson[]
+   */
   children: ILinkPerson[];
+
+  /**
+   * family relationship information @link:ILinkDynasty
+   */
   family: ILinkDynasty;
+
+  /**
+   * liege relationship information @link:ILinkPerson[]
+   */
   liege: ILinkPerson;
 
-  // allies & organization information
+  /**
+   * allies relationship information @link:ILinkPerson[]
+   */
   allies: ILinkPerson[];
+
+  /**
+   * enemies relationship information @link:ILinkPerson[]
+   */
   enemies: ILinkPerson[];
+
+  /**
+   * Factions are a group of peopl with a common goal
+   */
   factions: {
+    /**
+     * member of factions information @link:ILinkFaction[]
+     */
     memberOf: ILinkFaction[]
+
+    /**
+     * allied factions @link:ILinkFaction[]
+     */
     allies: ILinkFaction[]
+
+    /**
+     * enemy factions @link:ILinkFaction[]
+     */
     enemies: ILinkFaction[],
   };
 
-  // birth information
+  /** 
+   * birth information
+   */
   birth: {
-    // location of birth
+    /** 
+     * location of birth @link:ILinkDomain
+     */
     domain: ILinkDomain
 
-    // date of birth
+    /** 
+     * date of birth @link:ILinkDate
+     */
     date: ILinkDate
 
-    // birth order
+    /** 
+     * birth order
+     */
     rank: number,
   };
 
-  // death information
+  /** 
+   * death information
+   */
   death: {
-    // locatin of death
+    /** 
+     * location of death @link:ILinkDomain
+     */
     domain: ILinkDomain
 
-    // date of death
+    /** 
+     * date of death @link:ILinkDate
+     */
     date: ILinkDate,
   };
 
-  // features and actions
+  /** 
+   * features and actions @link:ILinkFeature[]
+   */
   features: ILinkFeature[];
   actions: string[];
 
-  // a list of items
+  /** 
+   * a list of items @link:ILinkItem[]
+   */
   items: ILinkItem[];
+
+  /** 
+   * a list of magical items @link:ILinkItem[]
+   */
   magicItems: ILinkItem[];
 
   // weight from items (encumberance)
@@ -220,196 +331,356 @@ export interface IPerson extends IResource {
   // equipment is what is currently equipped to the person
   // each below is a reference to a uuid in items or a physical description
   equipment: {
-    // head armor
+    /**
+     * head armor @link:ILinkItem
+     */
     head: ILinkItem
 
-    // left brow, ex: makeup
+    /**
+     * left brow, ex: makeup @link:ILinkItem
+     */
     leftBrow: ILinkItem
 
-    // left eye, ex: monocle
+    /**
+     * left eye, ex: monocle @link:ILinkItem
+     */
     leftEye: ILinkItem
 
-    // left ear, ex: jewelry
+    /**
+     * left ear, ex: jewelry @link:ILinkItem
+     */
     leftEar: ILinkItem
 
-    // right brow, ex: makeup
+    /**
+     * right brow, ex: makeup @link:ILinkItem
+     */
     rightBrow: ILinkItem
 
-    // right eye, ex: monocle
+    /**
+     * right eye, ex: monocle @link:ILinkItem
+     */
     rightEye: ILinkItem
 
-    // right ear, ex: jewelry
+    /**
+     * right ear, ex: jewelry @link:ILinkItem
+     */
     rightEar: ILinkItem
 
-    // both eyes, ex: glasses
+    /**
+     * both eyes, ex: glasses @link:ILinkItem
+     */
     eyes: ILinkItem
 
-    // nose, ex: jewelry
+    /**
+     * nose, ex: jewelry @link:ILinkItem
+     */
     nose: ILinkItem
 
-    // mouth, ex: makeup
+    /**
+     * mouth, ex: makeup @link:ILinkItem
+     */
     mouth: ILinkItem
 
-    // chin, ex: jewelry
+    /**
+     * chin, ex: jewelry @link:ILinkItem
+     */
     chin: ILinkItem
 
-    // neck, ex: jewelry
+    /**
+     * neck, ex: jewelry @link:ILinkItem
+     */
     neck: ILinkItem
 
-    // left shoulder
+    /**
+     * left shoulder @link:ILinkItem
+     */
     leftShoulder: ILinkItem
 
-    // left shoulder
+    /**
+     * left shoulder @link:ILinkItem
+     */
     leftBreast: ILinkItem
 
-    // left arm
+    /**
+     * left arm @link:ILinkItem
+     */
     leftArm: ILinkItem
 
-    // left wrist
+    /**
+     * left wrist @link:ILinkItem
+     */
     leftWrist: ILinkItem
 
-    // left hand, ex: glove
+    /**
+     * left hand, ex: glove @link:ILinkItem
+     */
     leftHand: ILinkItem
 
-    // left fingers, ex: ring
+    /**
+     * left fingers, ex: ring @link:ILinkItem
+     */
     leftFingers: ILinkItem
 
-    // left grip: ex: shield
+    /**
+     * left grip: ex: shield @link:ILinkItem
+     */
     leftGrip: ILinkItem
 
-    // right shoulder
+    /**
+     * right shoulder @link:ILinkItem
+     */
     rightShoulder: ILinkItem
 
-    // right shoulder
+    /**
+     * right shoulder @link:ILinkItem
+     */
     rightBreast: ILinkItem
 
-    // right arm
+    /**
+     * right arm @link:ILinkItem
+     */
     rightArm: ILinkItem
 
-    // right wrist
+    /**
+     * right wrist @link:ILinkItem
+     */
     rightWrist: ILinkItem
 
-    // right hand, ex: glove
+    /**
+     * right hand, ex: glove @link:ILinkItem
+     */
     rightHand: ILinkItem
 
-    // right fingers, ex: ring
+    /**
+     * right fingers, ex: ring @link:ILinkItem
+     */
     rightFingers: ILinkItem
 
-    // right grip: ex: sword
+    /**
+     * right grip: ex: sword @link:ILinkItem
+     */
     rightGrip: ILinkItem
 
-    // torso, ex: armor
+    /**
+     * torso, ex: armor @link:ILinkItem
+     */
     torso: ILinkItem
 
-    // back, ex: cape
+    /**
+     * back, ex: cape @link:ILinkItem
+     */
     back: ILinkItem
 
-    // abdomen, ex: cloth
+    /**
+     * abdomen, ex: cloth @link:ILinkItem
+     */
     abdomen: ILinkItem
 
-    // waist, ex: belt
+    /**
+     * waist, ex: belt @link:ILinkItem
+     */
     waist: ILinkItem
 
-    // groin, ex: armor
+    /**
+     * groin, ex: armor @link:ILinkItem
+     */
     groin: ILinkItem
 
-    // rear, ex: cloth
+    /**
+     * rear, ex: cloth @link:ILinkItem
+     */
     rear: ILinkItem
 
-    // left thigh
+    /**
+     * left thigh @link:ILinkItem
+     */
     leftThigh: ILinkItem
 
-    // left leg
+    /**
+     * left leg @link:ILinkItem
+     */
     leftLeg: ILinkItem
 
-    // left knee
+    /**
+     * left knee @link:ILinkItem
+     */
     leftKnee: ILinkItem
 
-    // left shin
+    /**
+     * left shin @link:ILinkItem
+     */
     leftShin: ILinkItem
 
-    // left ankle
+    /**
+     * left ankle @link:ILinkItem
+     */
     leftAnkle: ILinkItem
 
-    // left foot
+    /**
+     * left foot @link:ILinkItem
+     */
     leftFoot: ILinkItem
 
-    // left toes
+    /**
+     * left toes @link:ILinkItem
+     */
     leftToes: ILinkItem
 
-    // right thigh
+    /**
+     * right thigh @link:ILinkItem
+     */
     rightThigh: ILinkItem
 
-    // right leg
+    /**
+     * right leg @link:ILinkItem
+     */
     rightLeg: ILinkItem
 
-    // right knee
+    /**
+     * right knee @link:ILinkItem
+     */
     rightKnee: ILinkItem
 
-    // right shin
+    /**
+     * right shin @link:ILinkItem
+     */
     rightShin: ILinkItem
 
-    // right ankle
+    /**
+     * right ankle @link:ILinkItem
+     */
     rightAnkle: ILinkItem
 
-    // right foot
+    /**
+     * right foot @link:ILinkItem
+     */
     rightFoot: ILinkItem
 
-    // right toes
+    /**
+     * right toes @link:ILinkItem
+     */
     rightToes: ILinkItem
 
-    // mount
+    /**
+     * mount @link:ILinkFamiliar
+     */
     mount: ILinkFamiliar,
   };
 
-  // additional owernship
+  /**
+   * a list of people owned by this person @link:ILinkPerson[]
+   */
   chattel: ILinkPerson[];
+
+  /**
+   * domains owned by this person @link:ILinkDomain[]
+   */
   domains: ILinkDomain[];
+
+  /**
+   * buildings owned by this person @link:ILinkBuilding[]
+   */
   buildings: ILinkBuilding[];
+
+  /**
+   * titles owned by this person @link:ILinkTitle[]
+   */
   titles: ILinkTitle[];
+
+  /**
+   * familiars owned by this person @link:ILinkFamiliar[]
+   */
   familiars: ILinkFamiliar[];
+
+  /**
+   * vehicles owned by this person @link:ILinkVehicle[]
+   */
   vehicles: ILinkVehicle[];
 
-  // a one word description of this character's personality
+  /** 
+   * a one word description of this character's personality
+   */
   trait: string;
 
-  // a one word description of this person's physical characteristic
+  /** 
+   * a one word description of this person's physical characteristic
+   */
   characteristic: string;
 
-  // the character's mannerism in voice or behavior
+  /** 
+   * the character's mannerism in voice or behavior
+   */
   mannerism: string;
 
-  // the character's special talent
+  /** 
+   * the character's special talent
+   */
   talent: string;
 
-  // a detailed list of personality traits
+  /** 
+   * a detailed list of personality traits
+   */
   personalityTraits: string[];
 
-  // the character's ideal
+  /** 
+   * the character's ideal
+   */
   ideal: string;
 
-  // the character's bond
+  /** 
+   * the character's bond
+   */
   bond: string;
 
-  // the character's flaw
+  /** 
+   * the character's flaw
+   */
   flaw: string;
 
-  // the background for the character and that background's specialty
+  /** 
+   * the background for the character and that background's specialty @link:ILinkBackground
+   */
   background: ILinkBackground;
   specialty: string;
 
-  // knowledge is a list of information the player has learned about the campaign, world, etc.
+  /** 
+   * knowledge is a list of information the player has learned about the campaign, world, etc.
+   */
   knowledge: string[];
 
-  // additional information about this character's backstory
+  /** 
+   * additional information about this character's backstory
+   */
   backstory: string;
 
-  // campaign information
+  /** 
+   * campaigns @link:ILinkCampaign[]
+   */
   campaigns: ILinkCampaign[];
+
+  /** 
+   * activeCampaign @link:ILinkCampaign
+   */
   activeCampaign: ILinkCampaign;
+
+  /** 
+   * quests @link:ILinkQuest[]
+   */
   quests: ILinkQuest[];
+
+  /** 
+   * stories @link:ILinkStory[]
+   */
   stories: ILinkStory[];
+
+  /** 
+   * dialogs @link:ILinkDialog[]
+   */
   dialogs: ILinkDialog[];
+
+  /** 
+   * currentDialog
+   */
   currentDialog: number;
 }
 

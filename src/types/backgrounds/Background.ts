@@ -41,29 +41,45 @@ export interface IBackground extends IResource {
 
   // list of proficiencies
   proficiencies: {
-    // a list of skills with proficiency
+    /**
+     * a list of skills with proficiency
+     */
     skills?: SkillTypes[]
 
-    // a list of transportation modes with proficiency
+    /**
+     * a list of transportation modes with proficiency
+     */
     transportation?: TransporationModes[]
 
-    // a list of languages with proficiency
+    /**
+     * a list of languages with proficiency @link:ILinkLanguage[]
+     */
     languages?: ILinkLanguage[]
 
-    // a list of starting equipment
+    /**
+     * a list of starting equipment @link:ILinkItem[]
+     */
     items?: ILinkItem[]
 
-    // a list of tools with proficiency
+    /**
+     * a list of tools with proficiency @link:ILinkTool[]
+     */
     tools?: ILinkTool[]
 
-    // a number of tools you may become proficient in with this background
+    /**
+     * a number of tools you may become proficient in with this background
+     */
     selectTools?: number
 
-    // a number of languages you may learn from this background
+    /**
+     * a number of languages you may learn from this background
+     */
     selectLanguages?: number,
   };
 
-  // a list of features for this background
+  /** 
+   * a list of features for this background @link:ILinkFeature[]
+   */
   features: ILinkFeature[];
 }
 
