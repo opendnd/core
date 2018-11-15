@@ -44,6 +44,36 @@ const descriptions = {
   vehicles: "Vehicles are the mechanical or magical objects that can transport characters and things across your world.",
 };
 
+// replace dice
+const fixDice = (options) => {
+  if (options.includes('d20')) {
+    if (options.includes('sex')) {
+      options = [
+        'd4',
+        'd6',
+        'd8',
+        'd10',
+        'd12',
+        'd20',
+        'd100',
+        'sex',
+      ];
+    } else {
+      options = [
+        'd4',
+        'd6',
+        'd8',
+        'd10',
+        'd12',
+        'd20',
+        'd100',
+      ];
+    }
+  }
+
+  return options;
+}
+
 // dice order comes in alphabetized which is not desired
 const fixDiceOrder = (schema) => {
   if (schema.properties) {
@@ -51,33 +81,9 @@ const fixDiceOrder = (schema) => {
       const property = schema.properties[key];
       if (property.properties) fixDiceOrder(property);
       if (property.items) {
-        if (property.items.enum) {
-          if (property.items.enum.includes('d20')) {
-            property.items.enum = [
-              'd4',
-              'd6',
-              'd8',
-              'd10',
-              'd12',
-              'd20',
-              'd100',
-            ];
-          }
-        }
+        if (property.items.enum) property.items.enum = fixDice(property.items.enum);
       }
-      if (property.enum) {
-        if (property.enum.includes('d20')) {
-          property.enum = [
-            'd4',
-            'd6',
-            'd8',
-            'd10',
-            'd12',
-            'd20',
-            'd100',
-          ];
-        }
-      }
+      if (property.enum) property.enum = fixDice(property.enum);
     });
   }
 }

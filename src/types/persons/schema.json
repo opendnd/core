@@ -3886,12 +3886,12 @@
   "propertyOrder": [
     "uuid",
     "version",
+    "name",
     "type",
     "DNA",
     "level",
     "XP",
     "playerName",
-    "name",
     "age",
     "ageGroup",
     "power",

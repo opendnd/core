@@ -8,6 +8,17 @@ import {
 import { Sizes } from "../dna/DNA";
 import { ILinkLanguage } from "../languages/Language";
 
+export enum DiceAndSex {
+  D4 = "d4",
+  D6 = "d6",
+  D8 = "d8",
+  D10 = "d10",
+  D12 = "d12",
+  D20 = "d20",
+  D100 = "d100",
+  Sex = "sex",
+}
+
 export enum RacialAbilityIncreaseTypes {
   All = "all", // gives to all
   Choice = "choice", // gives to your choice of ability
@@ -34,38 +45,38 @@ export interface IRace extends IResource {
   // chromosomes have the dice size for each chromosome pair
   // note that this uses string instead of the Dice type as one chromosome specifies sex
   chromosomes: {
-    1?: string
-    2?: string
-    3?: string
-    4?: string
-    5?: string
-    6?: string
-    7?: string
-    8?: string
-    9?: string
-    10?: string
-    11?: string
-    12?: string
-    13?: string
-    14?: string
-    15?: string
-    16?: string
-    17?: string
-    18?: string
-    19?: string
-    20?: string
-    21?: string
-    22?: string
-    23?: string
-    24?: string
-    25?: string
-    26?: string
-    27?: string
-    28?: string
-    29?: string
-    30?: string
-    31?: string
-    32?: string,
+    1?: DiceAndSex
+    2?: DiceAndSex
+    3?: DiceAndSex
+    4?: DiceAndSex
+    5?: DiceAndSex
+    6?: DiceAndSex
+    7?: DiceAndSex
+    8?: DiceAndSex
+    9?: DiceAndSex
+    10?: DiceAndSex
+    11?: DiceAndSex
+    12?: DiceAndSex
+    13?: DiceAndSex
+    14?: DiceAndSex
+    15?: DiceAndSex
+    16?: DiceAndSex
+    17?: DiceAndSex
+    18?: DiceAndSex
+    19?: DiceAndSex
+    20?: DiceAndSex
+    21?: DiceAndSex
+    22?: DiceAndSex
+    23?: DiceAndSex
+    24?: DiceAndSex
+    25?: DiceAndSex
+    26?: DiceAndSex
+    27?: DiceAndSex
+    28?: DiceAndSex
+    29?: DiceAndSex
+    30?: DiceAndSex
+    31?: DiceAndSex
+    32?: DiceAndSex,
   };
 
   // this determines which dice are used for the x and y chromosome
