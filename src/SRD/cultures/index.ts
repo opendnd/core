@@ -11,4 +11,6 @@ interface ICultureDict extends IResourceDict {
 
 export const cultures:ILinkCultureDict = require('./cultures.json');
 
-export const culturesDict:ICultureDict = {};
+export const culturesDict:ICultureDict = {
+  'dnd0050e-1srd-core-0019-c6s000000001': require('./dnd0050e-1srd-core-0019-c6s000000001.json'),
+};

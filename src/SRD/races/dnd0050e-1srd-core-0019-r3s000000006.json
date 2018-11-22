@@ -1,1 +1,95 @@
-{"name":"Half-Orc","uuid":"dnd0050e-1srd-core-0019-r3s000000006","version":"0.1.0","chromosomes":{},"sex":{},"legend":{},"ageRanges":{"child":{},"young":{},"middle":{},"old":{}},"genes":{}}
+{
+  "name": "Half-Orc",
+  "uuid": "dnd0050e-1srd-core-0019-r3s000000006",
+  "version": "0.1.0",
+  "chromosomes": {
+    "1": "d20",
+    "2": "d20",
+    "3": "d20",
+    "4": "d10",
+    "5": "d10",
+    "6": "d10",
+    "7": "d10",
+    "8": "d8",
+    "9": "d8",
+    "10": "d8",
+    "11": "d8",
+    "12": "d8",
+    "13": "d8",
+    "14": "d8",
+    "15": "d8",
+    "16": "d6",
+    "17": "d6",
+    "18": "d6",
+    "19": "d6",
+    "20": "d6",
+    "21": "d4",
+    "22": "d4",
+    "23": "sex"
+  },
+  "sex": {
+    "x": "d8",
+    "y": "d4"
+  },
+  "categories": {
+    "general": "1",
+    "hairGeneral": "3",
+    "hairColor": "4",
+    "hairFacial": "10",
+    "skinGeneral": "5",
+    "sex": "23",
+    "eyeBrows": "12",
+    "eyeShape": "7",
+    "eyeColor": "2",
+    "faceMouth": "11",
+    "faceNose": "9",
+    "faceShape": "8",
+    "skinAging": "13",
+    "skinColor": "6"
+  },
+  "abilitiyIncreases": [
+    {
+      "ability": "all",
+      "amount": 1
+    }
+  ],
+  "ageRanges": {
+    "child": {
+      "max": 12,
+      "weight": 0.1,
+      "dice": [
+        "d8",
+        "d8"
+      ]
+    },
+    "young": {
+      "max": 32,
+      "weight": 0.2,
+      "dice": [
+        "d8",
+        "d8"
+      ]
+    },
+    "middle": {
+      "max": 64,
+      "weight": 0.5,
+      "dice": [
+        "d8",
+        "d8",
+        "d8",
+        "d8"
+      ]
+    },
+    "old": {
+      "max": 96,
+      "weight": 0.2,
+      "dice": [
+        "d8",
+        "d8",
+        "d8",
+        "d8"
+      ]
+    }
+  },
+  "genes": {}
+}
