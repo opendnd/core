@@ -1,8 +1,17 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
+import { ILinkRace, IRace } from "../../types/races/Race";
 
-export const races:ILinkResourceDict = require('./races.json');
+interface ILinkRaceDict extends ILinkResourceDict {
+  [uuid:string]: ILinkRace;
+}
 
-export const racesDict:IResourceDict = {
+interface IRaceDict extends IResourceDict {
+  [uuid:string]: IRace;
+}
+
+export const races:ILinkRaceDict = require('./races.json');
+
+export const racesDict:IRaceDict = {
   'dnd0050e-1srd-core-0019-r3s000000001': require('./dnd0050e-1srd-core-0019-r3s000000001.json'),
   'dnd0050e-1srd-core-0019-r3s000000002': require('./dnd0050e-1srd-core-0019-r3s000000002.json'),
   'dnd0050e-1srd-core-0019-r3s000000003': require('./dnd0050e-1srd-core-0019-r3s000000003.json'),

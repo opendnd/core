@@ -1,8 +1,17 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
+import { ILinkKlass, IKlass } from "../../types/klasses/Klass";
 
-export const klasses:ILinkResourceDict = require('./klasses.json');
+interface ILinkKlassDict extends ILinkResourceDict {
+  [uuid:string]: ILinkKlass;
+}
 
-export const klassesDict:IResourceDict = {
+interface IKlassDict extends IResourceDict {
+  [uuid:string]: IKlass;
+}
+
+export const klasses:ILinkKlassDict = require('./klasses.json');
+
+export const klassesDict:IKlassDict = {
   'dnd0050e-1srd-core-0019-k5s000000001': require('./dnd0050e-1srd-core-0019-k5s000000001.json'),
   'dnd0050e-1srd-core-0019-k5s000000002': require('./dnd0050e-1srd-core-0019-k5s000000002.json'),
   'dnd0050e-1srd-core-0019-k5s000000003': require('./dnd0050e-1srd-core-0019-k5s000000003.json'),

@@ -26,6 +26,13 @@ export enum DamageTypes {
   Thunder = "thunder",
 }
 
+// methods for generating abilities
+export enum AbilityMethods {
+  StandardArray = "standard_array",
+  FourDSixDropLowest = "4d6k3",
+  PointBuy = "point_buy",
+}
+
 // list of abilities
 export enum AbilityTypes {
   Strength = "strength", // measuring physical power
@@ -97,6 +104,16 @@ export enum AlignmentsY {
   Evil = "evil",
 }
 
+export interface IAlignmentMatrixDetail {
+  x: AlignmentsX;
+  y: AlignmentsY;
+}
+
+export interface IAlignmentMatrixValue {
+  x: number;
+  y: number;
+}
+
 // list of expanded alignments
 // x: Lawful, Social, Neutral, Rebel, Chaotic
 // y: Good, Moral, Neutral, Impure, Evil
@@ -122,6 +139,16 @@ export enum ExpandedAlignmentsY {
   Neutral = "neutral",
   Impure = "impure",
   Evil = "evil",
+}
+
+export interface IExpandedAlignmentMatrixDetail {
+  x: ExpandedAlignmentsX;
+  y: ExpandedAlignmentsY;
+}
+
+export interface IExpandedAlignmentMatrixValue {
+  x: number;
+  y: number;
 }
 
 // output the advantage types

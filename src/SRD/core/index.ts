@@ -1,5 +1,15 @@
 const Roll = require("roll");
 
+import { 
+  Alignments,
+  AlignmentsX,
+  AlignmentsY,
+  ExpandedAlignments,
+  ExpandedAlignmentsX,
+  ExpandedAlignmentsY,
+} from "../../types/core/Core";
+
+// helper method to roll the dice with a string or array of dice
 export const roll = (dice) => {
   if (typeof(dice) === 'string') {
     return new Roll().roll(dice).result;
@@ -12,17 +22,8 @@ export const roll = (dice) => {
   }
 }
 
-import { 
-  Alignments,
-  AlignmentsX,
-  AlignmentsY,
-  ExpandedAlignments,
-  ExpandedAlignmentsX,
-  ExpandedAlignmentsY,
-} from "../../types/core/Core";
-
 // use this matrix to determine positioning of alignments
-export const alignmentsMatrix = {
+export const alignmentsMatrixValues = {
   [Alignments.LG]: { x: -1, y: 1 },
   [Alignments.NG]: { x: 0, y: 1 },
   [Alignments.CG]: { x: 1, y: 1 },
@@ -34,6 +35,20 @@ export const alignmentsMatrix = {
   [Alignments.LE]: { x: -1, y: -1 },
   [Alignments.NE]: { x: 0, y: -1 },
   [Alignments.CE]: { x: 1, y: -1 },
+};
+
+export const alignmentsMatrix = {
+  [Alignments.LG]: { x: AlignmentsX.Lawful, y: AlignmentsY.Good },
+  [Alignments.NG]: { x: AlignmentsX.Neutral, y: AlignmentsY.Good },
+  [Alignments.CG]: { x: AlignmentsX.Chaotic, y: AlignmentsY.Good },
+
+  [Alignments.LN]: { x: AlignmentsX.Lawful, y: AlignmentsY.Neutral },
+  [Alignments.NN]: { x: AlignmentsX.Neutral, y: AlignmentsY.Neutral },
+  [Alignments.CN]: { x: AlignmentsX.Chaotic, y: AlignmentsY.Neutral },
+
+  [Alignments.LE]: { x: AlignmentsX.Lawful, y: AlignmentsY.Evil },
+  [Alignments.NE]: { x: AlignmentsX.Neutral, y: AlignmentsY.Evil },
+  [Alignments.CE]: { x: AlignmentsX.Chaotic, y: AlignmentsY.Evil },
 };
 
 export const alignmentsX = {
@@ -48,7 +63,7 @@ export const alignmentsY = {
   [AlignmentsY.Evil]: -1,
 };
 
-export const expandedAlignmentsMatrix = {
+export const expandedAlignmentsMatrixValues = {
   [ExpandedAlignments.LG]: { x: -2, y: 2 },
   [ExpandedAlignments.SG]: { x: -1, y: 2 },
   [ExpandedAlignments.NG]: { x: 0, y: 2 },
@@ -78,6 +93,38 @@ export const expandedAlignmentsMatrix = {
   [ExpandedAlignments.NE]: { x: 0, y: -2 },
   [ExpandedAlignments.RE]: { x: 1, y: -2 },
   [ExpandedAlignments.CE]: { x: 2, y: -2 },
+};
+
+export const expandedAlignmentsMatrix = {
+  [ExpandedAlignments.LG]: { x: ExpandedAlignmentsX.Lawful, y: ExpandedAlignmentsY.Good },
+  [ExpandedAlignments.SG]: { x: ExpandedAlignmentsX.Social, y: ExpandedAlignmentsY.Good },
+  [ExpandedAlignments.NG]: { x: ExpandedAlignmentsX.Neutral, y: ExpandedAlignmentsY.Good },
+  [ExpandedAlignments.RG]: { x: ExpandedAlignmentsX.Rebel, y: ExpandedAlignmentsY.Good },
+  [ExpandedAlignments.CG]: { x: ExpandedAlignmentsX.Chaotic, y: ExpandedAlignmentsY.Good },
+
+  [ExpandedAlignments.LM]: { x: ExpandedAlignmentsX.Lawful, y: ExpandedAlignmentsY.Moral },
+  [ExpandedAlignments.SM]: { x: ExpandedAlignmentsX.Social, y: ExpandedAlignmentsY.Moral },
+  [ExpandedAlignments.NM]: { x: ExpandedAlignmentsX.Neutral, y: ExpandedAlignmentsY.Moral },
+  [ExpandedAlignments.RM]: { x: ExpandedAlignmentsX.Rebel, y: ExpandedAlignmentsY.Moral },
+  [ExpandedAlignments.CM]: { x: ExpandedAlignmentsX.Chaotic, y: ExpandedAlignmentsY.Moral },
+
+  [ExpandedAlignments.LN]: { x: ExpandedAlignmentsX.Lawful, y: ExpandedAlignmentsY.Neutral },
+  [ExpandedAlignments.SN]: { x: ExpandedAlignmentsX.Social, y: ExpandedAlignmentsY.Neutral },
+  [ExpandedAlignments.NN]: { x: ExpandedAlignmentsX.Neutral, y: ExpandedAlignmentsY.Neutral },
+  [ExpandedAlignments.RN]: { x: ExpandedAlignmentsX.Rebel, y: ExpandedAlignmentsY.Neutral },
+  [ExpandedAlignments.CN]: { x: ExpandedAlignmentsX.Chaotic, y: ExpandedAlignmentsY.Neutral },
+
+  [ExpandedAlignments.LI]: { x: ExpandedAlignmentsX.Lawful, y: ExpandedAlignmentsY.Impure },
+  [ExpandedAlignments.SI]: { x: ExpandedAlignmentsX.Social, y: ExpandedAlignmentsY.Impure },
+  [ExpandedAlignments.NI]: { x: ExpandedAlignmentsX.Neutral, y: ExpandedAlignmentsY.Impure },
+  [ExpandedAlignments.RI]: { x: ExpandedAlignmentsX.Rebel, y: ExpandedAlignmentsY.Impure },
+  [ExpandedAlignments.CI]: { x: ExpandedAlignmentsX.Chaotic, y: ExpandedAlignmentsY.Impure },
+
+  [ExpandedAlignments.LE]: { x: ExpandedAlignmentsX.Lawful, y: ExpandedAlignmentsY.Evil },
+  [ExpandedAlignments.SE]: { x: ExpandedAlignmentsX.Social, y: ExpandedAlignmentsY.Evil },
+  [ExpandedAlignments.NE]: { x: ExpandedAlignmentsX.Neutral, y: ExpandedAlignmentsY.Evil },
+  [ExpandedAlignments.RE]: { x: ExpandedAlignmentsX.Rebel, y: ExpandedAlignmentsY.Evil },
+  [ExpandedAlignments.CE]: { x: ExpandedAlignmentsX.Chaotic, y: ExpandedAlignmentsY.Evil },
 };
 
 export const expandedAlignmentsX = {

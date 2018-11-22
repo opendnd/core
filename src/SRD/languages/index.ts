@@ -1,8 +1,17 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
+import { ILinkLanguage, ILanguage } from "../../types/languages/Language";
 
-export const languages:ILinkResourceDict = require('./languages.json');
+interface ILinkLanguageDict extends ILinkResourceDict {
+  [uuid:string]: ILinkLanguage;
+}
 
-export const languagesDict:IResourceDict = {
+interface ILanguageDict extends IResourceDict {
+  [uuid:string]: ILanguage;
+}
+
+export const languages:ILinkLanguageDict = require('./languages.json');
+
+export const languagesDict:ILanguageDict = {
   'dnd0050e-1srd-core-0019-l7s000000001': require('./dnd0050e-1srd-core-0019-l7s000000001.json'),
   'dnd0050e-1srd-core-0019-l7s000000002': require('./dnd0050e-1srd-core-0019-l7s000000002.json'),
   'dnd0050e-1srd-core-0019-l7s000000003': require('./dnd0050e-1srd-core-0019-l7s000000003.json'),

@@ -1,5 +1,14 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
+import { ILinkCulture, ICulture } from "../../types/cultures/Culture";
 
-export const cultures:ILinkResourceDict = require('./cultures.json');
+interface ILinkCultureDict extends ILinkResourceDict {
+  [uuid:string]: ILinkCulture;
+}
 
-export const culturesDict:IResourceDict = {};
+interface ICultureDict extends IResourceDict {
+  [uuid:string]: ICulture;
+}
+
+export const cultures:ILinkCultureDict = require('./cultures.json');
+
+export const culturesDict:ICultureDict = {};

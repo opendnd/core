@@ -11,6 +11,19 @@ import { ILinkLanguage } from "../languages/Language";
 import { ILinkTool } from "../tools/Tool";
 import { TransporationModes } from "../vehicles/Vehicle";
 
+export interface IIdeals {
+  any?: string[];
+  good?: string[];
+  moral?: string[];
+  impure?: string[];
+  evil?: string[];
+  neutral?: string[];
+  chaotic?: string[];
+  rebel?: string[];
+  social?: string[];
+  lawful?: string[];
+}
+
 export interface ILinkBackground extends ILinkResource {}
 
 export interface IBackground extends IResource {
@@ -32,18 +45,7 @@ export interface IBackground extends IResource {
   /**
    * A list of ideals by alignment x & y options
    */
-  ideals: {
-    any?: string[]
-    good?: string[]
-    moral?: string[]
-    impure?: string[]
-    evil?: string[]
-    neutral?: string[]
-    chaotic?: string[]
-    rebel?: string[]
-    social?: string[]
-    lawful?: string[],
-  };
+  ideals: IIdeals;
 
   /**
    * A list of bonds
@@ -54,7 +56,6 @@ export interface IBackground extends IResource {
    * A list of flaws
    */
   flaws: string[];
-
 
   /**
    * Starting treasury
