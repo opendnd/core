@@ -33,6 +33,15 @@ export * from "./types/tools/Tool";
 export * from "./types/traps/Trap";
 export * from "./types/vehicles/Vehicle";
 
+export * from "./SRD/backgrounds/index";
+export * from "./SRD/cultures/index";
+export * from "./SRD/features/index";
+export * from "./SRD/items/index";
+export * from "./SRD/klasses/index";
+export * from "./SRD/languages/index";
+export * from "./SRD/races/index";
+export * from "./SRD/core/index";
+
 export const schemas = {
   artwork: require('./types/artwork/schema.json'),
   backgrounds: require('./types/backgrounds/schema.json'),

@@ -1,0 +1,26 @@
+{
+  "dnd0050e-1srd-core-0019-i2s000000001": {
+    "uuid": "dnd0050e-1srd-core-0019-i2s000000001",
+    "name": "Holy Symbol"
+  },
+  "dnd0050e-1srd-core-0019-i2s000000002": {
+    "uuid": "dnd0050e-1srd-core-0019-i2s000000002",
+    "name": "Prayer Book"
+  },
+  "dnd0050e-1srd-core-0019-i2s000000003": {
+    "uuid": "dnd0050e-1srd-core-0019-i2s000000003",
+    "name": "Prayer Wheel"
+  },
+  "dnd0050e-1srd-core-0019-i2s000000004": {
+    "uuid": "dnd0050e-1srd-core-0019-i2s000000004",
+    "name": "Stick of Incense"
+  },
+  "dnd0050e-1srd-core-0019-i2s000000005": {
+    "uuid": "dnd0050e-1srd-core-0019-i2s000000005",
+    "name": "Vestments"
+  },
+  "dnd0050e-1srd-core-0019-i2s000000006": {
+    "uuid": "dnd0050e-1srd-core-0019-i2s000000006",
+    "name": "Common Clothes"
+  }
+}

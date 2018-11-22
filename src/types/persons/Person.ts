@@ -7,6 +7,7 @@ import {
   IResource,
   ILinkResource,
   Resource,
+  ITreasury,
 } from "../core/Core";
 import { ILinkBackground } from "../backgrounds/Background";
 import { ILinkBuilding } from "../buildings/Building";
@@ -90,13 +91,7 @@ export interface IPerson extends IResource {
   // treasury is made up of values for copper, silver, electrum, gold and platinum pieces (coins)
   // how much each coin is worth varies from towns, settings and campaigns
   // however, the chart below can be helpful as a base when determining your economy
-  treasury: {
-    cp: number // 1/100 | USD $1.00
-    sp: number // 1/10  | USD $10.00
-    ep: number // 1/2   | USD $50.00
-    gp: number // 1     | USD $100.00
-    pp: number, // 10    | USD $1,000.00
-  };
+  treasury: ITreasury;
 
   // base cost in cp of the person
   cost: number;
@@ -697,13 +692,7 @@ export class Person extends Resource implements IPerson {
   public honor = 0;
   public piety = 0;
   public reputation = 0;
-  public treasury = {
-    cp: 0,
-    sp: 0,
-    ep: 0,
-    gp: 0,
-    pp: 0,
-  };
+  public treasury = {};
   public cost = 0;
   public abilities = {
     STR: 0,

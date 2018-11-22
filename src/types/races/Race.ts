@@ -19,6 +19,58 @@ export enum DiceAndSex {
   Sex = "sex",
 }
 
+export enum Chromosomes {
+  C1 = "1",
+  C2 = "2",
+  C3 = "3",
+  C4 = "4",
+  C5 = "5",
+  C6 = "6",
+  C7 = "7",
+  C8 = "8",
+  C9 = "9",
+  C10 = "10",
+  C11 = "11",
+  C12 = "12",
+  C13 = "13",
+  C14 = "14",
+  C15 = "15",
+  C16 = "16",
+  C17 = "17",
+  C18 = "18",
+  C19 = "19",
+  C20 = "20",
+  C21 = "21",
+  C22 = "22",
+  C23 = "23",
+  C24 = "24",
+  C25 = "25",
+  C26 = "26",
+  C27 = "27",
+  C28 = "28",
+  C29 = "29",
+  C30 = "30",
+  C31 = "31",
+  C32 = "32",
+}
+
+export enum Categories {
+  General = "general",
+  HairGeneral = "hairGeneral",
+  HairColor = "hairColor",
+  HairFacial = "hairFacial",
+  SkinGeneral = "skinGeneral",
+  SkinColor = "skinColor",
+  SkinAging = "skinAging",
+  FaceShape = "faceShape",
+  FaceNose = "faceNose",
+  FaceMouth = "faceMouth",
+  EyeColor = "eyeColor",
+  EyeShape = "eyeShape",
+  EyeBrows = "eyeBrows",
+  Sex = "sex",
+}
+
 export enum RacialAbilityIncreaseTypes {
   All = "all", // gives to all
   Choice = "choice", // gives to your choice of ability
@@ -31,12 +83,43 @@ export enum RacialAbilityIncreaseTypes {
   Charisma = "charisma", // measuring force of personality
 }
 
+export interface IAgeGroup {
+  min: number;
+  max: number;
+  weight: number;
+  dice: Dice[];
+}
+
 export interface IRacialAbilityIncrease {
   // the ability that the modifier is
   ability: RacialAbilityIncreaseTypes;
 
   // the amount this increases the ability
   amount: number;
+}
+
+// a gene contains information about the person
+// This will output "general:C1:17": "tall"
+export interface IGene {
+  /**
+   * The category is the category for the trait
+   */
+  category: Categories;
+
+  /**
+   * Chromosome is which chromosome is used for this category
+   */
+  chromosome: Chromosomes;
+
+  /**
+   * This is the roll that was made in the DNA ex: 15=20
+   */
+  roll: string;
+
+  /**
+   * This is the trait that is associated with this
+   */
+  trait: string;
 }
 
 export interface ILinkRace extends ILinkResource {}
@@ -85,78 +168,72 @@ export interface IRace extends IResource {
     y?: Dice,
   };
 
-  // legend is used to lookup which physical characteristic is used for which chromosome
-  legend: {
+  // categories is used to lookup which physical characteristic is used for which chromosome
+  categories: {
     // general is basic information about the body
-    general?: number
+    general?: Chromosomes
 
     // general information on the hair like shape
-    hairGeneral?: number
+    hairGeneral?: Chromosomes
 
     // color of hair
-    hairColor?: number
+    hairColor?: Chromosomes
 
     // facial hair
-    hairFacial?: number
+    hairFacial?: Chromosomes
 
     // general information on the skin like texture
-    skinGeneral?: number
+    skinGeneral?: Chromosomes
 
     // color of the skin
-    skinColor?: number
+    skinColor?: Chromosomes
 
     // how does the skin age
-    skinAging?: number
+    skinAging?: Chromosomes
 
     // shape of the face
-    faceShape?: number
+    faceShape?: Chromosomes
 
     // shape of the nose
-    faceNose?: number
+    faceNose?: Chromosomes
 
     // shape of the mouth
-    faceMouth?: number
+    faceMouth?: Chromosomes
 
     // color of the eye
-    eyeColor?: number
+    eyeColor?: Chromosomes
 
     // shape of the eye
-    eyeShape?: number
+    eyeShape?: Chromosomes
 
     // details on the eye brows
-    eyeBrows?: number
+    eyeBrows?: Chromosomes
 
     // traits specific to male or females
-    sex?: number,
+    sex?: Chromosomes,
   };
 
   // age range
   ageRanges: {
-    child?: {
-      max: number
-      weight: number
-      dice: Dice[],
-    }
-    young?: {
-      max: number
-      weight: number
-      dice: Dice[],
-    }
-    middle?: {
-      max: number
-      weight: number
-      dice: Dice[],
-    }
-    old?: {
-      max: number
-      weight: number
-      dice: Dice[],
-    },
+    child?: IAgeGroup
+    young?: IAgeGroup
+    middle?: IAgeGroup
+    old?: IAgeGroup,
   };
 
-  // genes includes a key value pair dictionary with detailed information on a gene
-  // ex: "general:C1:20": "average height"
-  genes: object;
+  /**
+   * the dictionary includes a fast lookup of genes
+   * includeing a key value pair with a link to the trait
+   * ex: "general:C1:17": "tall"
+   */ 
+  dictionary: {
+    [gene:string]: string,
+  };
+
+  /**
+   * This is a more user friendly list of genes
+   */
+  genes: IGene[];
 
   /** 
    * ability score increases
@@ -192,9 +269,10 @@ export interface IRace extends IResource {
 export class Race extends Resource implements IRace {
   public chromosomes = {};
   public sex = {};
-  public legend = {};
+  public categories = {};
   public ageRanges = {};
-  public genes = {};
+  public dictionary = {};
+  public genes = [];
   public abilitiyIncreases = [];
   public alignments = [];
   public size = null;

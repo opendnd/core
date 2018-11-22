@@ -1,0 +1,66 @@
+{
+  "dnd0050e-1srd-core-0019-l7s000000001": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000001",
+    "name": "Common"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000002": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000002",
+    "name": "Dwarvish"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000003": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000003",
+    "name": "Elvish"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000004": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000004",
+    "name": "Giant"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000005": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000005",
+    "name": "Gnomish"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000006": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000006",
+    "name": "Goblin"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000007": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000007",
+    "name": "Halfling"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000008": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000008",
+    "name": "Orc"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000009": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000009",
+    "name": "Abyssal"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000010": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000010",
+    "name": "Celestial"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000011": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000011",
+    "name": "Draconic"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000012": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000012",
+    "name": "Deep Speech"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000013": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000013",
+    "name": "Infernal"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000014": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000014",
+    "name": "Primordial"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000015": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000015",
+    "name": "Sylvan"
+  },
+  "dnd0050e-1srd-core-0019-l7s000000016": {
+    "uuid": "dnd0050e-1srd-core-0019-l7s000000016",
+    "name": "Undercommon"
+  }
+}

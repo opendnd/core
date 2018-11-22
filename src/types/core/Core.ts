@@ -35,14 +35,15 @@ export enum AbilityTypes {
   Wisdom = "wisdom", // measuring perception and insight
   Charisma = "charisma", // measuring force of personality
 }
-export const abilityMapping = {
-  STR: AbilityTypes.Strength,
-  DEX: AbilityTypes.Dexterity,
-  CON: AbilityTypes.Constitution,
-  INT: AbilityTypes.Intelligence,
-  WIS: AbilityTypes.Wisdom,
-  CHA: AbilityTypes.Charisma,
-};
+
+export enum ShortAbilityTypes {
+  STR = AbilityTypes.Strength,
+  DEX = AbilityTypes.Dexterity,
+  CON = AbilityTypes.Constitution,
+  INT = AbilityTypes.Intelligence,
+  WIS = AbilityTypes.Wisdom,
+  CHA = AbilityTypes.Charisma,
+}
 
 // list of skills
 export enum SkillTypes {
@@ -51,7 +52,7 @@ export enum SkillTypes {
 
   // DEX
   Acrobatics = "acrobatics",
-  SleightOfHand = "sleightofhand",
+  SleightOfHand = "sleight_of_hand",
   Stealth = "stealth",
 
   // INT
@@ -62,7 +63,7 @@ export enum SkillTypes {
   Religion = "religion",
 
   // WIS
-  AnimalHandling = "animalhandling",
+  AnimalHandling = "animal_handling",
   Insight = "insight",
   Medicine = "medicine",
   Perception = "perception",
@@ -79,91 +80,49 @@ export enum SkillTypes {
 // x: Lawful, Neutral, Chaotic
 // y: Good, Neutral, Evil
 export enum Alignments {
-  LG = "LG", NG = "NG", CG = "CG",
-  LN = "LN", NN = "NN", CN = "CN",
-  LE = "LE", NE = "NE", CE = "CE",
+  LG = "lawful_good", NG = "neutral_good", CG = "chaotigood_G",
+  LN = "lawful_neutral", NN = "true_neutral", CN = "chaotic_neutral",
+  LE = "lawful_evil", NE = "neutral_evil", CE = "chaotic_evil",
 }
-export const alignmentsMatrix = {
-  LG: { x: "-1", y: "1" },
-  NG: { x: "0", y: "1" },
-  CG: { x: "1", y: "1" },
 
-  LN: { x: "-1", y: "0" },
-  NN: { x: "0", y: "0" },
-  CN: { x: "1", y: "0" },
+export enum AlignmentsX {
+  Lawful = "lawful",
+  Neutral = "neutral",
+  Chaotic = "chaotic",
+}
 
-  LE: { x: "-1", y: "-1" },
-  NE: { x: "0", y: "-1" },
-  CE: { x: "1", y: "-1" },
-};
-// these values make it easy to map to a background's ideals
-export const alignmentsX = {
-  "-1": "lawful",
-  "0": "neutral",
-  "1": "chaotic",
-};
-export const alignmentsY = {
-  "1": "good",
-  "0": "neutral",
-  "-1": "evil",
-};
+export enum AlignmentsY {
+  Good = "good",
+  Neutral = "neutral",
+  Evil = "evil",
+}
 
 // list of expanded alignments
 // x: Lawful, Social, Neutral, Rebel, Chaotic
 // y: Good, Moral, Neutral, Impure, Evil
 export enum ExpandedAlignments {
-  LG = "LG", SG = "SG", NG = "NG", RG = "RG", CG = "CG",
-  LM = "LM", SM = "SM", NM = "NM", RM = "RM", CM = "CM",
-  LN = "LN", SN = "SN", NN = "NN", RN = "RN", CN = "CN",
-  LI = "LI", SI = "SI", NI = "NI", RI = "RI", CI = "CI",
-  LE = "LE", SE = "SE", NE = "NE", RE = "RE", CE = "CE",
+  LG = "lawful_good", SG = "social_good", NG = "neutral_good", RG = "rebel_good", CG = "chaotic_good",
+  LM = "lawful_moral", SM = "social_moral", NM = "neutral_moral", RM = "rebel_moral", CM = "chaotic_moral",
+  LN = "lawful_neutral", SN = "social_neutral", NN = "true_neutral", RN = "rebel_neutral", CN = "chaotic_neutral",
+  LI = "lawful_impure", SI = "social_impure", NI = "neutral_impure", RI = "rebel_impure", CI = "chaotic_impure",
+  LE = "lawful_evil", SE = "social_evil", NE = "neutral_evil", RE = "rebel_evil", CE = "chaotic_evil",
 }
-export const expandedAlignmentsMatrix = {
-  LG: { x: "-2", y: "2" },
-  SG: { x: "-1", y: "2" },
-  NG: { x: "0", y: "2" },
-  RG: { x: "1", y: "2" },
-  CG: { x: "2", y: "2" },
 
-  LM: { x: "-2", y: "1" },
-  SM: { x: "-1", y: "1" },
-  NM: { x: "0", y: "1" },
-  RM: { x: "1", y: "1" },
-  CM: { x: "2", y: "1" },
+export enum ExpandedAlignmentsX {
+  Lawful = "lawful",
+  Social = "social",
+  Neutral = "neutral",
+  Rebel = "rebel",
+  Chaotic = "chaotic",
+}
 
-  LN: { x: "-2", y: "0" },
-  SN: { x: "-1", y: "0" },
-  NN: { x: "0", y: "0" },
-  RN: { x: "1", y: "0" },
-  CN: { x: "2", y: "0" },
-
-  LI: { x: "-2", y: "-1" },
-  SI: { x: "-1", y: "-1" },
-  NI: { x: "0", y: "-1" },
-  RI: { x: "1", y: "-1" },
-  CI: { x: "2", y: "-1" },
-
-  LE: { x: "-2", y: "-2" },
-  SE: { x: "-1", y: "-2" },
-  NE: { x: "0", y: "-2" },
-  RE: { x: "1", y: "-2" },
-  CE: { x: "2", y: "-2" },
-};
-// these values make it easy to map to a background's ideals
-export const expandedAlignmentsX = {
-  "-2": "lawful",
-  "-1": "social",
-  "0": "neutral",
-  "1": "rebel",
-  "2": "chaotic",
-};
-export const expandedAlignmentsY = {
-  "2": "good",
-  "1": "moral",
-  "0": "neutral",
-  "-1": "impure",
-  "-2": "evil",
-};
+export enum ExpandedAlignmentsY {
+  Good = "good",
+  Moral = "moral",
+  Neutral = "neutral",
+  Impure = "impure",
+  Evil = "evil",
+}
 
 // output the advantage types
 export enum AdvantageTypes {
@@ -172,8 +131,23 @@ export enum AdvantageTypes {
   Disadvantage = "disadvantage",
 }
 
-// export the standard array numbers
-export const standardArray = [15, 14, 13, 12, 10, 8];
+// standard currency types
+export enum Currencies {
+  CP = "cp",
+  SP = "sp",
+  EP = "ep",
+  GP = "gp",
+  PP = "pp",
+}
+
+// standard treasure interface
+export interface ITreasury {
+  cp?: number; // 1/100 | USD $1.00
+  sp?: number; // 1/10  | USD $10.00
+  ep?: number; // 1/2   | USD $50.00
+  gp?: number; // 1     | USD $100.00
+  pp?: number; // 10    | USD $1,000.00
+};
 
 // standard resource link
 export interface ILinkResource {
@@ -186,6 +160,16 @@ export interface ILinkResource {
    * This is the name for the linked Resource.
    */
   name: string;
+}
+
+// dictionary of resouce links
+export interface ILinkResourceDict {
+  [uuid:string]: ILinkResource
+}
+
+// dictionary of resouces
+export interface IResourceDict {
+  [uuid:string]: IResource
 }
 
 // standard resource
@@ -226,7 +210,7 @@ export interface IResource {
   notes?: string;
 }
 
-// disease class
+// resource class
 export class Resource implements IResource {
   public uuid = "";
   public version = "";

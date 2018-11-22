@@ -116,6 +116,9 @@ export enum EquipmentLocations {
 export interface ILinkItem extends ILinkResource {
   // personalized nickname of the item
   nickname?: string;
+
+  // quantity of the items, defaults to 1
+  quantity?: number
 }
 
 export interface IItem extends IResource {

@@ -1,0 +1,169 @@
+{
+  "uuid": "dnd0050e-1srd-core-0019-b9s000000001",
+  "version": "0.1.9",
+  "name": "Acolyte",
+  "abstract": false,
+  "description": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric-performing sacred rites is not the same thing as channeling divine power. Choose a god, a pantheon of gods, or some other quasi-divine being from among those listed in \"Fantasy-Historical Pantheons\" or those specified by your GM, and work with your GM to detail the nature of your religious service. Were you a lesser functionary in a temple, raised from childhood to assist the priests in the sacred rites? Or were you a high priest who suddenly experienced a call to serve your god in a different way? Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group that served a fiendish master that you now deny.",
+  "specialties": [
+    "God",
+    "Goddess",
+    "Pantheon of Gods",
+    "Quasi-divine Being"
+  ],
+  "personalityTraits": [
+    "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.",
+    "I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.",
+    "I see omens in every event and action. The gods try to speak to us, we just need to listen.",
+    "Nothing can shake my optimistic attitude.",
+    "I quote (or misquote) sacred texts and proverbs in almost every situation.",
+    "I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.",
+    "I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.",
+    "I've spent so long in the temple that I have little practical experience dealing with people in the outside world."
+  ],
+  "ideals": {
+    "any": [
+      "Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her teachings."
+    ],
+    "good": [
+      "Charity. I always try to help those in need, no matter what the personal cost."
+    ],
+    "lawful": [
+      "Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld.",
+      "Power. I hope to one day rise to the top of my faith's religious hierarchy.",
+      "Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well."
+    ],
+    "chaotic": [
+      "Change. We must help bring about the changes the gods are constantly working in the world."
+    ]
+  },
+  "bonds": [
+    "I would die to recover an ancient relic of my faith that was lost long ago.",
+    "I will someday get revenge on the corrupt temple hierarchy who branded me a heretic.",
+    "I owe my life to the priest who took me in when my parents died.",
+    "Everything I do is for the common people.",
+    "I will do anything to protect the temple where I served.",
+    "I seek to preserve a sacred text that my enemies consider heretical and seek to destroy."
+  ],
+  "flaws": [
+    "I judge others harshly, and myself even more severely.",
+    "I put too much trust in those who wield power within my temple's hierarchy.",
+    "My piety sometimes leads me to blindly trust those that profess faith in my god.",
+    "I am inflexible in my thinking.",
+    "I am suspicious of strangers and expect the worst of them.",
+    "Once I pick a goal, I become obsessed with it to the detriment of everything else in my life."
+  ],
+  "treasury": {
+    "cp": 0,
+    "sp": 0,
+    "ep": 0,
+    "gp": 15,
+    "pp": 0
+  },
+  "equipment": [
+    {
+      "uuid": "1edcfee0-edc5-11e8-ae13-e71f1966ea44",
+      "name": "Holy Symbol"
+    },
+    {
+      "uuid": "22f67ec0-edc5-11e8-ae13-e71f1966ea44",
+      "name": "Prayer Book"
+    },
+    {
+      "uuid": "27476250-edc5-11e8-ae13-e71f1966ea44",
+      "name": "Prayer Wheel"
+    },
+    {
+      "uuid": "2acdf100-edc5-11e8-ae13-e71f1966ea44",
+      "name": "Stick of Incense",
+      "quantity": 5
+    },
+    {
+      "uuid": "2fca7de0-edc5-11e8-ae13-e71f1966ea44",
+      "name": "Vestments"
+    },
+    {
+      "uuid": "3826b080-edc5-11e8-ae13-e71f1966ea44",
+      "name": "Common Clothes"
+    }
+  ],
+  "proficiencies": {
+    "skills": [
+      "insight",
+      "religion"
+    ],
+    "languages": [
+      {
+        "uuid": "ebeccb10-edc3-11e8-ae13-e71f1966ea44",
+        "name": "Common"
+      },
+      {
+        "uuid": "ef722140-edc3-11e8-ae13-e71f1966ea44",
+        "name": "Dwarvish"
+      },
+      {
+        "uuid": "f24e3f20-edc3-11e8-ae13-e71f1966ea44",
+        "name": "Elvish"
+      },
+      {
+        "uuid": "f58d6490-edc3-11e8-ae13-e71f1966ea44",
+        "name": "Giant"
+      },
+      {
+        "uuid": "f90db1b0-edc3-11e8-ae13-e71f1966ea44",
+        "name": "Gnomish"
+      },
+      {
+        "uuid": "fbb5a030-edc3-11e8-ae13-e71f1966ea44",
+        "name": "Goblin"
+      },
+      {
+        "uuid": "ffef2b30-edc3-11e8-ae13-e71f1966ea44",
+        "name": "Halfling"
+      },
+      {
+        "uuid": "04ee7730-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Orc"
+      },
+      {
+        "uuid": "07cb0a40-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Abyssal"
+      },
+      {
+        "uuid": "0ac4e950-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Celestial"
+      },
+      {
+        "uuid": "0d92af50-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Draconic"
+      },
+      {
+        "uuid": "10bd8970-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Deep Speech"
+      },
+      {
+        "uuid": "141c92f0-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Infernal"
+      },
+      {
+        "uuid": "17164af0-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Primordial"
+      },
+      {
+        "uuid": "1aa40590-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Sylvan"
+      },
+      {
+        "uuid": "1ebdac80-edc4-11e8-ae13-e71f1966ea44",
+        "name": "Undercommon"
+      }
+    ],
+    "selectLanguages": 2,
+    "selectTools": 0
+  },
+  "features": [
+    {
+      "name": "Shelter of the Faithful",
+      "uuid": "41436970-edc4-11e8-ae13-e71f1966ea44"
+    }
+  ]
+}

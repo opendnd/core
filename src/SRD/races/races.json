@@ -1,0 +1,38 @@
+{
+  "dnd0050e-1srd-core-0019-r3s000000001": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000001",
+    "name": "Dragonborn"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000002": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000002",
+    "name": "Dwarf"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000003": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000003",
+    "name": "Elf"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000004": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000004",
+    "name": "Gnome"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000005": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000005",
+    "name": "Half-Elf"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000006": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000006",
+    "name": "Half-Orc"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000007": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000007",
+    "name": "Halfling"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000008": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000008",
+    "name": "Human"
+  },
+  "dnd0050e-1srd-core-0019-r3s000000009": {
+    "uuid": "dnd0050e-1srd-core-0019-r3s000000009",
+    "name": "Tiefling"
+  }
+}
