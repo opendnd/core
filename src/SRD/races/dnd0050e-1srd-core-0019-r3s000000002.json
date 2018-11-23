@@ -151,6 +151,7 @@
       "name": "Hill Dwarf",
       "uuid": "dnd0050e-1srd-core-0019-r3ssub000201",
       "version": "0.1.0",
+      "description": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
       "abilitiyIncreases": [
         {
           "ability": "wisdom",

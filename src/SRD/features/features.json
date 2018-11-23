@@ -34,5 +34,29 @@
   "dnd0050e-1srd-core-0019-f6s000000009": {
     "uuid": "dnd0050e-1srd-core-0019-f6s000000009",
     "name": "Dwarven Toughness"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000010": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000010",
+    "name": "Keen Senses"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000011": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000011",
+    "name": "Fey Ancestry"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000012": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000012",
+    "name": "Trance"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000013": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000013",
+    "name": "Elf Weapon Training"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000014": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000014",
+    "name": "Cantrip"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000015": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000015",
+    "name": "Extra Language"
   }
 }
