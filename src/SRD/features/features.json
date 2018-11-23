@@ -1,1 +1,38 @@
-{"dnd0050e-1srd-core-0019-f6s000000001":{"uuid":"dnd0050e-1srd-core-0019-f6s000000001","name":"Shelter of the Faithful"}}
+{
+  "dnd0050e-1srd-core-0019-f6s000000001": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000001",
+    "name": "Shelter of the Faithful"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000002": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000002",
+    "name": "Draconic Ancestry"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000003": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000003",
+    "name": "Breath Weapon"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000004": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000004",
+    "name": "Darkvision"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000005": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000005",
+    "name": "Dwarven Resilience"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000006": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000006",
+    "name": "Dwarven Combat Training"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000007": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000007",
+    "name": "Tool Proficiency"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000008": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000008",
+    "name": "Stonecunning"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000009": {
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000009",
+    "name": "Dwarven Toughness"
+  }
+}

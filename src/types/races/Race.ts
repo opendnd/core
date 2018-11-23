@@ -7,6 +7,7 @@ import {
 } from "../core/Core";
 import { Sizes } from "../dna/DNA";
 import { ILinkLanguage } from "../languages/Language";
+import { ILinkFeature } from "../features/Feature";
 
 export enum DiceAndSex {
   D4 = "d4",
@@ -71,6 +72,78 @@ export enum Categories {
   Sex = "sex",
 }
 
+export interface ICategories {
+  /**
+   * general is basic information about the body
+   */
+  general?: Chromosomes;
+
+  /**
+   * general information on the hair like shape
+   */
+  hairGeneral?: Chromosomes;
+
+  /**
+   * color of hair
+   */
+  hairColor?: Chromosomes;
+
+  /**
+   * facial hair
+   */
+  hairFacial?: Chromosomes;
+
+  /**
+   * general information on the skin like texture
+   */
+  skinGeneral?: Chromosomes;
+
+  /**
+   * color of the skin
+   */
+  skinColor?: Chromosomes;
+
+  /**
+   * how does the skin age
+   */
+  skinAging?: Chromosomes;
+
+  /**
+   * shape of the face
+   */
+  faceShape?: Chromosomes;
+
+  /**
+   * shape of the nose
+   */
+  faceNose?: Chromosomes;
+
+  /**
+   * shape of the mouth
+   */
+  faceMouth?: Chromosomes;
+
+  /**
+   * color of the eye
+   */
+  eyeColor?: Chromosomes;
+
+  /**
+   * shape of the eye
+   */
+  eyeShape?: Chromosomes;
+
+  /**
+   * details on the eye brows
+   */
+  eyeBrows?: Chromosomes;
+
+  /**
+   * traits specific to male or females
+   */
+  sex?: Chromosomes;
+}
+
 export enum RacialAbilityIncreaseTypes {
   All = "all", // gives to all
   Choice = "choice", // gives to your choice of ability
@@ -84,10 +157,43 @@ export enum RacialAbilityIncreaseTypes {
 }
 
 export interface IAgeGroup {
+  /**
+   * The minimum age for this group
+   */
   min: number;
+
+  /**
+   * The maximum age for this group
+   */
   max: number;
+
+  /**
+   * The weight percentage for how common this age is for this race
+   */
   weight: number;
+
+  /**
+   * The dice to roll for a random age in this group (add min + dice rol)
+   */
   dice: Dice[];
+}
+
+// This is used for height and weight
+export interface IBaseGroup {
+  /**
+   * This is the base value
+   */
+  base: number;
+
+  /**
+   * This is the dice to roll to generate the random value
+   */
+  dice?: Dice[];
+
+  /**
+   * This is the multiplier to be used instead of the dice roll
+   */
+  multiplier?: number;
 }
 
 export interface IRacialAbilityIncrease {
@@ -125,9 +231,14 @@ export interface IGene {
 export interface ILinkRace extends ILinkResource {}
 
 export interface IRace extends IResource {
+  /**
+   * Description of the race
+   */
+  description: string;
+
   // chromosomes have the dice size for each chromosome pair
   // note that this uses string instead of the Dice type as one chromosome specifies sex
-  chromosomes: {
+  chromosomes?: {
     1?: DiceAndSex
     2?: DiceAndSex
     3?: DiceAndSex
@@ -162,59 +273,23 @@ export interface IRace extends IResource {
     32?: DiceAndSex,
   };
 
-  // this determines which dice are used for the x and y chromosome
-  sex: {
+  /**
+   * this determines which dice are used for the x and y chromosome
+   */
+  sex?: {
     x?: Dice
     y?: Dice,
   };
 
-  // categories is used to lookup which physical characteristic is used for which chromosome
-  categories: {
-    // general is basic information about the body
-    general?: Chromosomes
+  /**
+   * categories is used to lookup which physical characteristic is used for which chromosome
+   */
+  categories?: ICategories;
 
-    // general information on the hair like shape
-    hairGeneral?: Chromosomes
-
-    // color of hair
-    hairColor?: Chromosomes
-
-    // facial hair
-    hairFacial?: Chromosomes
-
-    // general information on the skin like texture
-    skinGeneral?: Chromosomes
-
-    // color of the skin
-    skinColor?: Chromosomes
-
-    // how does the skin age
-    skinAging?: Chromosomes
-
-    // shape of the face
-    faceShape?: Chromosomes
-
-    // shape of the nose
-    faceNose?: Chromosomes
-
-    // shape of the mouth
-    faceMouth?: Chromosomes
-
-    // color of the eye
-    eyeColor?: Chromosomes
-
-    // shape of the eye
-    eyeShape?: Chromosomes
-
-    // details on the eye brows
-    eyeBrows?: Chromosomes
-
-    // traits specific to male or females
-    sex?: Chromosomes,
-  };
-
-  // age range
-  ageRanges: {
+  /**
+   * age range
+   */
+  ageRanges?: {
     child?: IAgeGroup
     young?: IAgeGroup
     middle?: IAgeGroup
@@ -226,57 +301,63 @@ export interface IRace extends IResource {
    * includeing a key value pair with a link to the trait
    * ex: "general:C1:17": "tall"
    */ 
-  dictionary: {
+  dictionary?: {
     [gene:string]: string,
   };
 
   /**
    * This is a more user friendly list of genes
    */
-  genes: IGene[];
+  genes?: IGene[];
 
   /** 
    * ability score increases
    */
-  abilitiyIncreases: IRacialAbilityIncrease[];
+  abilitiyIncreases?: IRacialAbilityIncrease[];
 
   /** 
    * which alignments your race tends towards
    */
-  alignments: ExpandedAlignments[];
+  alignments?: ExpandedAlignments[];
 
   /** 
    * which size this race is
    */
-  size: Sizes;
+  size?: Sizes;
 
   /** 
    * base speed
    */
-  speed: number;
+  speed?: number;
 
   /** 
    * which languages you speak by virtue of your race @link:ILinkLanguage[];
    */
-  languages: ILinkLanguage[];
+  languages?: ILinkLanguage[];
 
   /** 
    * list of subraces @link:ILinkRace[];
    */
-  subraces: ILinkRace[];
+  subraces?: IRace[];
+
+  /**
+   * Weight is used to generate a random weight
+   * Number is in pounds (lbs)
+   */
+  weight?: IBaseGroup
+  
+  /**
+   * Height is used to generate a random height
+   * Number is in inches (in)
+   */
+  height?: IBaseGroup
+
+  /**
+   * A list of racial features
+   */
+  features?: ILinkFeature[]
 }
 
 export class Race extends Resource implements IRace {
-  public chromosomes = {};
-  public sex = {};
-  public categories = {};
-  public ageRanges = {};
-  public dictionary = {};
-  public genes = [];
-  public abilitiyIncreases = [];
-  public alignments = [];
-  public size = null;
-  public speed = 0;
-  public languages = [];
-  public subraces = [];
+  public description = "";
 }
