@@ -88,17 +88,16 @@
     }
   },
   "height": {
-    "base": 44,
+    "base": 54,
     "dice": [
-      "d4",
-      "d4"
+      "d10",
+      "d10"
     ]
   },
   "weight": {
-    "base": 115,
+    "base": 90,
     "dice": [
-      "d6",
-      "d6"
+      "d4"
     ]
   },
   "size": "medium",
