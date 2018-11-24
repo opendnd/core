@@ -58,5 +58,10 @@
   "dnd0050e-1srd-core-0019-f6s000000015": {
     "uuid": "dnd0050e-1srd-core-0019-f6s000000015",
     "name": "Extra Language"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000016": {
+    "name": "Skill Versatility",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000016",
+    "version": "0.1.0"
   }
 }
