@@ -1,5 +1,5 @@
 {
-  "name": "opendnd-core",
+  "name": "@opendnd/core",
   "version": "0.2.4",
   "description": "This is the opendnd core module",
   "main": "dist/index.js",

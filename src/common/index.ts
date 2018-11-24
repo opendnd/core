@@ -1,8 +1,8 @@
-const Roll = require("roll");
+const Roll = require("roll"); // tslint:disable-line
 
 // helper method to roll the dice with a string or array of dice
 export const roll = (dice) => {
-  if (typeof(dice) === 'string') {
+  if (typeof(dice) === "string") {
     return new Roll().roll(dice).result;
   } else {
     let result = 0;
@@ -11,4 +11,4 @@ export const roll = (dice) => {
     });
     return result;
   }
-}
+};
