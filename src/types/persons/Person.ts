@@ -71,7 +71,7 @@ export interface IPerson extends IResource {
   /** 
    * name of the player and the character
    */
-  playerName: string;
+  playerName?: string;
   name: string;
 
   /** 
@@ -94,7 +94,7 @@ export interface IPerson extends IResource {
   treasury: ITreasury;
 
   // base cost in cp of the person
-  cost: number;
+  cost?: number;
 
   // ability scores
   abilities: {
@@ -158,8 +158,8 @@ export interface IPerson extends IResource {
    */
   conditions: ILinkDisease[];
   exhaustion: number; // level 1-6
-  resistance: DamageTypes;
-  vulnerability: DamageTypes;
+  resistance?: DamageTypes;
+  vulnerability?: DamageTypes;
 
   // alignment for the character
   alignment: ExpandedAlignments;
@@ -167,50 +167,50 @@ export interface IPerson extends IResource {
   /** 
    * the character k(c)lass from the list of available @link:ILinkKlass
    */
-  klass: ILinkKlass;
+  klass?: ILinkKlass;
 
   // spellcasting information
-  spellcasting: {
+  spellcasting?: {
     /**  
      * spell casting ability
      */
-    ability: AbilityTypes
+    ability?: AbilityTypes
 
     /**  
      * spell save DC
      */
-    saveDC: number
+    saveDC?: number
 
     /**  
      * spell attack modifier
      */
-    attackModifier: number
+    attackModifier?: number
 
     /**  
      * list of known spells @link:ILinkSpell[]
      */
-    spells: ILinkSpell[],
+    spells?: ILinkSpell[],
   };
 
   /** 
    * cultural information @link:ILinkCulture
    */
-  culture: ILinkCulture;
+  culture?: ILinkCulture;
 
   /** 
    * religion information @link:ILinkReligion
    */
-  faith: ILinkReligion;
+  faith?: ILinkReligion;
 
   /**
    * mother relationship information @link:ILinkPerson
    */
-  mother: ILinkPerson;
+  mother?: ILinkPerson;
 
   /**
    * father relationship information @link:ILinkPerson
    */
-  father: ILinkPerson;
+  father?: ILinkPerson;
 
   /**
    * siblings relationship information @link:ILinkPerson[]
@@ -220,7 +220,7 @@ export interface IPerson extends IResource {
   /**
    * spouse relationship information @link:ILinkPerson
    */
-  spouse: ILinkPerson;
+  spouse?: ILinkPerson;
 
   /**
    * children relationship information @link:ILinkPerson[]
@@ -230,12 +230,12 @@ export interface IPerson extends IResource {
   /**
    * family relationship information @link:ILinkDynasty
    */
-  family: ILinkDynasty;
+  family?: ILinkDynasty;
 
   /**
    * liege relationship information @link:ILinkPerson[]
    */
-  liege: ILinkPerson;
+  liege?: ILinkPerson;
 
   /**
    * allies relationship information @link:ILinkPerson[]
@@ -274,17 +274,17 @@ export interface IPerson extends IResource {
     /** 
      * location of birth @link:ILinkDomain
      */
-    domain: ILinkDomain
+    domain?: ILinkDomain
 
     /** 
      * date of birth @link:ILinkDate
      */
-    date: ILinkDate
+    date?: ILinkDate
 
     /** 
      * birth order
      */
-    rank: number,
+    rank?: number,
   };
 
   /** 
@@ -294,12 +294,12 @@ export interface IPerson extends IResource {
     /** 
      * location of death @link:ILinkDomain
      */
-    domain: ILinkDomain
+    domain?: ILinkDomain
 
     /** 
      * date of death @link:ILinkDate
      */
-    date: ILinkDate,
+    date?: ILinkDate,
   };
 
   /** 
@@ -329,354 +329,354 @@ export interface IPerson extends IResource {
     /**
      * head armor @link:ILinkItem
      */
-    head: ILinkItem
+    head?: ILinkItem
 
     /**
      * left brow, ex: makeup @link:ILinkItem
      */
-    leftBrow: ILinkItem
+    leftBrow?: ILinkItem
 
     /**
      * left eye, ex: monocle @link:ILinkItem
      */
-    leftEye: ILinkItem
+    leftEye?: ILinkItem
 
     /**
      * left ear, ex: jewelry @link:ILinkItem
      */
-    leftEar: ILinkItem
+    leftEar?: ILinkItem
 
     /**
      * right brow, ex: makeup @link:ILinkItem
      */
-    rightBrow: ILinkItem
+    rightBrow?: ILinkItem
 
     /**
      * right eye, ex: monocle @link:ILinkItem
      */
-    rightEye: ILinkItem
+    rightEye?: ILinkItem
 
     /**
      * right ear, ex: jewelry @link:ILinkItem
      */
-    rightEar: ILinkItem
+    rightEar?: ILinkItem
 
     /**
      * both eyes, ex: glasses @link:ILinkItem
      */
-    eyes: ILinkItem
+    eyes?: ILinkItem
 
     /**
      * nose, ex: jewelry @link:ILinkItem
      */
-    nose: ILinkItem
+    nose?: ILinkItem
 
     /**
      * mouth, ex: makeup @link:ILinkItem
      */
-    mouth: ILinkItem
+    mouth?: ILinkItem
 
     /**
      * chin, ex: jewelry @link:ILinkItem
      */
-    chin: ILinkItem
+    chin?: ILinkItem
 
     /**
      * neck, ex: jewelry @link:ILinkItem
      */
-    neck: ILinkItem
+    neck?: ILinkItem
 
     /**
      * left shoulder @link:ILinkItem
      */
-    leftShoulder: ILinkItem
+    leftShoulder?: ILinkItem
 
     /**
      * left shoulder @link:ILinkItem
      */
-    leftBreast: ILinkItem
+    leftBreast?: ILinkItem
 
     /**
      * left arm @link:ILinkItem
      */
-    leftArm: ILinkItem
+    leftArm?: ILinkItem
 
     /**
      * left wrist @link:ILinkItem
      */
-    leftWrist: ILinkItem
+    leftWrist?: ILinkItem
 
     /**
      * left hand, ex: glove @link:ILinkItem
      */
-    leftHand: ILinkItem
+    leftHand?: ILinkItem
 
     /**
      * left fingers, ex: ring @link:ILinkItem
      */
-    leftFingers: ILinkItem
+    leftFingers?: ILinkItem
 
     /**
      * left grip: ex: shield @link:ILinkItem
      */
-    leftGrip: ILinkItem
+    leftGrip?: ILinkItem
 
     /**
      * right shoulder @link:ILinkItem
      */
-    rightShoulder: ILinkItem
+    rightShoulder?: ILinkItem
 
     /**
      * right shoulder @link:ILinkItem
      */
-    rightBreast: ILinkItem
+    rightBreast?: ILinkItem
 
     /**
      * right arm @link:ILinkItem
      */
-    rightArm: ILinkItem
+    rightArm?: ILinkItem
 
     /**
      * right wrist @link:ILinkItem
      */
-    rightWrist: ILinkItem
+    rightWrist?: ILinkItem
 
     /**
      * right hand, ex: glove @link:ILinkItem
      */
-    rightHand: ILinkItem
+    rightHand?: ILinkItem
 
     /**
      * right fingers, ex: ring @link:ILinkItem
      */
-    rightFingers: ILinkItem
+    rightFingers?: ILinkItem
 
     /**
      * right grip: ex: sword @link:ILinkItem
      */
-    rightGrip: ILinkItem
+    rightGrip?: ILinkItem
 
     /**
      * torso, ex: armor @link:ILinkItem
      */
-    torso: ILinkItem
+    torso?: ILinkItem
 
     /**
      * back, ex: cape @link:ILinkItem
      */
-    back: ILinkItem
+    back?: ILinkItem
 
     /**
      * abdomen, ex: cloth @link:ILinkItem
      */
-    abdomen: ILinkItem
+    abdomen?: ILinkItem
 
     /**
      * waist, ex: belt @link:ILinkItem
      */
-    waist: ILinkItem
+    waist?: ILinkItem
 
     /**
      * groin, ex: armor @link:ILinkItem
      */
-    groin: ILinkItem
+    groin?: ILinkItem
 
     /**
      * rear, ex: cloth @link:ILinkItem
      */
-    rear: ILinkItem
+    rear?: ILinkItem
 
     /**
      * left thigh @link:ILinkItem
      */
-    leftThigh: ILinkItem
+    leftThigh?: ILinkItem
 
     /**
      * left leg @link:ILinkItem
      */
-    leftLeg: ILinkItem
+    leftLeg?: ILinkItem
 
     /**
      * left knee @link:ILinkItem
      */
-    leftKnee: ILinkItem
+    leftKnee?: ILinkItem
 
     /**
      * left shin @link:ILinkItem
      */
-    leftShin: ILinkItem
+    leftShin?: ILinkItem
 
     /**
      * left ankle @link:ILinkItem
      */
-    leftAnkle: ILinkItem
+    leftAnkle?: ILinkItem
 
     /**
      * left foot @link:ILinkItem
      */
-    leftFoot: ILinkItem
+    leftFoot?: ILinkItem
 
     /**
      * left toes @link:ILinkItem
      */
-    leftToes: ILinkItem
+    leftToes?: ILinkItem
 
     /**
      * right thigh @link:ILinkItem
      */
-    rightThigh: ILinkItem
+    rightThigh?: ILinkItem
 
     /**
      * right leg @link:ILinkItem
      */
-    rightLeg: ILinkItem
+    rightLeg?: ILinkItem
 
     /**
      * right knee @link:ILinkItem
      */
-    rightKnee: ILinkItem
+    rightKnee?: ILinkItem
 
     /**
      * right shin @link:ILinkItem
      */
-    rightShin: ILinkItem
+    rightShin?: ILinkItem
 
     /**
      * right ankle @link:ILinkItem
      */
-    rightAnkle: ILinkItem
+    rightAnkle?: ILinkItem
 
     /**
      * right foot @link:ILinkItem
      */
-    rightFoot: ILinkItem
+    rightFoot?: ILinkItem
 
     /**
      * right toes @link:ILinkItem
      */
-    rightToes: ILinkItem
+    rightToes?: ILinkItem
 
     /**
      * mount @link:ILinkFamiliar
      */
-    mount: ILinkFamiliar,
+    mount?: ILinkFamiliar,
   };
 
   /**
    * a list of people owned by this person @link:ILinkPerson[]
    */
-  chattel: ILinkPerson[];
+  chattel?: ILinkPerson[];
 
   /**
    * domains owned by this person @link:ILinkDomain[]
    */
-  domains: ILinkDomain[];
+  domains?: ILinkDomain[];
 
   /**
    * buildings owned by this person @link:ILinkBuilding[]
    */
-  buildings: ILinkBuilding[];
+  buildings?: ILinkBuilding[];
 
   /**
    * titles owned by this person @link:ILinkTitle[]
    */
-  titles: ILinkTitle[];
+  titles?: ILinkTitle[];
 
   /**
    * familiars owned by this person @link:ILinkFamiliar[]
    */
-  familiars: ILinkFamiliar[];
+  familiars?: ILinkFamiliar[];
 
   /**
    * vehicles owned by this person @link:ILinkVehicle[]
    */
-  vehicles: ILinkVehicle[];
+  vehicles?: ILinkVehicle[];
 
   /** 
    * a one word description of this character's personality
    */
-  trait: string;
+  trait?: string;
 
   /** 
    * a one word description of this person's physical characteristic
    */
-  characteristic: string;
+  characteristic?: string;
 
   /** 
    * the character's mannerism in voice or behavior
    */
-  mannerism: string;
+  mannerism?: string;
 
   /** 
    * the character's special talent
    */
-  talent: string;
+  talent?: string;
 
   /** 
    * a detailed list of personality traits
    */
-  personalityTraits: string[];
+  personalityTraits?: string[];
 
   /** 
    * the character's ideal
    */
-  ideal: string;
+  ideal?: string;
 
   /** 
    * the character's bond
    */
-  bond: string;
+  bond?: string;
 
   /** 
    * the character's flaw
    */
-  flaw: string;
+  flaw?: string;
 
   /** 
    * the background for the character and that background's specialty @link:ILinkBackground
    */
-  background: ILinkBackground;
-  specialty: string;
+  background?: ILinkBackground;
+  specialty?: string;
 
   /** 
    * knowledge is a list of information the player has learned about the campaign, world, etc.
    */
-  knowledge: string[];
+  knowledge?: string[];
 
   /** 
    * additional information about this character's backstory
    */
-  backstory: string;
+  backstory?: string;
 
   /** 
    * campaigns @link:ILinkCampaign[]
    */
-  campaigns: ILinkCampaign[];
+  campaigns?: ILinkCampaign[];
 
   /** 
    * activeCampaign @link:ILinkCampaign
    */
-  activeCampaign: ILinkCampaign;
+  activeCampaign?: ILinkCampaign;
 
   /** 
    * quests @link:ILinkQuest[]
    */
-  quests: ILinkQuest[];
+  quests?: ILinkQuest[];
 
   /** 
    * stories @link:ILinkStory[]
    */
-  stories: ILinkStory[];
+  stories?: ILinkStory[];
 
   /** 
    * dialogs @link:ILinkDialog[]
    */
-  dialogs: ILinkDialog[];
+  dialogs?: ILinkDialog[];
 
   /** 
    * currentDialog
    */
-  currentDialog: number;
+  currentDialog?: number;
 }
 
 export class Person extends Resource implements IPerson {
@@ -684,10 +684,9 @@ export class Person extends Resource implements IPerson {
   public DNA = null;
   public level = 0;
   public XP = 0;
-  public playerName = "";
   public name = "";
   public age = 0;
-  public ageGroup = null;
+  public ageGroup = AgeGroups.Child;
   public power = 0;
   public honor = 0;
   public piety = 0;
@@ -702,6 +701,7 @@ export class Person extends Resource implements IPerson {
     WIS: 0,
     CHA: 0,
   };
+  public alignment = ExpandedAlignments.NN;
   public proficiencies = {
     skills: [],
     languages: [],
@@ -720,118 +720,22 @@ export class Person extends Resource implements IPerson {
   public HP = 0;
   public conditions = [];
   public exhaustion = 0;
-  public resistance = null;
-  public vulnerability = null;
-  public alignment = null;
-  public klass = null;
-  public spellcasting = {
-    ability: null,
-    saveDC: 0,
-    attackModifier: 0,
-    spells: [],
-  };
-  public culture = null;
-  public faith = null;
-  public mother = null;
-  public father = null;
   public siblings = [];
-  public spouse = null;
   public children = [];
-  public family = null;
-  public liege = null;
   public allies = [];
   public enemies = [];
-  public factions = {
-    memberOf: [],
-    allies: [],
-    enemies: [],
-  };
-  public birth = {
-    domain: null,
-    date: null,
-    rank: 0,
-  };
-  public death = {
-    domain: null,
-    date: null,
-  };
   public features = [];
   public actions = [];
   public items = [];
   public magicItems = [];
   public weight = 0;
   public capacity = 0;
-  public equipment: {
-    head: null,
-    leftBrow: null,
-    leftEye: null,
-    leftEar: null,
-    rightBrow: null,
-    rightEye: null,
-    rightEar: null,
-    eyes: null,
-    nose: null,
-    mouth: null,
-    chin: null,
-    neck: null,
-    leftShoulder: null,
-    leftBreast: null,
-    leftArm: null,
-    leftWrist: null,
-    leftHand: null,
-    leftFingers: null,
-    leftGrip: null,
-    rightShoulder: null,
-    rightBreast: null,
-    rightArm: null,
-    rightWrist: null,
-    rightHand: null,
-    rightFingers: null,
-    rightGrip: null,
-    torso: null,
-    back: null,
-    abdomen: null,
-    waist: null,
-    groin: null,
-    rear: null,
-    leftThigh: null,
-    leftLeg: null,
-    leftKnee: null,
-    leftShin: null,
-    leftAnkle: null,
-    leftFoot: null,
-    leftToes: null,
-    rightThigh: null,
-    rightLeg: null,
-    rightKnee: null,
-    rightShin: null,
-    rightAnkle: null,
-    rightFoot: null,
-    rightToes: null,
-    mount: null,
+  public equipment = {};
+  public factions = {
+    memberOf: [],
+    allies: [],
+    enemies: [],
   };
-  public chattel = [];
-  public domains = [];
-  public buildings = [];
-  public titles = [];
-  public familiars = [];
-  public vehicles = [];
-  public trait = "";
-  public characteristic = "";
-  public mannerism = "";
-  public talent = "";
-  public personalityTraits = [];
-  public ideal = "";
-  public bond = "";
-  public flaw = "";
-  public background = null;
-  public specialty = "";
-  public knowledge = [];
-  public backstory = "";
-  public campaigns = [];
-  public activeCampaign = null;
-  public quests = [];
-  public stories = [];
-  public dialogs = [];
-  public currentDialog = 0;
+  public birth = {};
+  public death = {};
 }
