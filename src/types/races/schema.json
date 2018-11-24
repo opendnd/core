@@ -1,6 +1,11 @@
 {
   "type": "object",
   "properties": {
+    "description": {
+      "description": "Description of the race",
+      "type": "string",
+      "title": "Description"
+    },
     "chromosomes": {
       "type": "object",
       "properties": {
@@ -491,6 +496,7 @@
       "title": "Chromosomes"
     },
     "sex": {
+      "description": "this determines which dice are used for the x and y chromosome",
       "type": "object",
       "properties": {
         "x": {
@@ -528,9 +534,11 @@
       "title": "Sex"
     },
     "categories": {
+      "description": "categories is used to lookup which physical characteristic is used for which chromosome",
       "type": "object",
       "properties": {
         "general": {
+          "description": "general is basic information about the body",
           "enum": [
             "1",
             "10",
@@ -569,6 +577,7 @@
           "title": "General"
         },
         "hairGeneral": {
+          "description": "general information on the hair like shape",
           "enum": [
             "1",
             "10",
@@ -607,6 +616,7 @@
           "title": "Hair General"
         },
         "hairColor": {
+          "description": "color of hair",
           "enum": [
             "1",
             "10",
@@ -645,6 +655,7 @@
           "title": "Hair Color"
         },
         "hairFacial": {
+          "description": "facial hair",
           "enum": [
             "1",
             "10",
@@ -683,6 +694,7 @@
           "title": "Hair Facial"
         },
         "skinGeneral": {
+          "description": "general information on the skin like texture",
           "enum": [
             "1",
             "10",
@@ -721,6 +733,7 @@
           "title": "Skin General"
         },
         "skinColor": {
+          "description": "color of the skin",
           "enum": [
             "1",
             "10",
@@ -759,6 +772,7 @@
           "title": "Skin Color"
         },
         "skinAging": {
+          "description": "how does the skin age",
           "enum": [
             "1",
             "10",
@@ -797,6 +811,7 @@
           "title": "Skin Aging"
         },
         "faceShape": {
+          "description": "shape of the face",
           "enum": [
             "1",
             "10",
@@ -835,6 +850,7 @@
           "title": "Face Shape"
         },
         "faceNose": {
+          "description": "shape of the nose",
           "enum": [
             "1",
             "10",
@@ -873,6 +889,7 @@
           "title": "Face Nose"
         },
         "faceMouth": {
+          "description": "shape of the mouth",
           "enum": [
             "1",
             "10",
@@ -911,6 +928,7 @@
           "title": "Face Mouth"
         },
         "eyeColor": {
+          "description": "color of the eye",
           "enum": [
             "1",
             "10",
@@ -949,6 +967,7 @@
           "title": "Eye Color"
         },
         "eyeShape": {
+          "description": "shape of the eye",
           "enum": [
             "1",
             "10",
@@ -987,6 +1006,7 @@
           "title": "Eye Shape"
         },
         "eyeBrows": {
+          "description": "details on the eye brows",
           "enum": [
             "1",
             "10",
@@ -1025,6 +1045,7 @@
           "title": "Eye Brows"
         },
         "sex": {
+          "description": "traits specific to male or females",
           "enum": [
             "1",
             "10",
@@ -1080,23 +1101,32 @@
         "eyeBrows",
         "sex"
       ],
-      "title": "Category"
+      "title": "Categories"
     },
     "ageRanges": {
+      "description": "age range",
       "type": "object",
       "properties": {
         "child": {
           "type": "object",
           "properties": {
+            "min": {
+              "description": "The minimum age for this group",
+              "type": "number",
+              "title": "Min"
+            },
             "max": {
+              "description": "The maximum age for this group",
               "type": "number",
               "title": "Max"
             },
             "weight": {
+              "description": "The weight percentage for how common this age is for this race",
               "type": "number",
               "title": "Weight"
             },
             "dice": {
+              "description": "The dice to roll for a random age in this group (add min + dice rol)",
               "type": "array",
               "items": {
                 "enum": [
@@ -1115,6 +1145,7 @@
           },
           "additionalProperties": false,
           "propertyOrder": [
+            "min",
             "max",
             "weight",
             "dice"
@@ -1122,6 +1153,7 @@
           "required": [
             "dice",
             "max",
+            "min",
             "weight"
           ],
           "title": "Child"
@@ -1129,15 +1161,23 @@
         "young": {
           "type": "object",
           "properties": {
+            "min": {
+              "description": "The minimum age for this group",
+              "type": "number",
+              "title": "Min"
+            },
             "max": {
+              "description": "The maximum age for this group",
               "type": "number",
               "title": "Max"
             },
             "weight": {
+              "description": "The weight percentage for how common this age is for this race",
               "type": "number",
               "title": "Weight"
             },
             "dice": {
+              "description": "The dice to roll for a random age in this group (add min + dice rol)",
               "type": "array",
               "items": {
                 "enum": [
@@ -1156,6 +1196,7 @@
           },
           "additionalProperties": false,
           "propertyOrder": [
+            "min",
             "max",
             "weight",
             "dice"
@@ -1163,6 +1204,7 @@
           "required": [
             "dice",
             "max",
+            "min",
             "weight"
           ],
           "title": "Young"
@@ -1170,15 +1212,23 @@
         "middle": {
           "type": "object",
           "properties": {
+            "min": {
+              "description": "The minimum age for this group",
+              "type": "number",
+              "title": "Min"
+            },
             "max": {
+              "description": "The maximum age for this group",
               "type": "number",
               "title": "Max"
             },
             "weight": {
+              "description": "The weight percentage for how common this age is for this race",
               "type": "number",
               "title": "Weight"
             },
             "dice": {
+              "description": "The dice to roll for a random age in this group (add min + dice rol)",
               "type": "array",
               "items": {
                 "enum": [
@@ -1197,6 +1247,7 @@
           },
           "additionalProperties": false,
           "propertyOrder": [
+            "min",
             "max",
             "weight",
             "dice"
@@ -1204,6 +1255,7 @@
           "required": [
             "dice",
             "max",
+            "min",
             "weight"
           ],
           "title": "Middle"
@@ -1211,15 +1263,23 @@
         "old": {
           "type": "object",
           "properties": {
+            "min": {
+              "description": "The minimum age for this group",
+              "type": "number",
+              "title": "Min"
+            },
             "max": {
+              "description": "The maximum age for this group",
               "type": "number",
               "title": "Max"
             },
             "weight": {
+              "description": "The weight percentage for how common this age is for this race",
               "type": "number",
               "title": "Weight"
             },
             "dice": {
+              "description": "The dice to roll for a random age in this group (add min + dice rol)",
               "type": "array",
               "items": {
                 "enum": [
@@ -1238,6 +1298,7 @@
           },
           "additionalProperties": false,
           "propertyOrder": [
+            "min",
             "max",
             "weight",
             "dice"
@@ -1245,6 +1306,7 @@
           "required": [
             "dice",
             "max",
+            "min",
             "weight"
           ],
           "title": "Old"
@@ -1258,6 +1320,15 @@
         "old"
       ],
       "title": "Age Ranges"
+    },
+    "dictionary": {
+      "description": "the dictionary includes a fast lookup of genes\nincludeing a key value pair with a link to the trait\nex: \"general:C1:17\": \"tall\"",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "propertyOrder": [],
+      "title": "Dictionary"
     },
     "genes": {
       "description": "This is a more user friendly list of genes",
@@ -1394,31 +1465,31 @@
       "type": "array",
       "items": {
         "enum": [
-          "CE",
-          "CG",
-          "CI",
-          "CM",
-          "CN",
-          "LE",
-          "LG",
-          "LI",
-          "LM",
-          "LN",
-          "NE",
-          "NG",
-          "NI",
-          "NM",
-          "NN",
-          "RE",
-          "RG",
-          "RI",
-          "RM",
-          "RN",
-          "SE",
-          "SG",
-          "SI",
-          "SM",
-          "SN"
+          "chaotic_evil",
+          "chaotic_good",
+          "chaotic_impure",
+          "chaotic_moral",
+          "chaotic_neutral",
+          "lawful_evil",
+          "lawful_good",
+          "lawful_impure",
+          "lawful_moral",
+          "lawful_neutral",
+          "neutral_evil",
+          "neutral_good",
+          "neutral_impure",
+          "neutral_moral",
+          "rebel_evil",
+          "rebel_good",
+          "rebel_impure",
+          "rebel_moral",
+          "rebel_neutral",
+          "social_evil",
+          "social_good",
+          "social_impure",
+          "social_moral",
+          "social_neutral",
+          "true_neutral"
         ],
         "type": "string"
       },
@@ -1446,7 +1517,7 @@
       "title": "Speed"
     },
     "languages": {
-      "description": "which languages you speak by virtue of your race @link:ILinkLanguage[];",
+      "description": "which languages you speak by virtue of your race @link:ILinkLanguage[]",
       "type": "array",
       "items": {
         "type": "object",
@@ -1475,7 +1546,414 @@
       "title": "Languages"
     },
     "subraces": {
-      "description": "list of subraces @link:ILinkRace[];",
+      "description": "Subraces",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "Description of the race",
+            "type": "string",
+            "title": "description"
+          },
+          "abilitiyIncreases": {
+            "description": "ability score increases",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ability": {
+                  "enum": [
+                    "all",
+                    "charisma",
+                    "choice",
+                    "constitution",
+                    "dexterity",
+                    "intelligence",
+                    "strength",
+                    "wisdom"
+                  ],
+                  "type": "string",
+                  "title": "ability"
+                },
+                "amount": {
+                  "type": "number",
+                  "title": "amount"
+                }
+              },
+              "additionalProperties": false,
+              "propertyOrder": [
+                "ability",
+                "amount"
+              ],
+              "required": [
+                "ability",
+                "amount"
+              ]
+            },
+            "title": "abilitiyIncreases"
+          },
+          "alignments": {
+            "description": "which alignments your race tends towards",
+            "type": "array",
+            "items": {
+              "enum": [
+                "chaotic_evil",
+                "chaotic_good",
+                "chaotic_impure",
+                "chaotic_moral",
+                "chaotic_neutral",
+                "lawful_evil",
+                "lawful_good",
+                "lawful_impure",
+                "lawful_moral",
+                "lawful_neutral",
+                "neutral_evil",
+                "neutral_good",
+                "neutral_impure",
+                "neutral_moral",
+                "rebel_evil",
+                "rebel_good",
+                "rebel_impure",
+                "rebel_moral",
+                "rebel_neutral",
+                "social_evil",
+                "social_good",
+                "social_impure",
+                "social_moral",
+                "social_neutral",
+                "true_neutral"
+              ],
+              "type": "string"
+            },
+            "title": "alignments"
+          },
+          "languages": {
+            "description": "which languages you speak by virtue of your race @link:ILinkLanguage[];",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "description": "This is the UUID for the linked Resource.",
+                  "type": "string",
+                  "title": "uuid"
+                },
+                "name": {
+                  "description": "This is the name for the linked Resource.",
+                  "type": "string",
+                  "title": "name"
+                }
+              },
+              "additionalProperties": false,
+              "propertyOrder": [
+                "uuid",
+                "name"
+              ],
+              "required": [
+                "name",
+                "uuid"
+              ]
+            },
+            "title": "languages"
+          },
+          "weight": {
+            "description": "Weight is used to generate a random weight\nNumber is in pounds (lbs)",
+            "type": "object",
+            "properties": {
+              "base": {
+                "description": "This is the base value",
+                "type": "number",
+                "title": "base"
+              },
+              "dice": {
+                "description": "This is the dice to roll to generate the random value",
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "d10",
+                    "d100",
+                    "d12",
+                    "d20",
+                    "d4",
+                    "d6",
+                    "d8"
+                  ],
+                  "type": "string"
+                },
+                "title": "dice"
+              },
+              "multiplier": {
+                "description": "This is the multiplier to be used instead of the dice roll",
+                "type": "number",
+                "title": "multiplier"
+              }
+            },
+            "additionalProperties": false,
+            "propertyOrder": [
+              "base",
+              "dice",
+              "multiplier"
+            ],
+            "required": [
+              "base"
+            ],
+            "title": "weight"
+          },
+          "height": {
+            "description": "Height is used to generate a random height\nNumber is in inches (in)",
+            "type": "object",
+            "properties": {
+              "base": {
+                "description": "This is the base value",
+                "type": "number",
+                "title": "base"
+              },
+              "dice": {
+                "description": "This is the dice to roll to generate the random value",
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "d10",
+                    "d100",
+                    "d12",
+                    "d20",
+                    "d4",
+                    "d6",
+                    "d8"
+                  ],
+                  "type": "string"
+                },
+                "title": "dice"
+              },
+              "multiplier": {
+                "description": "This is the multiplier to be used instead of the dice roll",
+                "type": "number",
+                "title": "multiplier"
+              }
+            },
+            "additionalProperties": false,
+            "propertyOrder": [
+              "base",
+              "dice",
+              "multiplier"
+            ],
+            "required": [
+              "base"
+            ],
+            "title": "height"
+          },
+          "features": {
+            "description": "A list of racial features @link:ILinkFeature[]",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "description": "This is the UUID for the linked Resource.",
+                  "type": "string",
+                  "title": "uuid"
+                },
+                "name": {
+                  "description": "This is the name for the linked Resource.",
+                  "type": "string",
+                  "title": "name"
+                }
+              },
+              "additionalProperties": false,
+              "propertyOrder": [
+                "uuid",
+                "name"
+              ],
+              "required": [
+                "name",
+                "uuid"
+              ]
+            },
+            "title": "features"
+          },
+          "uuid": {
+            "description": "This is the UUID for this Resource.",
+            "type": "string",
+            "title": "uuid"
+          },
+          "version": {
+            "description": "This is the version number for generator used to create this Resource.",
+            "type": "string",
+            "title": "version"
+          },
+          "name": {
+            "description": "This is the name for this Resource.",
+            "type": "string",
+            "title": "name"
+          },
+          "abstract": {
+            "description": "This determines if this is an abstract concept a Resource like a template.",
+            "type": "boolean",
+            "title": "abstract"
+          },
+          "abstractProperties": {
+            "description": "These are unique properties for an abstract Resource to help with generating.",
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "abstractProperties"
+          },
+          "derivation": {
+            "description": "This is the LinkResource that this Resource is derived from like a template. @link:ILinkResource",
+            "type": "object",
+            "properties": {
+              "uuid": {
+                "description": "This is the UUID for the linked Resource.",
+                "type": "string",
+                "title": "uuid"
+              },
+              "name": {
+                "description": "This is the name for the linked Resource.",
+                "type": "string",
+                "title": "name"
+              }
+            },
+            "additionalProperties": false,
+            "propertyOrder": [
+              "uuid",
+              "name"
+            ],
+            "required": [
+              "name",
+              "uuid"
+            ],
+            "title": "derivation"
+          },
+          "notes": {
+            "description": "These are specific notes for this Resource that may be helpful while writing.",
+            "type": "string",
+            "title": "notes"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "description",
+          "abilitiyIncreases",
+          "alignments",
+          "languages",
+          "weight",
+          "height",
+          "features",
+          "uuid",
+          "version",
+          "name",
+          "abstract",
+          "abstractProperties",
+          "derivation",
+          "notes"
+        ],
+        "required": [
+          "abilitiyIncreases",
+          "abstract",
+          "description",
+          "name",
+          "uuid",
+          "version"
+        ]
+      },
+      "title": "Subraces"
+    },
+    "weight": {
+      "description": "Weight is used to generate a random weight\nNumber is in pounds (lbs)",
+      "type": "object",
+      "properties": {
+        "base": {
+          "description": "This is the base value",
+          "type": "number",
+          "title": "Base"
+        },
+        "dice": {
+          "description": "This is the dice to roll to generate the random value",
+          "type": "array",
+          "items": {
+            "enum": [
+              "d4",
+              "d6",
+              "d8",
+              "d10",
+              "d12",
+              "d20",
+              "d100"
+            ],
+            "type": "string"
+          },
+          "title": "Dice"
+        },
+        "multiplier": {
+          "description": "This is the multiplier to be used instead of the dice roll",
+          "type": "number",
+          "title": "Multiplier"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "base",
+        "dice",
+        "multiplier"
+      ],
+      "required": [
+        "base"
+      ],
+      "title": "Weight"
+    },
+    "height": {
+      "description": "Height is used to generate a random height\nNumber is in inches (in)",
+      "type": "object",
+      "properties": {
+        "base": {
+          "description": "This is the base value",
+          "type": "number",
+          "title": "Base"
+        },
+        "dice": {
+          "description": "This is the dice to roll to generate the random value",
+          "type": "array",
+          "items": {
+            "enum": [
+              "d4",
+              "d6",
+              "d8",
+              "d10",
+              "d12",
+              "d20",
+              "d100"
+            ],
+            "type": "string"
+          },
+          "title": "Dice"
+        },
+        "multiplier": {
+          "description": "This is the multiplier to be used instead of the dice roll",
+          "type": "number",
+          "title": "Multiplier"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "base",
+        "dice",
+        "multiplier"
+      ],
+      "required": [
+        "base"
+      ],
+      "title": "Height"
+    },
+    "features": {
+      "description": "A list of racial features @link:ILinkFeature[]",
       "type": "array",
       "items": {
         "type": "object",
@@ -1501,7 +1979,7 @@
           "uuid"
         ]
       },
-      "title": "Subraces"
+      "title": "Features"
     },
     "uuid": {
       "description": "This is the UUID for this Resource.",
@@ -1562,13 +2040,12 @@
   },
   "additionalProperties": false,
   "propertyOrder": [
-    "uuid",
-    "version",
-    "name",
+    "description",
     "chromosomes",
     "sex",
     "categories",
     "ageRanges",
+    "dictionary",
     "genes",
     "abilitiyIncreases",
     "alignments",
@@ -1576,6 +2053,12 @@
     "speed",
     "languages",
     "subraces",
+    "weight",
+    "height",
+    "features",
+    "uuid",
+    "version",
+    "name",
     "abstract",
     "abstractProperties",
     "derivation",
@@ -1585,16 +2068,12 @@
     "abilitiyIncreases",
     "abstract",
     "ageRanges",
-    "alignments",
     "categories",
     "chromosomes",
-    "genes",
-    "languages",
+    "description",
+    "dictionary",
     "name",
     "sex",
-    "size",
-    "speed",
-    "subraces",
     "uuid",
     "version"
   ],

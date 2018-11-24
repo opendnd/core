@@ -1,6 +1,9 @@
 import { expect } from 'chai';
 import { 
-  roll,
+  SRD,
+} from '../src';
+
+const {
   backgrounds,
   cultures,
   features,
@@ -8,17 +11,9 @@ import {
   klasses,
   languages,
   races,
-} from '../src';
+} = SRD;
 
 describe('SRD', () => {
-  it('rolls a string', () => {
-    expect(roll('1d5')).to.be.a('number');
-  });
-
-  it('rolls an array', () => {
-    expect(roll(['d6', 'd20'])).to.be.a('number');
-  });
-
   it('backgrounds', () => {
     expect(backgrounds).to.be.an('object');
   });

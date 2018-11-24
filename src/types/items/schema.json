@@ -72,6 +72,10 @@
           "type": "string",
           "title": "Nickname"
         },
+        "quantity": {
+          "type": "number",
+          "title": "Quantity"
+        },
         "uuid": {
           "description": "This is the UUID for the linked Resource.",
           "type": "string",
@@ -86,6 +90,7 @@
       "additionalProperties": false,
       "propertyOrder": [
         "nickname",
+        "quantity",
         "uuid",
         "name"
       ],
@@ -158,6 +163,10 @@
             "type": "string",
             "title": "nickname"
           },
+          "quantity": {
+            "type": "number",
+            "title": "quantity"
+          },
           "uuid": {
             "description": "This is the UUID for the linked Resource.",
             "type": "string",
@@ -172,6 +181,7 @@
         "additionalProperties": false,
         "propertyOrder": [
           "nickname",
+          "quantity",
           "uuid",
           "name"
         ],
@@ -192,6 +202,10 @@
             "type": "string",
             "title": "nickname"
           },
+          "quantity": {
+            "type": "number",
+            "title": "quantity"
+          },
           "uuid": {
             "description": "This is the UUID for the linked Resource.",
             "type": "string",
@@ -206,6 +220,7 @@
         "additionalProperties": false,
         "propertyOrder": [
           "nickname",
+          "quantity",
           "uuid",
           "name"
         ],
@@ -379,31 +394,31 @@
     },
     "alignment": {
       "enum": [
-        "CE",
-        "CG",
-        "CI",
-        "CM",
-        "CN",
-        "LE",
-        "LG",
-        "LI",
-        "LM",
-        "LN",
-        "NE",
-        "NG",
-        "NI",
-        "NM",
-        "NN",
-        "RE",
-        "RG",
-        "RI",
-        "RM",
-        "RN",
-        "SE",
-        "SG",
-        "SI",
-        "SM",
-        "SN"
+        "chaotic_evil",
+        "chaotic_good",
+        "chaotic_impure",
+        "chaotic_moral",
+        "chaotic_neutral",
+        "lawful_evil",
+        "lawful_good",
+        "lawful_impure",
+        "lawful_moral",
+        "lawful_neutral",
+        "neutral_evil",
+        "neutral_good",
+        "neutral_impure",
+        "neutral_moral",
+        "rebel_evil",
+        "rebel_good",
+        "rebel_impure",
+        "rebel_moral",
+        "rebel_neutral",
+        "social_evil",
+        "social_good",
+        "social_impure",
+        "social_moral",
+        "social_neutral",
+        "true_neutral"
       ],
       "type": "string",
       "title": "Alignment"
@@ -517,9 +532,6 @@
   },
   "additionalProperties": false,
   "propertyOrder": [
-    "uuid",
-    "version",
-    "name",
     "nickname",
     "type",
     "weaponProperties",
@@ -550,6 +562,9 @@
     "dialogs",
     "currentDialog",
     "properties",
+    "uuid",
+    "version",
+    "name",
     "abstract",
     "abstractProperties",
     "derivation",

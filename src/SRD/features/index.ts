@@ -1,11 +1,11 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
 import { ILinkFeature, IFeature } from "../../types/features/Feature";
 
-interface ILinkFeatureDict extends ILinkResourceDict {
+export interface ILinkFeatureDict extends ILinkResourceDict {
   [uuid:string]: ILinkFeature;
 }
 
-interface IFeatureDict extends IResourceDict {
+export interface IFeatureDict extends IResourceDict {
   [uuid:string]: IFeature;
 }
 

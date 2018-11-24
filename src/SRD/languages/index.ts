@@ -1,11 +1,11 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
 import { ILinkLanguage, ILanguage } from "../../types/languages/Language";
 
-interface ILinkLanguageDict extends ILinkResourceDict {
+export interface ILinkLanguageDict extends ILinkResourceDict {
   [uuid:string]: ILinkLanguage;
 }
 
-interface ILanguageDict extends IResourceDict {
+export interface ILanguageDict extends IResourceDict {
   [uuid:string]: ILanguage;
 }
 

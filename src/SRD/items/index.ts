@@ -1,11 +1,11 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
 import { ILinkItem, IItem } from "../../types/items/Item";
 
-interface ILinkItemDict extends ILinkResourceDict {
+export interface ILinkItemDict extends ILinkResourceDict {
   [uuid:string]: ILinkItem;
 }
 
-interface IItemDict extends IResourceDict {
+export interface IItemDict extends IResourceDict {
   [uuid:string]: IItem;
 }
 

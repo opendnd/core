@@ -230,6 +230,45 @@ export interface IGene {
 
 export interface ILinkRace extends ILinkResource {}
 
+export interface ISubRace extends IResource {
+  /**
+   * Description of the race
+   */
+  description: string;
+
+  /** 
+   * ability score increases
+   */
+  abilitiyIncreases: IRacialAbilityIncrease[];
+
+  /** 
+   * which alignments your race tends towards
+   */
+  alignments?: ExpandedAlignments[];
+
+  /** 
+   * which languages you speak by virtue of your race @link:ILinkLanguage[];
+   */
+  languages?: ILinkLanguage[];
+
+  /**
+   * Weight is used to generate a random weight
+   * Number is in pounds (lbs)
+   */
+  weight?: IBaseGroup
+  
+  /**
+   * Height is used to generate a random height
+   * Number is in inches (in)
+   */
+  height?: IBaseGroup
+
+  /**
+   * A list of racial features @link:ILinkFeature[]
+   */
+  features?: ILinkFeature[]
+}
+
 export interface IRace extends IResource {
   /**
    * Description of the race
@@ -238,7 +277,7 @@ export interface IRace extends IResource {
 
   // chromosomes have the dice size for each chromosome pair
   // note that this uses string instead of the Dice type as one chromosome specifies sex
-  chromosomes?: {
+  chromosomes: {
     1?: DiceAndSex
     2?: DiceAndSex
     3?: DiceAndSex
@@ -276,7 +315,7 @@ export interface IRace extends IResource {
   /**
    * this determines which dice are used for the x and y chromosome
    */
-  sex?: {
+  sex: {
     x?: Dice
     y?: Dice,
   };
@@ -284,12 +323,12 @@ export interface IRace extends IResource {
   /**
    * categories is used to lookup which physical characteristic is used for which chromosome
    */
-  categories?: ICategories;
+  categories: ICategories;
 
   /**
    * age range
    */
-  ageRanges?: {
+  ageRanges: {
     child?: IAgeGroup
     young?: IAgeGroup
     middle?: IAgeGroup
@@ -301,7 +340,7 @@ export interface IRace extends IResource {
    * includeing a key value pair with a link to the trait
    * ex: "general:C1:17": "tall"
    */ 
-  dictionary?: {
+  dictionary: {
     [gene:string]: string,
   };
 
@@ -313,7 +352,7 @@ export interface IRace extends IResource {
   /** 
    * ability score increases
    */
-  abilitiyIncreases?: IRacialAbilityIncrease[];
+  abilitiyIncreases: IRacialAbilityIncrease[];
 
   /** 
    * which alignments your race tends towards
@@ -331,14 +370,14 @@ export interface IRace extends IResource {
   speed?: number;
 
   /** 
-   * which languages you speak by virtue of your race @link:ILinkLanguage[];
+   * which languages you speak by virtue of your race @link:ILinkLanguage[]
    */
   languages?: ILinkLanguage[];
 
   /** 
-   * list of subraces @link:ILinkRace[];
+   * Subraces
    */
-  subraces?: IRace[];
+  subraces?: ISubRace[];
 
   /**
    * Weight is used to generate a random weight
@@ -353,11 +392,17 @@ export interface IRace extends IResource {
   height?: IBaseGroup
 
   /**
-   * A list of racial features
+   * A list of racial features @link:ILinkFeature[]
    */
   features?: ILinkFeature[]
 }
 
 export class Race extends Resource implements IRace {
   public description = "";
+  public chromosomes = {};
+  public sex = {};
+  public categories = {};
+  public ageRanges = {};
+  public dictionary = {};
+  public abilitiyIncreases = [];
 }

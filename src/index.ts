@@ -33,14 +33,33 @@ export * from "./types/tools/Tool";
 export * from "./types/traps/Trap";
 export * from "./types/vehicles/Vehicle";
 
-export * from "./SRD/backgrounds/index";
-export * from "./SRD/cultures/index";
-export * from "./SRD/features/index";
-export * from "./SRD/items/index";
-export * from "./SRD/klasses/index";
-export * from "./SRD/languages/index";
-export * from "./SRD/races/index";
-export * from "./SRD/core/index";
+// get data for SRD
+import { backgrounds, backgroundsDict } from "./SRD/backgrounds/index";
+import { cultures, culturesDict } from "./SRD/cultures/index";
+import { features, featuresDict } from "./SRD/features/index";
+import { items, itemsDict } from "./SRD/items/index";
+import { klasses, klassesDict } from "./SRD/klasses/index";
+import { languages, languagesDict } from "./SRD/languages/index";
+import { races, racesDict } from "./SRD/races/index";
+
+export const SRD = {
+  backgrounds,
+  backgroundsDict,
+  cultures,
+  culturesDict,
+  features,
+  featuresDict,
+  items,
+  itemsDict,
+  klasses,
+  klassesDict,
+  languages,
+  languagesDict,
+  races,
+  racesDict,
+}
+
+export * from "./common/index";
 
 export const schemas = {
   artwork: require('./types/artwork/schema.json'),

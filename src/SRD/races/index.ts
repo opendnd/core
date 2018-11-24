@@ -1,11 +1,11 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
 import { ILinkRace, IRace } from "../../types/races/Race";
 
-interface ILinkRaceDict extends ILinkResourceDict {
+export interface ILinkRaceDict extends ILinkResourceDict {
   [uuid:string]: ILinkRace;
 }
 
-interface IRaceDict extends IResourceDict {
+export interface IRaceDict extends IResourceDict {
   [uuid:string]: IRace;
 }
 

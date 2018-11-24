@@ -91,6 +91,10 @@
             "type": "string",
             "title": "nickname"
           },
+          "quantity": {
+            "type": "number",
+            "title": "quantity"
+          },
           "uuid": {
             "description": "This is the UUID for the linked Resource.",
             "type": "string",
@@ -105,6 +109,7 @@
         "additionalProperties": false,
         "propertyOrder": [
           "nickname",
+          "quantity",
           "uuid",
           "name"
         ],
@@ -199,9 +204,6 @@
   },
   "additionalProperties": false,
   "propertyOrder": [
-    "uuid",
-    "version",
-    "name",
     "nickname",
     "cost",
     "mode",
@@ -213,6 +215,9 @@
     "multiplier",
     "speed",
     "properties",
+    "uuid",
+    "version",
+    "name",
     "abstract",
     "abstractProperties",
     "derivation",

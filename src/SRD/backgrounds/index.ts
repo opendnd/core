@@ -1,11 +1,11 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
 import { IBackground, ILinkBackground } from "../../types/backgrounds/Background";
 
-interface ILinkBackgroundDict extends ILinkResourceDict {
+export interface ILinkBackgroundDict extends ILinkResourceDict {
   [uuid:string]: ILinkBackground;
 }
 
-interface IBackgroundDict extends IResourceDict {
+export interface IBackgroundDict extends IResourceDict {
   [uuid:string]: IBackground;
 }
 

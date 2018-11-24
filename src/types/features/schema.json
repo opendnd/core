@@ -1,6 +1,11 @@
 {
   "type": "object",
   "properties": {
+    "description": {
+      "description": "Description of the feature",
+      "type": "string",
+      "title": "Description"
+    },
     "uuid": {
       "description": "This is the UUID for this Resource.",
       "type": "string",
@@ -60,6 +65,7 @@
   },
   "additionalProperties": false,
   "propertyOrder": [
+    "description",
     "uuid",
     "version",
     "name",
@@ -70,6 +76,7 @@
   ],
   "required": [
     "abstract",
+    "description",
     "name",
     "uuid",
     "version"

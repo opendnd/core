@@ -1,7 +1,13 @@
 {
   "type": "object",
   "properties": {
+    "description": {
+      "description": "Description provides a detailed overview to the player on this background",
+      "type": "string",
+      "title": "Description"
+    },
     "specialties": {
+      "description": "A list of specialties available for this background",
       "type": "array",
       "items": {
         "type": "string"
@@ -9,6 +15,7 @@
       "title": "Specialties"
     },
     "personalityTraits": {
+      "description": "A list of personality trait options",
       "type": "array",
       "items": {
         "type": "string"
@@ -16,6 +23,7 @@
       "title": "Personality Traits"
     },
     "ideals": {
+      "description": "A list of ideals by alignment x & y options",
       "type": "object",
       "properties": {
         "any": {
@@ -105,6 +113,7 @@
       "title": "Ideals"
     },
     "bonds": {
+      "description": "A list of bonds",
       "type": "array",
       "items": {
         "type": "string"
@@ -112,13 +121,89 @@
       "title": "Bonds"
     },
     "flaws": {
+      "description": "A list of flaws",
       "type": "array",
       "items": {
         "type": "string"
       },
       "title": "Flaws"
     },
+    "treasury": {
+      "description": "Starting treasury",
+      "type": "object",
+      "properties": {
+        "cp": {
+          "type": "number",
+          "title": "Cp"
+        },
+        "sp": {
+          "type": "number",
+          "title": "Sp"
+        },
+        "ep": {
+          "type": "number",
+          "title": "Ep"
+        },
+        "gp": {
+          "type": "number",
+          "title": "Gp"
+        },
+        "pp": {
+          "type": "number",
+          "title": "Pp"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "cp",
+        "sp",
+        "ep",
+        "gp",
+        "pp"
+      ],
+      "title": "Treasury"
+    },
+    "equipment": {
+      "description": "A list of starting equipment @link:ILinkItem[]",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nickname": {
+            "type": "string",
+            "title": "nickname"
+          },
+          "quantity": {
+            "type": "number",
+            "title": "quantity"
+          },
+          "uuid": {
+            "description": "This is the UUID for the linked Resource.",
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "description": "This is the name for the linked Resource.",
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "nickname",
+          "quantity",
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "name",
+          "uuid"
+        ]
+      },
+      "title": "Equipment"
+    },
     "proficiencies": {
+      "description": "A list of proficiencies",
       "type": "object",
       "properties": {
         "skills": {
@@ -127,7 +212,7 @@
           "items": {
             "enum": [
               "acrobatics",
-              "animalhandling",
+              "animal_handling",
               "arcana",
               "athletics",
               "deception",
@@ -141,7 +226,7 @@
               "performance",
               "persuasion",
               "religion",
-              "sleightofhand",
+              "sleight_of_hand",
               "stealth",
               "survival"
             ],
@@ -193,40 +278,6 @@
           },
           "title": "Languages"
         },
-        "items": {
-          "description": "a list of starting equipment @link:ILinkItem[]",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "nickname": {
-                "type": "string",
-                "title": "nickname"
-              },
-              "uuid": {
-                "description": "This is the UUID for the linked Resource.",
-                "type": "string",
-                "title": "uuid"
-              },
-              "name": {
-                "description": "This is the name for the linked Resource.",
-                "type": "string",
-                "title": "name"
-              }
-            },
-            "additionalProperties": false,
-            "propertyOrder": [
-              "nickname",
-              "uuid",
-              "name"
-            ],
-            "required": [
-              "name",
-              "uuid"
-            ]
-          },
-          "title": "Items"
-        },
         "tools": {
           "description": "a list of tools with proficiency @link:ILinkTool[]",
           "type": "array",
@@ -272,7 +323,6 @@
         "skills",
         "transportation",
         "languages",
-        "items",
         "tools",
         "selectTools",
         "selectLanguages"
@@ -367,16 +417,19 @@
   },
   "additionalProperties": false,
   "propertyOrder": [
-    "uuid",
-    "version",
-    "name",
+    "description",
     "specialties",
     "personalityTraits",
     "ideals",
     "bonds",
     "flaws",
+    "treasury",
+    "equipment",
     "proficiencies",
     "features",
+    "uuid",
+    "version",
+    "name",
     "abstract",
     "abstractProperties",
     "derivation",
@@ -385,6 +438,7 @@
   "required": [
     "abstract",
     "bonds",
+    "description",
     "features",
     "flaws",
     "ideals",
@@ -392,6 +446,7 @@
     "personalityTraits",
     "proficiencies",
     "specialties",
+    "treasury",
     "uuid",
     "version"
   ],

@@ -1,11 +1,11 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
 import { ILinkKlass, IKlass } from "../../types/klasses/Klass";
 
-interface ILinkKlassDict extends ILinkResourceDict {
+export interface ILinkKlassDict extends ILinkResourceDict {
   [uuid:string]: ILinkKlass;
 }
 
-interface IKlassDict extends IResourceDict {
+export interface IKlassDict extends IResourceDict {
   [uuid:string]: IKlass;
 }
 

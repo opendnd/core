@@ -1,11 +1,11 @@
 import { IResourceDict, ILinkResourceDict } from "../../types/core/Core";
 import { ILinkCulture, ICulture } from "../../types/cultures/Culture";
 
-interface ILinkCultureDict extends ILinkResourceDict {
+export interface ILinkCultureDict extends ILinkResourceDict {
   [uuid:string]: ILinkCulture;
 }
 
-interface ICultureDict extends IResourceDict {
+export interface ICultureDict extends IResourceDict {
   [uuid:string]: ICulture;
 }
 
