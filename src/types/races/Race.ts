@@ -228,7 +228,7 @@ export interface IGene {
   trait: string;
 }
 
-export interface ILinkRace extends ILinkResource {}
+export interface ILinkSubRace extends ILinkResource {}
 
 export interface ISubRace extends IResource {
   /**
@@ -267,6 +267,13 @@ export interface ISubRace extends IResource {
    * A list of racial features @link:ILinkFeature[]
    */
   features?: ILinkFeature[]
+}
+
+export interface ILinkRace extends ILinkResource {
+  /**
+   * Specify which subrace if needed
+   */
+  subrace?: ILinkSubRace;
 }
 
 export interface IRace extends IResource {
