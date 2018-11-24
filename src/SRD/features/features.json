@@ -63,5 +63,20 @@
     "name": "Skill Versatility",
     "uuid": "dnd0050e-1srd-core-0019-f6s000000016",
     "version": "0.1.0"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000017": {
+    "name": "Menacing",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000017",
+    "version": "0.1.0"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000018": {
+    "name": "Relentless Endurance",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000018",
+    "version": "0.1.0"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000019": {
+    "name": "Savage Attacks",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000019",
+    "version": "0.1.0"
   }
 }
