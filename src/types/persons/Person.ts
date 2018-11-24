@@ -595,48 +595,48 @@ export interface IPerson extends IResource {
   /** 
    * a one word description of this character's personality
    */
-  trait?: string;
+  trait: string;
 
   /** 
    * a one word description of this person's physical characteristic
    */
-  characteristic?: string;
+  characteristic: string;
 
   /** 
    * the character's mannerism in voice or behavior
    */
-  mannerism?: string;
+  mannerism: string;
 
   /** 
    * the character's special talent
    */
-  talent?: string;
+  talent: string;
 
   /** 
    * a detailed list of personality traits
    */
-  personalityTraits?: string[];
+  personalityTraits: string[];
 
   /** 
    * the character's ideal
    */
-  ideal?: string;
+  ideal: string;
 
   /** 
    * the character's bond
    */
-  bond?: string;
+  bond: string;
 
   /** 
    * the character's flaw
    */
-  flaw?: string;
+  flaw: string;
 
   /** 
    * the background for the character and that background's specialty @link:ILinkBackground
    */
-  background?: ILinkBackground;
-  specialty?: string;
+  background: ILinkBackground;
+  specialty: string;
 
   /** 
    * knowledge is a list of information the player has learned about the campaign, world, etc.
@@ -738,4 +738,14 @@ export class Person extends Resource implements IPerson {
   };
   public birth = {};
   public death = {};
+  public personalityTraits = []
+  public ideal = "";
+  public bond = "";
+  public flaw = "";
+  public mannerism = "";
+  public characteristic = "";
+  public trait = "";
+  public talent = "";
+  public background = null;
+  public specialty = "";
 }
