@@ -103,17 +103,17 @@
     }
   },
   "height": {
-    "base": 57,
+    "base": 58,
     "dice": [
-      "d8",
-      "d8"
+      "d10",
+      "d10"
     ]
   },
   "weight": {
-    "base": 100,
+    "base": 140,
     "dice": [
-      "d4",
-      "d4"
+      "d6",
+      "d6"
     ]
   },
   "size": "medium",
@@ -232,7 +232,7 @@
     "eyeColor:C2:2": "brass",
     "eyeColor:C2:1": "white",
     "eyeColor:C2:10=2": "violet",
-    "eyeColor:C2:7=5": "multiColored",
+    "eyeColor:C2:7=5": "multi-colored",
     "eyeColor:C2:4=9": "amber",
     "eyeColor:C2:5=1": "cognac",
     "eyeColor:C2:6=9": "brandy",
@@ -426,7 +426,7 @@
     "hairColor:C4:5=1": "ebony",
     "hairColor:C4:6=2": "blue-black",
     "hairColor:C4:3=2": "lime green",
-    "hairColor:C4:3=5": "multiColored",
+    "hairColor:C4:3=5": "multi-colored",
     "hairColor:C4:8=4": "violet",
     "hairColor:C4:4=5": "platinum",
     "hairColor:C4:8=2": "sandy blonde",

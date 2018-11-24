@@ -78,5 +78,25 @@
     "name": "Savage Attacks",
     "uuid": "dnd0050e-1srd-core-0019-f6s000000019",
     "version": "0.1.0"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000020": {
+    "name": "Lucky",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000020",
+    "version": "0.1.0"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000021": {
+    "name": "Brave",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000021",
+    "version": "0.1.0"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000022": {
+    "name": "Halfling Nimbleness",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000022",
+    "version": "0.1.0"
+  },
+  "dnd0050e-1srd-core-0019-f6s000000023": {
+    "name": "Naturally Stealthy",
+    "uuid": "dnd0050e-1srd-core-0019-f6s000000023",
+    "version": "0.1.0"
   }
 }
