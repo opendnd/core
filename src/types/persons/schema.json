@@ -34,6 +34,32 @@
           "description": "race of the creature @link:ILinkRace",
           "type": "object",
           "properties": {
+            "subrace": {
+              "description": "Specify which subrace if needed",
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "description": "This is the UUID for the linked Resource.",
+                  "type": "string",
+                  "title": "UUID"
+                },
+                "name": {
+                  "description": "This is the name for the linked Resource.",
+                  "type": "string",
+                  "title": "Name"
+                }
+              },
+              "additionalProperties": false,
+              "propertyOrder": [
+                "uuid",
+                "name"
+              ],
+              "required": [
+                "name",
+                "uuid"
+              ],
+              "title": "Subrace"
+            },
             "uuid": {
               "description": "This is the UUID for the linked Resource.",
               "type": "string",
@@ -47,6 +73,7 @@
           },
           "additionalProperties": false,
           "propertyOrder": [
+            "subrace",
             "uuid",
             "name"
           ],
@@ -378,6 +405,29 @@
                 "trait"
               ],
               "title": "Skin Aging"
+            },
+            "sex": {
+              "type": "object",
+              "properties": {
+                "gene": {
+                  "type": "string",
+                  "title": "Gene"
+                },
+                "trait": {
+                  "type": "string",
+                  "title": "Trait"
+                }
+              },
+              "additionalProperties": false,
+              "propertyOrder": [
+                "gene",
+                "trait"
+              ],
+              "required": [
+                "gene",
+                "trait"
+              ],
+              "title": "Sex"
             }
           },
           "additionalProperties": false,
@@ -394,7 +444,8 @@
             "hairFacial",
             "faceMouth",
             "eyeBrows",
-            "skinAging"
+            "skinAging",
+            "sex"
           ],
           "title": "Traits"
         },
@@ -1188,12 +1239,6 @@
         "attackModifier",
         "spells"
       ],
-      "required": [
-        "ability",
-        "attackModifier",
-        "saveDC",
-        "spells"
-      ],
       "title": "Spellcasting"
     },
     "culture": {
@@ -1667,11 +1712,6 @@
         "date",
         "rank"
       ],
-      "required": [
-        "date",
-        "domain",
-        "rank"
-      ],
       "title": "Birth"
     },
     "death": {
@@ -1735,10 +1775,6 @@
       "propertyOrder": [
         "domain",
         "date"
-      ],
-      "required": [
-        "date",
-        "domain"
       ],
       "title": "Death"
     },
@@ -3600,55 +3636,6 @@
         "rightToes",
         "mount"
       ],
-      "required": [
-        "abdomen",
-        "back",
-        "chin",
-        "eyes",
-        "groin",
-        "head",
-        "leftAnkle",
-        "leftArm",
-        "leftBreast",
-        "leftBrow",
-        "leftEar",
-        "leftEye",
-        "leftFingers",
-        "leftFoot",
-        "leftGrip",
-        "leftHand",
-        "leftKnee",
-        "leftLeg",
-        "leftShin",
-        "leftShoulder",
-        "leftThigh",
-        "leftToes",
-        "leftWrist",
-        "mount",
-        "mouth",
-        "neck",
-        "nose",
-        "rear",
-        "rightAnkle",
-        "rightArm",
-        "rightBreast",
-        "rightBrow",
-        "rightEar",
-        "rightEye",
-        "rightFingers",
-        "rightFoot",
-        "rightGrip",
-        "rightHand",
-        "rightKnee",
-        "rightLeg",
-        "rightShin",
-        "rightShoulder",
-        "rightThigh",
-        "rightToes",
-        "rightWrist",
-        "torso",
-        "waist"
-      ],
       "title": "Equipment"
     },
     "chattel": {
@@ -4207,36 +4194,22 @@
     "abilities",
     "abstract",
     "actions",
-    "activeCampaign",
     "age",
     "ageGroup",
     "alignment",
     "allies",
     "background",
-    "backstory",
     "birth",
     "bond",
-    "buildings",
-    "campaigns",
     "capacity",
     "characteristic",
-    "chattel",
     "children",
     "conditions",
-    "cost",
-    "culture",
-    "currentDialog",
     "death",
-    "dialogs",
-    "domains",
     "enemies",
     "equipment",
     "exhaustion",
     "factions",
-    "faith",
-    "familiars",
-    "family",
-    "father",
     "features",
     "flaw",
     "hitDice",
@@ -4244,39 +4217,26 @@
     "ideal",
     "initiative",
     "items",
-    "klass",
-    "knowledge",
     "level",
-    "liege",
     "magicItems",
     "mannerism",
     "maxHP",
-    "mother",
     "name",
     "personalityTraits",
     "piety",
-    "playerName",
     "power",
     "proficiencies",
-    "quests",
     "reputation",
-    "resistance",
     "siblings",
     "specialty",
     "speed",
-    "spellcasting",
-    "spouse",
-    "stories",
     "talent",
     "tempHP",
-    "titles",
     "trait",
     "treasury",
     "type",
     "uuid",
-    "vehicles",
     "version",
-    "vulnerability",
     "weight"
   ],
   "$schema": "http://json-schema.org/draft-07/schema#",

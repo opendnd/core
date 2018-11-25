@@ -21,6 +21,32 @@
       "description": "race of the creature @link:ILinkRace",
       "type": "object",
       "properties": {
+        "subrace": {
+          "description": "Specify which subrace if needed",
+          "type": "object",
+          "properties": {
+            "uuid": {
+              "description": "This is the UUID for the linked Resource.",
+              "type": "string",
+              "title": "UUID"
+            },
+            "name": {
+              "description": "This is the name for the linked Resource.",
+              "type": "string",
+              "title": "Name"
+            }
+          },
+          "additionalProperties": false,
+          "propertyOrder": [
+            "uuid",
+            "name"
+          ],
+          "required": [
+            "name",
+            "uuid"
+          ],
+          "title": "Subrace"
+        },
         "uuid": {
           "description": "This is the UUID for the linked Resource.",
           "type": "string",
@@ -34,6 +60,7 @@
       },
       "additionalProperties": false,
       "propertyOrder": [
+        "subrace",
         "uuid",
         "name"
       ],
@@ -365,6 +392,29 @@
             "trait"
           ],
           "title": "Skin Aging"
+        },
+        "sex": {
+          "type": "object",
+          "properties": {
+            "gene": {
+              "type": "string",
+              "title": "Gene"
+            },
+            "trait": {
+              "type": "string",
+              "title": "Trait"
+            }
+          },
+          "additionalProperties": false,
+          "propertyOrder": [
+            "gene",
+            "trait"
+          ],
+          "required": [
+            "gene",
+            "trait"
+          ],
+          "title": "Sex"
         }
       },
       "additionalProperties": false,
@@ -381,7 +431,8 @@
         "hairFacial",
         "faceMouth",
         "eyeBrows",
-        "skinAging"
+        "skinAging",
+        "sex"
       ],
       "title": "Traits"
     },

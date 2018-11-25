@@ -76,6 +76,9 @@ export interface ITraits {
 
   // this includes information about how the skin ages like texture
   skinAging?: ITrait;
+
+  // this includes information specific to gender
+  sex?: ITrait;
 }
 
 // the available chromosomes
