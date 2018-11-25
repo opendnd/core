@@ -1,11 +1,6 @@
 {
   "type": "object",
   "properties": {
-    "description": {
-      "description": "Description of the feature",
-      "type": "string",
-      "title": "Description"
-    },
     "uuid": {
       "description": "This is the UUID for this Resource.",
       "type": "string",
@@ -68,7 +63,6 @@
     "uuid",
     "version",
     "name",
-    "description",
     "abstract",
     "abstractProperties",
     "derivation",
@@ -76,12 +70,11 @@
   ],
   "required": [
     "abstract",
-    "description",
     "name",
     "uuid",
     "version"
   ],
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Feature",
-  "description": "Features are character based such as class features."
+  "title": "Event",
+  "description": "Events are the different noteworthy happenings in your world such as births, deaths, foundings, etc."
 }

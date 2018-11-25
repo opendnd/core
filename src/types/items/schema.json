@@ -262,7 +262,7 @@
     "AC": {
       "description": "AC for the item",
       "type": "number",
-      "title": " A C"
+      "title": "AC"
     },
     "equippable": {
       "description": "a list of locations this item can be equipped",
@@ -330,27 +330,27 @@
       "properties": {
         "STR": {
           "type": "number",
-          "title": " S T R"
+          "title": "STR"
         },
         "DEX": {
           "type": "number",
-          "title": " D E X"
+          "title": "DEX"
         },
         "CON": {
           "type": "number",
-          "title": " C O N"
+          "title": "CON"
         },
         "INT": {
           "type": "number",
-          "title": " I N T"
+          "title": "INT"
         },
         "WIS": {
           "type": "number",
-          "title": " W I S"
+          "title": "WIS"
         },
         "CHA": {
           "type": "number",
-          "title": " C H A"
+          "title": "CHA"
         }
       },
       "additionalProperties": false,
@@ -382,15 +382,15 @@
     },
     "maxHP": {
       "type": "number",
-      "title": "Max H P"
+      "title": "Max HP"
     },
     "tempHP": {
       "type": "number",
-      "title": "Temp H P"
+      "title": "Temp HP"
     },
     "HP": {
       "type": "number",
-      "title": " H P"
+      "title": "HP"
     },
     "alignment": {
       "enum": [
@@ -532,6 +532,9 @@
   },
   "additionalProperties": false,
   "propertyOrder": [
+    "uuid",
+    "version",
+    "name",
     "nickname",
     "type",
     "weaponProperties",
@@ -562,9 +565,6 @@
     "dialogs",
     "currentDialog",
     "properties",
-    "uuid",
-    "version",
-    "name",
     "abstract",
     "abstractProperties",
     "derivation",

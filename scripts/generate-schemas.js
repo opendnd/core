@@ -22,6 +22,7 @@ const descriptions = {
   dungeons: "Dungeons are not just traditional dungeons but also forests, caverns and mazes that make up your world's dark underbelly.",
   dynasties: "Dynasties are the familial factions that form the powers of your world and provide context for your character's rich backstory.",
   encounters: "Encounters are the heart of conflict in your world, monsters, players and enemies collide to do battle.",
+  events: "Events are the different noteworthy happenings in your world such as births, deaths, foundings, etc.",
   factions: "Factions are the political powers that influence your world and give depth to your quests and domains.",
   familiars: "Familiars are the companion beasts of your world. ",
   features: "Features are character based such as class features.",
@@ -114,16 +115,41 @@ const capitalizeTitles = (schema) => {
 const splitOnCapital = (title) => {
   let splitTitle = '';
   title.split('').forEach((letter, i) => {
-    if (capitalizedLetters.includes(letter)) splitTitle += ' ';
+    const prevLetter = title[i - 1];
+    if (
+      (capitalizedLetters.includes(letter)) &&
+      (!capitalizedLetters.includes(prevLetter))
+    ) {
+      splitTitle += ' ';
+    }
     if (i === 0) letter = letter.toUpperCase();
     splitTitle += letter;
   });
 
   // edge cases
   if (splitTitle.includes('Uuid')) splitTitle = splitTitle.replace('Uuid', 'UUID');
-  if (splitTitle.includes('D N A')) splitTitle = 'DNA';
+  if (splitTitle[0] === ' ') splitTitle = splitTitle.slice(1);
 
   return splitTitle;
+}
+
+const removeItemFromArray = (item, array) => {
+  return array.filter(e => e !== item);
+}
+
+// fix the property order so uuid, name and version are at the top
+const fixPropertyOrder = (schema) => {
+  let propertyOrder = Object.assign([], schema.propertyOrder);
+  propertyOrder = removeItemFromArray('uuid', propertyOrder);
+  propertyOrder = removeItemFromArray('version', propertyOrder);
+  propertyOrder = removeItemFromArray('name', propertyOrder);
+  
+  schema.propertyOrder = [
+    'uuid',
+    'version',
+    'name',
+    ...propertyOrder,
+  ];
 }
 
 // process all the schemas
@@ -164,6 +190,7 @@ const processAll = () => {
           capitalizeTitles(schema);
           fixDiceOrder(schema);
           fixAbstractProperties(schema);
+          fixPropertyOrder(schema);
 
           // add title and description
           schema.title = resource;
