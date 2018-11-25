@@ -1,6 +1,66 @@
 {
   "type": "object",
   "properties": {
+    "description": {
+      "description": "A description of the culture",
+      "type": "string",
+      "title": "Description"
+    },
+    "names": {
+      "description": "A list of names in this culture",
+      "type": "object",
+      "properties": {
+        "male": {
+          "description": "Male names",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Male"
+        },
+        "female": {
+          "description": "Female names",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Female"
+        },
+        "neuter": {
+          "description": "Neuter names",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Neuter"
+        },
+        "domain": {
+          "description": "Domain names",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Domain"
+        },
+        "dynasty": {
+          "description": "Dynasty names",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Dynasty"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "male",
+        "female",
+        "neuter",
+        "domain",
+        "dynasty"
+      ],
+      "title": "Names"
+    },
     "uuid": {
       "description": "This is the UUID for this Resource.",
       "type": "string",
@@ -63,6 +123,8 @@
     "uuid",
     "version",
     "name",
+    "description",
+    "names",
     "abstract",
     "abstractProperties",
     "derivation",
@@ -70,7 +132,9 @@
   ],
   "required": [
     "abstract",
+    "description",
     "name",
+    "names",
     "uuid",
     "version"
   ],

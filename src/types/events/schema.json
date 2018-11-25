@@ -1,6 +1,76 @@
 {
   "type": "object",
   "properties": {
+    "type": {
+      "description": "Type of event",
+      "enum": [
+        "annulment",
+        "birth",
+        "death",
+        "founding",
+        "marriage",
+        "other"
+      ],
+      "type": "string",
+      "title": "Type"
+    },
+    "description": {
+      "description": "description of the event",
+      "type": "string",
+      "title": "Description"
+    },
+    "domain": {
+      "description": "location of the event @link:ILinkDomain",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "description": "This is the UUID for the linked Resource.",
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "description": "This is the name for the linked Resource.",
+          "type": "string",
+          "title": "Name"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "Domain"
+    },
+    "date": {
+      "description": "date of the event @link:ILinkDate",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "description": "This is the UUID for the linked Resource.",
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "description": "This is the name for the linked Resource.",
+          "type": "string",
+          "title": "Name"
+        }
+      },
+      "additionalProperties": false,
+      "propertyOrder": [
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "Date"
+    },
     "uuid": {
       "description": "This is the UUID for this Resource.",
       "type": "string",
@@ -63,6 +133,10 @@
     "uuid",
     "version",
     "name",
+    "type",
+    "description",
+    "domain",
+    "date",
     "abstract",
     "abstractProperties",
     "derivation",
@@ -71,6 +145,7 @@
   "required": [
     "abstract",
     "name",
+    "type",
     "uuid",
     "version"
   ],

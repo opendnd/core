@@ -1645,138 +1645,155 @@
       "title": "Factions"
     },
     "birth": {
-      "description": "birth information",
+      "description": "Birth information @link:ILinkEvent",
       "type": "object",
       "properties": {
-        "domain": {
-          "description": "location of birth @link:ILinkDomain",
-          "type": "object",
-          "properties": {
-            "uuid": {
-              "description": "This is the UUID for the linked Resource.",
-              "type": "string",
-              "title": "UUID"
-            },
-            "name": {
-              "description": "This is the name for the linked Resource.",
-              "type": "string",
-              "title": "Name"
-            }
-          },
-          "additionalProperties": false,
-          "propertyOrder": [
-            "uuid",
-            "name"
-          ],
-          "required": [
-            "name",
-            "uuid"
-          ],
-          "title": "Domain"
-        },
         "date": {
-          "description": "date of birth @link:ILinkDate",
-          "type": "object",
-          "properties": {
-            "uuid": {
-              "description": "This is the UUID for the linked Resource.",
-              "type": "string",
-              "title": "UUID"
-            },
-            "name": {
-              "description": "This is the name for the linked Resource.",
-              "type": "string",
-              "title": "Name"
-            }
-          },
-          "additionalProperties": false,
-          "propertyOrder": [
-            "uuid",
-            "name"
-          ],
-          "required": [
-            "name",
-            "uuid"
-          ],
+          "description": "A shorthand of the date (name value)",
+          "type": "string",
           "title": "Date"
         },
-        "rank": {
-          "description": "birth order",
-          "type": "number",
-          "title": "Rank"
+        "type": {
+          "description": "Event type",
+          "enum": [
+            "annulment",
+            "birth",
+            "death",
+            "founding",
+            "marriage",
+            "other"
+          ],
+          "type": "string",
+          "title": "Type"
+        },
+        "uuid": {
+          "description": "This is the UUID for the linked Resource.",
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "description": "This is the name for the linked Resource.",
+          "type": "string",
+          "title": "Name"
         }
       },
       "additionalProperties": false,
       "propertyOrder": [
-        "domain",
         "date",
-        "rank"
+        "type",
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "date",
+        "name",
+        "type",
+        "uuid"
       ],
       "title": "Birth"
     },
+    "birthRank": {
+      "type": "number",
+      "title": "Birth Rank"
+    },
     "death": {
-      "description": "death information",
+      "description": "Death information @link:ILinkEvent",
       "type": "object",
       "properties": {
-        "domain": {
-          "description": "location of death @link:ILinkDomain",
-          "type": "object",
-          "properties": {
-            "uuid": {
-              "description": "This is the UUID for the linked Resource.",
-              "type": "string",
-              "title": "UUID"
-            },
-            "name": {
-              "description": "This is the name for the linked Resource.",
-              "type": "string",
-              "title": "Name"
-            }
-          },
-          "additionalProperties": false,
-          "propertyOrder": [
-            "uuid",
-            "name"
-          ],
-          "required": [
-            "name",
-            "uuid"
-          ],
-          "title": "Domain"
-        },
         "date": {
-          "description": "date of death @link:ILinkDate",
-          "type": "object",
-          "properties": {
-            "uuid": {
-              "description": "This is the UUID for the linked Resource.",
-              "type": "string",
-              "title": "UUID"
-            },
-            "name": {
-              "description": "This is the name for the linked Resource.",
-              "type": "string",
-              "title": "Name"
-            }
-          },
-          "additionalProperties": false,
-          "propertyOrder": [
-            "uuid",
-            "name"
-          ],
-          "required": [
-            "name",
-            "uuid"
-          ],
+          "description": "A shorthand of the date (name value)",
+          "type": "string",
           "title": "Date"
+        },
+        "type": {
+          "description": "Event type",
+          "enum": [
+            "annulment",
+            "birth",
+            "death",
+            "founding",
+            "marriage",
+            "other"
+          ],
+          "type": "string",
+          "title": "Type"
+        },
+        "uuid": {
+          "description": "This is the UUID for the linked Resource.",
+          "type": "string",
+          "title": "UUID"
+        },
+        "name": {
+          "description": "This is the name for the linked Resource.",
+          "type": "string",
+          "title": "Name"
         }
       },
       "additionalProperties": false,
       "propertyOrder": [
-        "domain",
-        "date"
+        "date",
+        "type",
+        "uuid",
+        "name"
+      ],
+      "required": [
+        "date",
+        "name",
+        "type",
+        "uuid"
       ],
       "title": "Death"
+    },
+    "marriages": {
+      "description": "Marriage information @link:ILinkEvent[]",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "description": "A shorthand of the date (name value)",
+            "type": "string",
+            "title": "date"
+          },
+          "type": {
+            "description": "Event type",
+            "enum": [
+              "annulment",
+              "birth",
+              "death",
+              "founding",
+              "marriage",
+              "other"
+            ],
+            "type": "string",
+            "title": "type"
+          },
+          "uuid": {
+            "description": "This is the UUID for the linked Resource.",
+            "type": "string",
+            "title": "uuid"
+          },
+          "name": {
+            "description": "This is the name for the linked Resource.",
+            "type": "string",
+            "title": "name"
+          }
+        },
+        "additionalProperties": false,
+        "propertyOrder": [
+          "date",
+          "type",
+          "uuid",
+          "name"
+        ],
+        "required": [
+          "date",
+          "name",
+          "type",
+          "uuid"
+        ]
+      },
+      "title": "Marriages"
     },
     "features": {
       "description": "features and actions @link:ILinkFeature[]",
@@ -4149,7 +4166,9 @@
     "enemies",
     "factions",
     "birth",
+    "birthRank",
     "death",
+    "marriages",
     "features",
     "actions",
     "items",
@@ -4200,6 +4219,7 @@
     "allies",
     "background",
     "birth",
+    "birthRank",
     "bond",
     "capacity",
     "characteristic",
