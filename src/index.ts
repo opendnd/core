@@ -12,6 +12,7 @@ export * from "./types/domains/Domain";
 export * from "./types/dungeons/Dungeon";
 export * from "./types/dynasties/Dynasty";
 export * from "./types/encounters/Encounter";
+export * from "./types/events/Event";
 export * from "./types/factions/Faction";
 export * from "./types/familiars/Familiar";
 export * from "./types/features/Feature";
@@ -75,6 +76,7 @@ export const schemas = {
   dungeons: require('./types/dungeons/schema.json'),
   dynasties: require('./types/dynasties/schema.json'),
   encounters: require('./types/encounters/schema.json'),
+  events: require('./types/events/schema.json'),
   factions: require('./types/factions/schema.json'),
   familiars: require('./types/familiars/schema.json'),
   features: require('./types/features/schema.json'),

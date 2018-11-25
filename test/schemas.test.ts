@@ -16,6 +16,7 @@ const {
   dungeons,
   dynasties,
   encounters,
+  events,
   factions,
   familiars,
   features,
@@ -77,6 +78,9 @@ describe('Schemas', () => {
   });
   it('encounters', () => {
     expect(encounters).to.be.an('object');
+  });
+  it('events', () => {
+    expect(events).to.be.an('object');
   });
   it('factions', () => {
     expect(factions).to.be.an('object');

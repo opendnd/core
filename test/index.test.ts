@@ -13,6 +13,7 @@ import {
   Dungeon,
   Dynasty,
   Encounter,
+  Event,
   Faction,
   Familiar,
   Feature,
@@ -87,6 +88,10 @@ describe('Core', () => {
   it('Encounter', () => {
     const encounter:Encounter = new Encounter();
     expect(encounter.name).to.be.a('string');
+  });
+  it('Event', () => {
+    const event:Event = new Event();
+    expect(event.name).to.be.a('string');
   });
   it('Faction', () => {
     const faction:Faction = new Faction();

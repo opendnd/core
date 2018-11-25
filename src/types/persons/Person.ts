@@ -32,6 +32,7 @@ import { ILinkStory } from "../stories/Story";
 import { ILinkTitle } from "../titles/Title";
 import { ILinkTool } from "../tools/Tool";
 import { ILinkVehicle, TransporationModes } from "../vehicles/Vehicle";
+import { ILinkEvent } from "../events/Event";
 
 // the types of persons
 export enum PersonTypes {
@@ -268,39 +269,20 @@ export interface IPerson extends IResource {
   };
 
   /** 
-   * birth information
+   * Birth information @link:ILinkEvent
    */
-  birth: {
-    /** 
-     * location of birth @link:ILinkDomain
-     */
-    domain?: ILinkDomain
-
-    /** 
-     * date of birth @link:ILinkDate
-     */
-    date?: ILinkDate
-
-    /** 
-     * birth order
-     */
-    rank?: number,
-  };
+  birth: ILinkEvent;
+  birthRank: number;
 
   /** 
-   * death information
+   * Death information @link:ILinkEvent
    */
-  death: {
-    /** 
-     * location of death @link:ILinkDomain
-     */
-    domain?: ILinkDomain
+  death: ILinkEvent;
 
-    /** 
-     * date of death @link:ILinkDate
-     */
-    date?: ILinkDate,
-  };
+  /**
+   * Marriage information @link:ILinkEvent[]
+   */
+  marriages?: ILinkEvent[];
 
   /** 
    * features and actions @link:ILinkFeature[]
@@ -736,8 +718,9 @@ export class Person extends Resource implements IPerson {
     allies: [],
     enemies: [],
   };
-  public birth = {};
-  public death = {};
+  public birth = null;
+  public birthRank = 0;
+  public death = null;
   public personalityTraits = []
   public ideal = "";
   public bond = "";
