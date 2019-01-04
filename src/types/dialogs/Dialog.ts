@@ -12,7 +12,7 @@ export interface IResponse {
   text: string;
 
   // the prompts index available for this response
-  prompts: string;
+  prompt: number;
 
   // a list of trigger events for this response
   triggers: string[];
@@ -24,7 +24,7 @@ export interface IResponse {
 }
 
 // prompts are used to prompt the user with choices to interact with the character
-export interface IPrompts {
+export interface IPrompt {
   choices: IChoice[];
 }
 export interface IChoice {
@@ -32,7 +32,7 @@ export interface IChoice {
   text: string;
 
   // the next response index for this choice
-  response: string;
+  response: number;
 
   // a requirement is which technical requirement the player must have to use this choice
   requirement: {};
@@ -48,21 +48,17 @@ export interface IChoice {
 
 export interface IDialog extends IResource {
   // current prompts for the player to choose
-  currentPrompts: string;
-
-  // current response from the character
-  currentResponse: string;
+  currentResponse: number;
 
   // a list of responses
   responses: IResponse[];
 
   // a list of prompts
-  prompts: IPrompts[];
+  prompts: IPrompt[];
 }
 
 export class Dialog extends Resource implements IDialog {
-  public currentPrompts = "";
-  public currentResponse = "";
+  public currentResponse = 0;
   public responses = [];
   public prompts = [];
 }
