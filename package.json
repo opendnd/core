@@ -1,5 +1,5 @@
 {
-  "name": "@howlingsails_dnd_core",
+  "name": "@howlingsails_dnd/core",
   "version": "0.3.0",
   "description": "This is the opendnd core module",
   "main": "dist/index.js",
